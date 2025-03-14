@@ -1,0 +1,124 @@
+uuid: 640e287e-1b5c-4291-a859-b477732ee8b8
+langcode: pl
+status: true
+dependencies: {  }
+id: upgrade_d7_node_complete_story
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (Artykuł)'
+source:
+  plugin: d7_node_complete
+  node_type: story
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_story/0/status:
+    -
+      plugin: get
+      source: comment
+  taxonomyextra:
+    -
+      plugin: sub_process
+      source: taxonomyextra
+      process:
+        target_id: tid
+  body:
+    -
+      plugin: get
+      source: body
+  field_frontpage_promote:
+    -
+      plugin: get
+      source: field_frontpage_promote
+  field_image_cache:
+    -
+      plugin: sub_process
+      source: field_image_cache
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_image_banner:
+    -
+      plugin: sub_process
+      source: field_image_banner
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: story
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+    - upgrade_language
+  optional:
+    - upgrade_d7_field_instance
+    - upgrade_d7_comment_field_instance

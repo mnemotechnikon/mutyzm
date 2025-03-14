@@ -1,0 +1,11 @@
+uuid: 9581cee0-7741-4efa-bff2-10e8a6cf8882
+langcode: pl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: iTEzwrEQ_4JIb-OYGiqzyF2TmMgWyWayresXcWgwGWM
+name: Tagi
+vid: tags
+description: 'Używaj tagów do grupowania artykułów podobnych tematycznie w kategorie.'
+weight: 0
+new_revision: false

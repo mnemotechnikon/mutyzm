@@ -1,0 +1,13 @@
+uuid: f2bb941b-ba03-4ce8-b170-56e6482d9705
+langcode: pl
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: sOb26JSy3fGpWkvR0WYN6_hMqj_6d1rvbvrkzp1yya0
+id: node_make_sticky_action
+label: 'Przyklej wpis'
+type: node
+plugin: node_make_sticky_action
+configuration: {  }

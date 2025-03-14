@@ -1,0 +1,22 @@
+uuid: b7abd136-f502-4c51-9911-54f757211368
+langcode: pl
+status: true
+dependencies:
+  theme:
+    - bootstrap5
+_core:
+  default_config_hash: yX9o6NcntZnXRDfbJoHY1pJwuXlumW44m5AMs347NN4
+id: bootstrap5_local_tasks
+theme: bootstrap5
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Zakładki
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

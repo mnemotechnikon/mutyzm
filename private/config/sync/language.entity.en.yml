@@ -1,0 +1,11 @@
+uuid: b10585c5-9b6b-470f-8246-d03c5370522b
+langcode: pl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: lBXDpdDPXQtrfTJQhr6MjRJJEEyYSoRJ0acdvHLsWeA
+id: en
+label: Angielski
+direction: ltr
+weight: 0
+locked: false
