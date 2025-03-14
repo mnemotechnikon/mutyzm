@@ -2,8 +2,8 @@ _core:
   default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
 langcode: pl
 uuid: 75b87f10-3485-428f-b2d6-bdeddbe2c7f6
-name: 'Drush Site-Install'
-mail: admin@example.com
+name: 'CTM Centrum Terapii'
+mail: admin@mutyzm.pl
 slogan: ''
 page:
   403: ''

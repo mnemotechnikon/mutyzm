@@ -1,11 +1,65 @@
 uuid: 87da0f95-4234-4a66-a574-1bca5619e8eb
 langcode: pl
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.page
+  module:
+    - block
+    - contextual
+    - field_permissions
+    - filter
+    - image
+    - language
+    - locale
+    - node
+    - path
+    - system
+    - taxonomy
+    - views_ui
 _core:
   default_config_hash: OeKGIkmZA_c-t6QLH81WNQx8gDCc1MRmxaTuQgxBByU
 id: administrator
-label: Administrator
-weight: 3
+label: administrator
+weight: 0
 is_admin: true
-permissions: {  }
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access private fields'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access user profiles'
+  - 'administer actions'
+  - 'administer blocks'
+  - 'administer content types'
+  - 'administer field permissions'
+  - 'administer filters'
+  - 'administer image styles'
+  - 'administer languages'
+  - 'administer menu'
+  - 'administer modules'
+  - 'administer nodes'
+  - 'administer permissions'
+  - 'administer site configuration'
+  - 'administer software updates'
+  - 'administer taxonomy'
+  - 'administer themes'
+  - 'administer url aliases'
+  - 'administer users'
+  - 'administer views'
+  - 'bypass node access'
+  - 'cancel account'
+  - 'change own username'
+  - 'create page content'
+  - 'create url aliases'
+  - 'delete any page content'
+  - 'delete own page content'
+  - 'edit any page content'
+  - 'edit own page content'
+  - 'select account cancellation method'
+  - 'translate interface'
+  - 'view own unpublished content'
+  - 'view the administration theme'

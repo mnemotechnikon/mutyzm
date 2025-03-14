@@ -1,0 +1,14 @@
+uuid: b65539cd-a762-4a71-8778-9e6b8add8048
+langcode: pl
+status: true
+dependencies:
+  config:
+    - user.role.pozycjoner
+  module:
+    - user
+id: user_add_role_action.pozycjoner
+label: 'Dodaj rolę pozycjoner wskazanym użytkownikom'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: pozycjoner

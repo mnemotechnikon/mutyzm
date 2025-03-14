@@ -2,29 +2,16 @@ uuid: 507ce6b5-a930-4d00-922d-ac39da3ce1e0
 langcode: pl
 status: true
 dependencies:
-  config:
-    - filter.format.basic_html
   module:
-    - comment
-    - contact
-    - file
-    - filter
-    - search
-    - shortcut
+    - node
     - system
 _core:
   default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
 id: authenticated
-label: 'Użytkownik uwierzytelniony'
-weight: 1
+label: 'użytkownik uwierzytelniony'
+weight: 2
 is_admin: false
 permissions:
-  - 'access comments'
   - 'access content'
-  - 'access shortcuts'
-  - 'access site-wide contact form'
-  - 'delete own files'
-  - 'post comments'
-  - 'search content'
-  - 'skip comment approval'
-  - 'use text format basic_html'
+  - 'change own username'
+  - 'view own unpublished content'

@@ -1,0 +1,9 @@
+uuid: d63c3fad-923c-4ff6-b41d-0c1071021836
+langcode: pl
+status: true
+dependencies: {  }
+name: 'Działy menu'
+vid: vocabulary_2
+description: 'Kategoryzuje treści według działów głównego menu. '
+weight: -9
+new_revision: false

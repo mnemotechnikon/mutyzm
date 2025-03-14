@@ -1,0 +1,29 @@
+uuid: 6221b79a-c5f3-4ddc-825f-704690ce84b6
+langcode: pl
+status: true
+dependencies:
+  module:
+    - block
+    - contextual
+    - image
+    - node
+    - path
+    - system
+    - taxonomy
+id: audytor
+label: audytor
+weight: 5
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access site reports'
+  - 'administer blocks'
+  - 'administer image styles'
+  - 'administer modules'
+  - 'administer taxonomy'
+  - 'administer themes'
+  - 'administer url aliases'
+  - 'view own unpublished content'

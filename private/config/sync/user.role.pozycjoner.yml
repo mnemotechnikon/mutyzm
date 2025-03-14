@@ -1,0 +1,26 @@
+uuid: 4b54a918-6b13-4ab1-b403-9482827673a9
+langcode: pl
+status: true
+dependencies:
+  config:
+    - node.type.page
+  module:
+    - contextual
+    - node
+    - path
+    - system
+id: pozycjoner
+label: pozycjoner
+weight: 4
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access site reports'
+  - 'administer nodes'
+  - 'administer site configuration'
+  - 'administer url aliases'
+  - 'create url aliases'
+  - 'edit any page content'
+  - 'view the administration theme'

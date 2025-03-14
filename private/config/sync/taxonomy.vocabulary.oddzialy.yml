@@ -1,0 +1,9 @@
+uuid: 0a1bb227-b5f8-43d1-baa7-7f5c21412c42
+langcode: pl
+status: true
+dependencies: {  }
+name: Oddziały
+vid: oddzialy
+description: 'Lista oddziałów, w których pracują specjaliści'
+weight: 0
+new_revision: false

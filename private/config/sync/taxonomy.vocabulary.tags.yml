@@ -6,6 +6,6 @@ _core:
   default_config_hash: iTEzwrEQ_4JIb-OYGiqzyF2TmMgWyWayresXcWgwGWM
 name: Tagi
 vid: tags
-description: 'Używaj tagów do grupowania artykułów podobnych tematycznie w kategorie.'
-weight: 0
+description: null
+weight: -8
 new_revision: false

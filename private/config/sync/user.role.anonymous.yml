@@ -2,23 +2,13 @@ uuid: e8b51b38-59e2-47d7-8533-93231558975b
 langcode: pl
 status: true
 dependencies:
-  config:
-    - filter.format.restricted_html
   module:
-    - comment
-    - contact
-    - filter
-    - search
     - system
 _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
 id: anonymous
-label: 'Użytkownik anonimowy'
-weight: 0
+label: 'użytkownik anonimowy'
+weight: 3
 is_admin: false
 permissions:
-  - 'access comments'
   - 'access content'
-  - 'access site-wide contact form'
-  - 'search content'
-  - 'use text format restricted_html'

@@ -1,0 +1,14 @@
+uuid: 51adea25-af6a-42bf-800d-e1271a5389aa
+langcode: pl
+status: true
+dependencies:
+  config:
+    - user.role.moderator
+  module:
+    - user
+id: user_remove_role_action.moderator
+label: 'Odbierz rolę moderator wskazanym użytkownikom'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: moderator

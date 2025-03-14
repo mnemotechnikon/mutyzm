@@ -1,0 +1,9 @@
+uuid: 218a0645-2009-48aa-ad79-b76c2c7a0e92
+langcode: pl
+status: true
+dependencies: {  }
+name: Subskrypcje
+vid: newsletter
+description: 'Kategorie newslettera'
+weight: -7
+new_revision: false

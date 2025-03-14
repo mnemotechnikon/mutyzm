@@ -1,0 +1,14 @@
+uuid: 29ef8ad9-1b7b-48ce-a6d9-f5ea20942596
+langcode: pl
+status: true
+dependencies:
+  config:
+    - user.role.audytor
+  module:
+    - user
+id: user_add_role_action.audytor
+label: 'Dodaj rolę audytor wskazanym użytkownikom'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: audytor

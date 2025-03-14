@@ -1,0 +1,9 @@
+uuid: b638cf05-66ec-4c5e-88dd-eef492a682d5
+langcode: pl
+status: true
+dependencies: {  }
+name: 'Kategorie ogłoszeń'
+vid: ad_categories
+description: 'Kategorie ogłoszeń'
+weight: -6
+new_revision: false

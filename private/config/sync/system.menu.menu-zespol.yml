@@ -1,0 +1,8 @@
+uuid: 7ea95b1b-828b-4706-bed6-5621a7a65515
+langcode: pl
+status: true
+dependencies: {  }
+id: menu-zespol
+label: 'Nasz zespół'
+description: 'Wyświetla odnośniki do podkategorii w dziale "Zespół"'
+locked: false

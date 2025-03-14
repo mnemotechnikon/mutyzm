@@ -1,0 +1,14 @@
+uuid: cd4c3e75-7b65-423b-9dc8-7b5432dc3dc2
+langcode: pl
+status: true
+dependencies:
+  config:
+    - user.role.pozycjoner
+  module:
+    - user
+id: user_remove_role_action.pozycjoner
+label: 'Odbierz rolę pozycjoner wskazanym użytkownikom'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: pozycjoner

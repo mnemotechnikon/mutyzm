@@ -1,0 +1,38 @@
+uuid: eb73dc75-c5fc-42e3-a9bd-301f827fc887
+langcode: pl
+status: true
+dependencies:
+  config:
+    - node.type.page
+  module:
+    - block
+    - contextual
+    - locale
+    - node
+    - path
+    - system
+    - taxonomy
+id: moderator
+label: moderator
+weight: 1
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access user profiles'
+  - 'administer blocks'
+  - 'administer menu'
+  - 'administer nodes'
+  - 'administer taxonomy'
+  - 'administer users'
+  - 'create page content'
+  - 'create url aliases'
+  - 'delete any page content'
+  - 'delete own page content'
+  - 'edit any page content'
+  - 'edit own page content'
+  - 'translate interface'
+  - 'view the administration theme'
