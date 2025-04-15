@@ -216,7 +216,11 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: '[webform:title]'
-      body: '<h2>[webform:title]</h2><p>[webform_submission:values]</p><p>Wysłano: [webform_submission:completed]&nbsp;&nbsp;<br><a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>'
+      body: |-
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]<br>
+        <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements:
         horizontal_rule: horizontal_rule
         informacja_o_administratorze_danych: informacja_o_administratorze_danych
@@ -315,10 +319,9 @@ handlers:
       sender_name: ''
       subject: _default
       body: |-
-        [webform:title]
-        [webform_submission:values]
-
-        <hr>Wysłano: [webform_submission:completed]<br />
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]<br>
         <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements:
         horizontal_rule: horizontal_rule

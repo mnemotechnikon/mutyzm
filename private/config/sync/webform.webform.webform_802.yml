@@ -270,11 +270,11 @@ settings:
   confirmation_exclude_query: false
   confirmation_exclude_token: false
   confirmation_update: false
-  limit_total: 12
-  limit_total_interval: null
+  limit_total: 60
+  limit_total_interval: 3600
   limit_total_message: ''
   limit_total_unique: false
-  limit_user: 12
+  limit_user: null
   limit_user_interval: null
   limit_user_message: ''
   limit_user_unique: false
@@ -325,7 +325,11 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: '[webform:title]'
-      body: '<h2>[webform:title]</h2><p>[webform_submission:values]</p><p>Wysłano: [webform_submission:completed]&nbsp;&nbsp;<br><a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>'
+      body: |-
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]
+        <br><a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements:
         horizontal_rule: horizontal_rule
         informacja_o_administratorze_danych: informacja_o_administratorze_danych
@@ -364,7 +368,12 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: '[webform:title]'
-      body: '<h2>[webform:title]</h2><h3>Potwierdzenie wysłanego zgłoszenia</h3><p>[webform_submission:values]</p><p>Wysłano: [webform_submission:completed]<br>Adres IP nadawcy: [webform_submission:ip-address]</p>'
+      body: |-
+        <h2>[webform:title]</h2>
+        <h3>Potwierdzenie wysłanego zgłoszenia</h3>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]
+        <br>Adres IP nadawcy: [webform_submission:ip-address]</p>
       excluded_elements:
         horizontal_rule: horizontal_rule
         informacja_o_administratorze_danych: informacja_o_administratorze_danych
@@ -403,7 +412,11 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: _default
-      body: '<h2>[webform:title]</h2><p>[webform_submission:values]</p><p><hr></p><p>Wysłano: [webform_submission:completed]<br><a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>'
+      body: |-
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]
+        <br><a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements:
         horizontal_rule: horizontal_rule
         informacja_o_administratorze_danych: informacja_o_administratorze_danych

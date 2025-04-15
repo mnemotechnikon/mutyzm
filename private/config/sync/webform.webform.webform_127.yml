@@ -12,58 +12,59 @@ id: webform_127
 title: 'Szkolenia dla rodziców'
 description: null
 categories: {  }
-elements: |
+elements: |-
   imie_nazwisko:
     '#type': textfield
-    '#size': 
-    '#title': 'Imię i nazwisko' 
+    '#size': null
+    '#title': 'Imię i nazwisko'
     '#required': true
   telefon:
     '#type': textfield
-    '#size': 
-    '#title': 'Telefon komórkowy' 
+    '#size': null
+    '#title': 'Telefon komórkowy'
     '#required': true
   email:
     '#type': email
     '#size': 20
-    '#default_value': '[current-user:mail]' 
-    '#title': 'Adres e-mail' 
+    '#default_value': '[current-user:mail]'
+    '#title': 'Adres e-mail'
     '#required': true
   miasto_zamieszkania:
     '#type': textfield
-    '#size': 
-    '#default_value': '[current-user:profile_miasto]' 
-    '#title': 'Miasto zamieszkania' 
+    '#size': null
+    '#default_value': '[current-user:profile_miasto]'
+    '#title': 'Miasto zamieszkania'
     '#required': true
   data_szkolenia:
     '#type': date
-    '#default_value': 'now' 
-    '#title': 'Data szkolenia' 
+    '#default_value': now
+    '#title': 'Data szkolenia'
   ilosc_osob:
     '#type': radios
+    '#title': 'Ilość osób'
+    '#description': '<p>Proszę zaznaczyć ilu rodziców/opiekunów będzie uczestniczyć w szkoleniu.</p>'
     '#options':
       1: '1'
       2: '2'
-    '#title': 'Ilość osób' 
-    '#description': "Proszę zaznaczyć ilu rodziców/opiekunów będzie uczestniczyć w szkoleniu."
     '#required': true
+    '#wrapper_type': form_element
   materialy:
     '#type': select
     '#options':
       elektroniczne: 'Materiały elektroniczne w cenie 15 zł.'
       papierowe: 'Materiały papierowe w cenie 35 zł.'
-    '#title': 'Proszę o materiały ze szkolenia/webinaru' 
-    '#description': "W przypadku materiałów w wersji papierowej prosimy w uwagach podać adres wysyłki."
+    '#title': 'Proszę o materiały ze szkolenia/webinaru'
+    '#description': 'W przypadku materiałów w wersji papierowej prosimy w uwagach podać adres wysyłki.'
   uwagi:
     '#type': textarea
-    '#title': 'Uwagi/pytania' 
+    '#title': Uwagi/pytania
   zaswiadczenie:
     '#type': select
     '#options':
       elektroniczne: 'Zaświadczenie elektroniczne w cenie 15 zł.'
       papierowe: 'Zaświadczenie papierowe w cenie 25 zł.'
-    '#title': 'Proszę o wystawienie zaświadczenia' 
-    '#description': "W przypadku zaświadczenia papierowego prosimy w uwagach podać adres wysyłki."
+    '#title': 'Proszę o wystawienie zaświadczenia'
+    '#description': 'W przypadku zaświadczenia papierowego prosimy w uwagach podać adres wysyłki.'
   zgoda_przetwarzanie_danych:
     '#type': checkbox
     '#title': 'Zgoda na przetwarzanie danych'
@@ -73,9 +74,9 @@ elements: |
     '#required_error': 'Zgoda wymagana'
   informacja_o_administratorze_danych:
     '#type': processed_text
-    '#title': 'Informacja o Administratorze Danych' 
+    '#title': 'Informacja o Administratorze Danych'
     '#format': full_html
-    '#text': "<p>Administratorem Państwa danych osobowych jest CTM Sp. z o.o. z siedzibą przy ul. Fatimskiej 41a/310 w Krakowie, e-mail: <a href='mailto:biuro@mutyzm.pl'>biuro@mutyzm.pl</a>, tel. 796-688-996. Podanie danych osobowych zawartych w formularzu jest dobrowolne, ale niezbędne do odpowiedzi na formularz/realizacji umowy, a także że przysługują Państwu prawa dostępu do Państwa danych osobowych, ich zmiany (w tym aktualizacji), a także pozostałe prawa opisane w <a href='/Polityka_prywatności'>Polityce prywatności</a> art. 6 pkt 1 lit. b,c,f RODO.</p>"
+    '#text': '<p>Administratorem Państwa danych osobowych jest CTM Sp. z o.o. z siedzibą przy ul. Fatimskiej 41a/310 w Krakowie, e-mail: <a href=''mailto:biuro@mutyzm.pl''>biuro@mutyzm.pl</a>, tel. 796-688-996. Podanie danych osobowych zawartych w formularzu jest dobrowolne, ale niezbędne do odpowiedzi na formularz/realizacji umowy, a także że przysługują Państwu prawa dostępu do Państwa danych osobowych, ich zmiany (w tym aktualizacji), a także pozostałe prawa opisane w <a href=''/Polityka_prywatności''>Polityce prywatności</a> art. 6 pkt 1 lit. b,c,f RODO.</p>'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -136,7 +137,11 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: '[webform:title]'
-      body: '<h2>[webform:title]</h2><p>[webform_submission:values]</p><p>Wysłano: [webform_submission:completed]&nbsp;&nbsp;<br><a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>'
+      body: |-
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]
+        <br><a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements:
         informacja_o_administratorze_danych: informacja_o_administratorze_danych
       ignore_access: false
@@ -176,11 +181,10 @@ handlers:
       subject: '[webform:title]'
       body: |-
         <h2>[webform:title]</h2>
-        <h3>Dziękujemy za wysłanie formularza zgłoszeniowego.<br />
-        Po zebraniu minimalnej liczby osób potwierdzimy szkolenie i wyślemy Państwu dane do przelewu oraz adres sali szkoleniowej. <br />Prosimy sprawdzić, czy nie ma błędu w Państwa formularzu zgłoszeniowym.
-        </h3>
-        <p><b>Przesłane zgłoszenie:</b>
-        [webform_submission:values]</p>
+        <h3>Dziękujemy za wysłanie formularza zgłoszeniowego.</h3>
+        <p>Po zebraniu minimalnej liczby osób potwierdzimy szkolenie i wyślemy Państwu dane do przelewu oraz adres sali szkoleniowej. <br />Prosimy sprawdzić, czy nie ma błędu w Państwa formularzu zgłoszeniowym.</p>
+        <h3>Przesłane zgłoszenie:</h3>
+        <p>[webform_submission:values]</p>
         <hr>
         <p>Wysłano: [webform_submission:completed]<br />
         Adres IP nadawcy: [webform_submission:ip-address]</p>
@@ -222,10 +226,9 @@ handlers:
       sender_name: ''
       subject: _default
       body: |-
-        [webform:title]
-        [webform_submission:values]
-
-        <hr>Wysłano: [webform_submission:completed]<br />
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]<br>
         <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements:
         informacja_o_administratorze_danych: informacja_o_administratorze_danych

@@ -289,9 +289,8 @@ handlers:
       subject: '[webform:title]'
       body: |-
         <h2>[webform:title]</h2>
-        [webform_submission:values]<br />
-
-        <p>Wysłano: [webform_submission:completed]<br />
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]<br>
         <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements: null
       ignore_access: false
@@ -332,9 +331,9 @@ handlers:
       body: |-
         <h2>[webform:title]</h2>
         <h3>Potwierdzenie wysłanego zgłoszenia</h3>
-        [webform_submission:values]
+        <p>[webform_submission:values]</p>
 
-        <p>Data wysłania: [webform_submission:completed]<br />
+        <hr><p>Data wysłania: [webform_submission:completed]<br />
         IP nadawcy: [webform_submission:ip-address]</p>
       excluded_elements: null
       ignore_access: false
@@ -374,9 +373,9 @@ handlers:
       subject: '[webform:title]'
       body: |-
         <h2>[webform:title]</h2>
-        [webform_submission:values]<br />
+        <p>[webform_submission:values]</p>
 
-        <p>Wysłano: [webform_submission:completed]<br />
+        <hr><p>Wysłano: [webform_submission:completed]<br />
         <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements: null
       ignore_access: false
@@ -415,10 +414,9 @@ handlers:
       sender_name: ''
       subject: _default
       body: |-
-        [webform:title]
-        [webform_submission:values]
-
-        <hr>Wysłano: [webform_submission:completed]<br />
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]<br>
         <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements: null
       ignore_access: false

@@ -17,20 +17,17 @@ elements: |
     '#type': textfield
     '#size': 
     '#title': 'Imię i nazwisko' 
-    '#description': ""
     '#required': true
   telefon:
     '#type': textfield
     '#size': 
     '#title': 'Telefon komórkowy' 
-    '#description': ""
     '#required': true
   email:
     '#type': email
     '#size': 20
     '#default_value': '[current-user:mail]' 
     '#title': 'Adres e-mail' 
-    '#description': ""
     '#required': true
   specjalizacja:
     '#type': select
@@ -42,31 +39,26 @@ elements: |
       psychiatra: 'psychiatra'
       student: 'student'
     '#title': 'Specjalizacja' 
-    '#description': ""
     '#required': true
   firma:
     '#type': textfield
     '#size': 
     '#title': 'Firma/instytucja' 
-    '#description': ""
   termin:
     '#type': textfield
     '#size': 
     '#title': 'Termin konferencji' 
-    '#description': ""
   miejscowosc:
     '#type': textfield
     '#size': 
     '#default_value': '[current-user:profile_miasto]' 
     '#title': 'Miejscowość konferencji' 
-    '#description': ""
     '#required': true
   miejscowosc_zamieszkania:
     '#type': textfield
     '#size': 
     '#default_value': '[current-user:profile_miasto]' 
     '#title': 'Miejscowość zamieszkania' 
-    '#description': ""
     '#required': true
   faktura:
     '#type': select
@@ -74,12 +66,10 @@ elements: |
       tak: 'TAK'
       nie: 'NIE'
     '#title': 'Chcesz otrzymać fakturę?' 
-    '#description': ""
   fieldset_dane_do_faktury:
     '#type': fieldset
     '#open': true
     '#title': 'Dane do faktury VAT' 
-    '#description': ""
     '#states':
       visible:
         ':input[name="faktura"]':
@@ -89,50 +79,48 @@ elements: |
       '#type': textfield
       '#size': 
       '#title': 'Nazwa' 
-      '#description': ""
     faktura_ulica_13:
       '#type': textfield
       '#size': 
       '#title': 'Ulica' 
-      '#description': ""
     faktura_miasto_13:
       '#type': textfield
       '#size': 
       '#title': 'Kod i miasto' 
-      '#description': "<p>Proszę podać kod pocztowy i miasto.</p>\n"
+      '#description': "Proszę podać kod pocztowy i miasto."
     faktura_nip_13:
       '#type': textfield
       '#size': 
       '#title': 'NIP - TYLKO DLA FIRM I ZAKŁADÓW PRACY' 
-      '#description': ""
     faktura_uwagi_13:
       '#type': textarea
-      '#title': 'Uwagi' 
-      '#description': "<p>dodatkowe informacje</p>\n"
-  zgoda_dane_osobowe:
-    '#description': "TAK, zgadzam się na przetwarzanie moich danych osobowych w celach marketingowych, przez CTM Sp. z o.o. z siedzibą w Krakowie (31-831) przy ul. Fatimskiej 41a/310, jako administratora danych osobowych. Zostałem poinformowany o tym, że podanie ww. danych jest dobrowolne oraz że mam prawo do dostępu do swoich danych, ich poprawiania, a także wycofania udzielonej zgody i pozostałych kwestiach wynikających z art. 13 RODO, dostępnych w <a href='/Polityka_prywatności'>Polityce prywatności</a>."
+      '#title': 'Uwagi do faktury' 
+    zgoda_efaktura:
+      '#type': checkbox
+      '#title': 'Wyrażam zgodę na przesyłanie faktur drogą elektroniczną' 
+      '#states':
+        visible:
+          ':input[name="faktura"]':
+            value: tak
+  zgoda_przetwarzanie_danych:
     '#type': checkbox
-    '#options':
-      tak: 'TAK, zgadzam się na przetwarzanie moich danych osobowych w celach marketingowych, przez CTM Sp. z o.o. z siedzibą w Krakowie (31-831) przy ul. Fatimskiej 41a/310, jako administratora danych osobowych. Zostałem poinformowany o tym, że podanie ww. danych jest dobrowolne oraz że mam prawo do dostępu do swoich danych, ich poprawiania, a także wycofania udzielonej zgody i pozostałych kwestiach wynikających z art. 13 RODO, dostępnych w <a href="/Polityka_prywatności">Polityce prywatności</a>.'
-    '#multiple': true
-    '#title_display': invisible
-    '#title': 'Zgoda - dane osobowe' 
-    '#description': ""
-  zgoda_efaktura:
-    '#description': "Wyrażam zgodę na przesyłanie faktur drogą elektroniczną."
-    '#type': checkbox
-    '#options':
-      tak: 'Wyrażam zgodę na przesyłanie faktur drogą elektroniczną.'
-    '#multiple': true
-    '#title_display': invisible
-    '#title': 'Zgoda - faktura elektroniczna' 
-    '#description': ""
+    '#title': 'Zgoda na przetwarzanie danych'
+    '#more_title': 'Pokaż treść zgody'
+    '#more': '<p>TAK, zgadzam się na przetwarzanie moich danych osobowych w celach marketingowych, przez CTM Sp. z o.o. z siedzibą w Krakowie (31-831) przy ul. Fatimskiej 41a/310, jako administratora danych osobowych. Zostałem poinformowany o tym, że podanie ww. danych jest dobrowolne oraz że mam prawo do dostępu do swoich danych, ich poprawiania, a także wycofania udzielonej zgody i pozostałych kwestiach wynikających z art. 13 RODO, dostępnych w Polityce prywatności.</p>'
+    '#required': true
+    '#required_error': 'Zgoda wymagana'
+  horizontal_rule:
+    '#type': webform_horizontal_rule
   informacja_o_administratorze_danych:
     '#type': processed_text
+    '#title': 'Informacja o Administratorze Danych'
     '#format': full_html
-    '#text': "<p><span id='ado_info_teaser'>Administratorem Państwa danych osobowych jest CTM Sp. z o.o. z siedzibą przy ul. Fatimskiej 41a/310 w Krakowie, e-mail: <a href='mailto:biuro@mutyzm.pl'>biuro@mutyzm.pl</a>, tel. 796-688-996.</span><a id='ado_info_more'>pokaż pełny tekst</a><span id='ado_info_full'>Podanie danych osobowych zawartych w formularzu jest dobrowolne, ale niezbędne do odpowiedzi na formularz/realizacji umowy, a także że przysługują Państwu prawa dostępu do Państwa danych osobowych, ich zmiany (w tym aktualizacji), a także pozostałe prawa opisane w <a href='/Polityka_prywatności'>Polityce prywatności</a> art. 6 pkt 1 lit. b,c,f RODO.</span></p>\n"
-    '#title': 'Informacja o Administratorze Danych' 
-    '#description': ""
+    '#text': "<p>Administratorem Państwa danych osobowych jest CTM Sp. z o.o. z siedzibą przy ul. Fatimskiej 41a/310 w Krakowie, e-mail: <a href='mailto:biuro@mutyzm.pl'>biuro@mutyzm.pl</a>, tel. 796-688-996. Podanie danych osobowych zawartych w formularzu jest dobrowolne, ale niezbędne do odpowiedzi na formularz/realizacji umowy, a także że przysługują Państwu prawa dostępu do Państwa danych osobowych, ich zmiany (w tym aktualizacji), a także pozostałe prawa opisane w <a href='/Polityka_prywatności'>Polityce prywatności</a> art. 6 pkt 1 lit. b,c,f RODO.</p>"
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': Wyślij
+
 css: ''
 javascript: ''
 settings:
@@ -141,11 +129,12 @@ settings:
   preview: 0
   draft: '0'
   draft_auto_save: false
-  confirmation_type: url
+  confirmation_type: message
   confirmation_url: taxonomy/term/118
-  confirmation_message: "<h3><b>Dziękujemy za wysłanie formularza, wyślemy Państwu wkrótce więcej informacji e-mailem.</b></h3>\r\n"
+  confirmation_message: "<p>Dziękujemy za wysłanie formularza, wyślemy Państwu wkrótce więcej informacji e-mailem.</p>"
   limit_total: 60
-  limit_user: 12
+  limit_total_interval: 3600
+  limit_user: null
   form_submit_label: Wyślij
   wizard_complete: 1
 access:
@@ -158,8 +147,8 @@ handlers:
   email_3:
     id: email
     handler_id: email_3
-    label: 'Email 3'
-    notes: ''
+    label: 'Email zapisy'
+    notes: 'Wysyłka zgłoszenia na adres zapisy@mutyzm.pl'
     status: true
     conditions: {  }
     weight: 3
@@ -179,24 +168,18 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: default
+      subject: '[webform:title]'
       body: |-
-        <h2>[node:title]</h2>
-        [webform_submission:values]
-        <p>[webform_submission:values:zgoda_dane_osobowe:label]: <b>[webform_submission:values:zgoda_dane_osobowe:key]</b><br />
-        [webform_submission:values:zgoda_efaktura:label]: <b>[webform_submission:values:zgoda_efaktura:key]</b>
-        </p>
-
-        <hr><p>Wysłano: [webform_submission:date:long]<br />
-        Wysłane przez: [webform_submission:user]<br />
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]<br>
         <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements:
-        zgoda_dane_osobowe: zgoda_dane_osobowe
-        zgoda_efaktura: zgoda_efaktura
+        horizontal_rule: horizontal_rule
         informacja_o_administratorze_danych: informacja_o_administratorze_danych
       ignore_access: false
       exclude_empty: true
-      exclude_empty_checkbox: false
+      exclude_empty_checkbox: true
       exclude_attachments: false
       html: true
       attachments: false
@@ -207,7 +190,7 @@ handlers:
   email_5:
     id: email
     handler_id: email_5
-    label: 'Email 5'
+    label: 'Email do nadawcy'
     notes: ''
     status: true
     conditions: {  }
@@ -221,29 +204,26 @@ handlers:
       bcc_options: {  }
       cc_mail: ''
       cc_options: {  }
-      from_mail: default
+      from_mail: '[webform_submission:values:email:raw]'
       from_options: {  }
-      from_name: default
+      from_name: '[webform_submission:values:imie_nazwisko:raw]'
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: default
+      subject: '[webform:title]'
       body: |-
-        <h2>[node:title]</h2>
+        <h2>[webform:title]</h2>
         <h3>Potwierdzenie wysłanego zgłoszenia</h3>
-        [webform_submission:values]
-
-        <pre>--------------------
-        Data wysłania: [webform_submission:date:short]
-        Adres IP nadawcy: [webform_submission:ip-address]</pre>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]<br />
+        Adres IP nadawcy: [webform_submission:ip-address]</p>
       excluded_elements:
-        zgoda_dane_osobowe: zgoda_dane_osobowe
-        zgoda_efaktura: zgoda_efaktura
+        horizontal_rule: horizontal_rule
         informacja_o_administratorze_danych: informacja_o_administratorze_danych
       ignore_access: false
       exclude_empty: true
-      exclude_empty_checkbox: false
+      exclude_empty_checkbox: true
       exclude_attachments: false
       html: true
       attachments: false
@@ -254,11 +234,11 @@ handlers:
   email_6:
     id: email
     handler_id: email_6
-    label: 'Email 6'
+    label: 'Email do admina'
     notes: ''
     status: true
     conditions: {  }
-    weight: 6
+    weight: 8
     settings:
       states:
         - completed
@@ -275,20 +255,14 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: default
+      subject: _default
       body: |-
-        <h2>[node:title]</h2>
-        [webform_submission:values]
-        <p>[webform_submission:values:zgoda_dane_osobowe:label]: <b>[webform_submission:values:zgoda_dane_osobowe:key]</b><br />
-        [webform_submission:values:zgoda_efaktura:label]: <b>[webform_submission:values:zgoda_efaktura:key]</b>
-        </p>
-
-        <hr><p>Wysłano: [webform_submission:date:long]<br />
-        Wysłane przez: [webform_submission:user]<br />
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]<br>
         <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements:
-        zgoda_dane_osobowe: zgoda_dane_osobowe
-        zgoda_efaktura: zgoda_efaktura
+        horizontal_rule: horizontal_rule
         informacja_o_administratorze_danych: informacja_o_administratorze_danych
       ignore_access: false
       exclude_empty: true

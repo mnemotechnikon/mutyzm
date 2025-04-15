@@ -13,46 +13,45 @@ title: 'Nowość! Program dla nastolatków i młodych dorosłych '
 description: null
 categories: {  }
 elements: |
-  imie_i_nazwisko:
+  imie_nazwisko:
     '#type': textfield
     '#title': 'Imię i nazwisko' 
-    '#description': ""
     '#required': true
   telefon_komorkowy:
     '#type': textfield
     '#title': 'Telefon komórkowy' 
-    '#description': ""
     '#required': true
-  adres_e_mail:
+  email:
     '#type': email
-    '#size': 20
     '#default_value': '[current-user:mail]' 
     '#title': 'Adres e-mail' 
-    '#description': ""
     '#required': true
   kod_i_miasto:
     '#type': textfield
     '#title': 'Kod i miasto' 
-    '#description': ""
-  uwagi2:
+  uwagi:
     '#type': textarea
     '#title': 'Uwagi' 
-    '#description': "<p>dodatkowe informacje</p>"
-  zgoda___dane_osobowe:
-    '#description': "TAK, zgadzam się na przetwarzanie moich danych osobowych w celach marketingowych, przez CTM Sp. z o.o. z siedzibą w Krakowie (31-831) przy ul. Fatimskiej 41a/310, jako administratora danych osobowych. Zostałem poinformowany o tym, że podanie ww. danych jest dobrowolne oraz że mam prawo do dostępu do swoich danych, ich poprawiania, a także wycofania udzielonej zgody i pozostałych kwestiach wynikających z art. 13 RODO, dostępnych w <a href='/Polityka_prywatności'>Polityce prywatności</a>."
+    '#description': "Dodatkowe informacje"
+  zgoda_przetwarzanie_danych:
     '#type': checkbox
-    '#options':
-      tak: 'TAK, zgadzam się na przetwarzanie moich danych osobowych w celach marketingowych, przez CTM Sp. z o.o. z siedzibą w Krakowie (31-831) przy ul. Fatimskiej 41a/310, jako administratora danych osobowych. Zostałem poinformowany o tym, że podanie ww. danych jest dobrowolne oraz że mam prawo do dostępu do swoich danych, ich poprawiania, a także wycofania udzielonej zgody i pozostałych kwestiach wynikających z art. 13 RODO, dostępnych w <a href="/Polityka_prywatności">Polityce prywatności</a>.'
-    '#multiple': true
-    '#title_display': invisible
-    '#title': 'Zgoda - dane osobowe' 
-    '#description': ""
+    '#title': 'Zgoda na przetwarzanie danych'
+    '#more_title': 'Pokaż treść zgody'
+    '#more': '<p>TAK, zgadzam się na przetwarzanie moich danych osobowych w celach marketingowych, przez CTM Sp. z o.o. z siedzibą w Krakowie (31-831) przy ul. Fatimskiej 41a/310, jako administratora danych osobowych. Zostałem poinformowany o tym, że podanie ww. danych jest dobrowolne oraz że mam prawo do dostępu do swoich danych, ich poprawiania, a także wycofania udzielonej zgody i pozostałych kwestiach wynikających z art. 13 RODO, dostępnych w Polityce prywatności.</p>'
+    '#required': true
+    '#required_error': 'Zgoda wymagana'
+  horizontal_rule:
+    '#type': webform_horizontal_rule
   informacja_o_administratorze_danych:
     '#type': processed_text
+    '#title': 'Informacja o Administratorze Danych'
     '#format': full_html
-    '#text': "<p>Administratorem Państwa danych osobowych jest CTM Sp. z o.o. z siedzibą przy ul. Fatimskiej 41a/310 w Krakowie, e-mail: <a href='mailto:biuro@mutyzm.pl'>biuro@mutyzm.pl</a>, tel. 796-688-996.<a id='ado_info_more'>pokaż pełny tekst</a>Podanie danych osobowych zawartych w formularzu jest dobrowolne, ale niezbędne do odpowiedzi na formularz/realizacji umowy, a także że przysługują Państwu prawa dostępu do Państwa danych osobowych, ich zmiany (w tym aktualizacji), a także pozostałe prawa opisane w <a href='/Polityka_prywatności'>Polityce prywatności</a> art. 6 pkt 1 lit. b,c,f RODO.</p>\n"
-    '#title': 'Informacja o Administratorze Danych' 
-    '#description': ""
+    '#text': "<p>Administratorem Państwa danych osobowych jest CTM Sp. z o.o. z siedzibą przy ul. Fatimskiej 41a/310 w Krakowie, e-mail: <a href='mailto:biuro@mutyzm.pl'>biuro@mutyzm.pl</a>, tel. 796-688-996. Podanie danych osobowych zawartych w formularzu jest dobrowolne, ale niezbędne do odpowiedzi na formularz/realizacji umowy, a także że przysługują Państwu prawa dostępu do Państwa danych osobowych, ich zmiany (w tym aktualizacji), a także pozostałe prawa opisane w <a href='/Polityka_prywatności'>Polityce prywatności</a> art. 6 pkt 1 lit. b,c,f RODO.</p>"
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': Wyślij
+  
 css: ''
 javascript: ''
 settings:
@@ -61,10 +60,11 @@ settings:
   preview: 0
   draft: '0'
   draft_auto_save: false
-  confirmation_type: url
+  confirmation_type: message
   confirmation_url: /Nowość_Program_dla_nastolatków_i_młodych_dorosłych
-  confirmation_message: "<h2>Dziękujemy za&nbsp;zgłoszenie!</h2>\r\n"
+  confirmation_message: "<p>Dziękujemy za&nbsp;zgłoszenie!</p>"
   limit_total: 60
+  limit_total_interval: 3600
   limit_user: null
   form_submit_label: Wyślij
   wizard_complete: 1
@@ -92,19 +92,25 @@ handlers:
       bcc_options: {  }
       cc_mail: ''
       cc_options: {  }
-      from_mail: default
+      from_mail: '[webform_submission:values:email:raw]'
       from_options: {  }
-      from_name: default
+      from_name: '[webform_submission:values:imie_nazwisko:raw]'
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: default
-      body: default
-      excluded_elements: {  }
+      subject: '[webform:title]'
+      body: |-
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]<br>
+        <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
+      excluded_elements:
+        horizontal_rule: horizontal_rule
+        informacja_o_administratorze_danych: informacja_o_administratorze_danych
       ignore_access: false
       exclude_empty: true
-      exclude_empty_checkbox: false
+      exclude_empty_checkbox: true
       exclude_attachments: false
       html: true
       attachments: false
@@ -115,7 +121,7 @@ handlers:
   email_2:
     id: email
     handler_id: email_2
-    label: 'Email 2'
+    label: 'Email do nadawcy'
     notes: ''
     status: true
     conditions: {  }
@@ -123,40 +129,40 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: '[webform_submission:values:adres_e_mail:raw]'
+      to_mail: '[webform_submission:values:email:raw]'
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
       cc_mail: ''
       cc_options: {  }
-      from_mail: default
+      from_mail: '[site:mail]'
       from_options: {  }
-      from_name: default
+      from_name: '[site:name]'
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: default
-      body: |
-        <h3>Dziękujemy za wysłanie formularza.</h3>
-        <p>Wysłane przez: [webform_submission:user]</p>
-
-        <p><b>Przesłane zgłoszenie:</b>
-        [webform_submission:values]</p>
-
+      subject: '[webform:title]'
+      body: |-
+        <h2>[webform:title]</h2>
+        <h3>Dziękujemy za wysłanie formularza.
+        <br>Przesłane zgłoszenie:</h3>
+        <p>[webform_submission:values]</p>
 
         <p>Kontakt:<br />
         E-mail: terapia@ctm.org.pl <br /> 
         Karolina Olszewska – tel. 531-761- 858 (pon. – pt. w godz. 8:30 – 16:00)<br /> </p>
 
         <h4> Wiadomość została wygenerowana automatycznie.</h4>
-        <hr>
-        <p>Data wysłania: [webform_submission:date:short]<br />
+        
+        <hr><p>Wysłano: [webform_submission:completed]<br />
         Adres IP nadawcy: [webform_submission:ip-address]</p>
-      excluded_elements: {  }
+      excluded_elements:
+        horizontal_rule: horizontal_rule
+        informacja_o_administratorze_danych: informacja_o_administratorze_danych
       ignore_access: false
       exclude_empty: true
-      exclude_empty_checkbox: false
+      exclude_empty_checkbox: true
       exclude_attachments: false
       html: true
       attachments: false
@@ -167,8 +173,8 @@ handlers:
   email_3:
     id: email
     handler_id: email_3
-    label: 'Email 3'
-    notes: ''
+    label: 'Email terapia'
+    notes: 'Wysyłka na adres terapia@ctm.org.pl'
     status: true
     conditions: {  }
     weight: 3
@@ -181,16 +187,22 @@ handlers:
       bcc_options: {  }
       cc_mail: ''
       cc_options: {  }
-      from_mail: default
+      from_mail: '[webform_submission:values:email:raw]'
       from_options: {  }
-      from_name: default
+      from_name: '[webform_submission:values:imie_nazwisko:raw]'
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: default
-      body: default
-      excluded_elements: {  }
+      subject: '[webform:title]'
+      body: |-
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]<br>
+        <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
+      excluded_elements:
+        horizontal_rule: horizontal_rule
+        informacja_o_administratorze_danych: informacja_o_administratorze_danych
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
@@ -204,8 +216,8 @@ handlers:
   email_4:
     id: email
     handler_id: email_4
-    label: 'Email 4'
-    notes: ''
+    label: 'Email szkolenia'
+    notes: 'Wysyłka na adres szkolenia@mutyzm.pl'
     status: true
     conditions: {  }
     weight: 4
@@ -218,19 +230,25 @@ handlers:
       bcc_options: {  }
       cc_mail: ''
       cc_options: {  }
-      from_mail: default
+      from_mail: '[webform_submission:values:email:raw]'
       from_options: {  }
-      from_name: default
+      from_name: '[webform_submission:values:imie_nazwisko:raw]'
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: default
-      body: default
-      excluded_elements: {  }
+      subject: '[webform:title]'
+      body: |-
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]<br>
+        <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
+      excluded_elements:
+        horizontal_rule: horizontal_rule
+        informacja_o_administratorze_danych: informacja_o_administratorze_danych
       ignore_access: false
       exclude_empty: true
-      exclude_empty_checkbox: false
+      exclude_empty_checkbox: true
       exclude_attachments: false
       html: true
       attachments: false

@@ -268,7 +268,7 @@ handlers:
         <p>Ilość przypadków: <b>[webform_submission:values:ilosc_6]</b></p>
         <p>Informacje dodatkowe:<br />
         [webform_submission:values:uwagi_6]</p>
-        <p>Wysłano: [webform_submission:completed]<br />
+        <hr><p>Wysłano: [webform_submission:completed]<br />
         <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p><br />
       excluded_elements:
         horizontal_rule: horizontal_rule
@@ -311,9 +311,9 @@ handlers:
       body: |-
         <h2>[webform:title]</h2>
         <h3>Potwierdzenie wysłanego zgłoszenia</h3>
-        [webform_submission:values]
+        <p>[webform_submission:values]</p>
 
-        <p>Wysłano: [webform_submission:completed]<br />
+        <hr><p>Wysłano: [webform_submission:completed]<br />
         IP nadawcy: [webform_submission:ip-address]</p>
       excluded_elements:
         horizontal_rule: horizontal_rule
@@ -368,7 +368,7 @@ handlers:
         <p>Ilość przypadków: <b>[webform_submission:values:ilosc_6]</b></p>
         <p>Informacje dodatkowe:<br />
         [webform_submission:values:uwagi_6]</p>
-        <p>Wysłano: [webform_submission:completed]<br />
+        <hr><p>Wysłano: [webform_submission:completed]<br />
         <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p><br />
       excluded_elements:
         horizontal_rule: horizontal_rule
@@ -409,10 +409,9 @@ handlers:
       sender_name: ''
       subject: _default
       body: |-
-        [webform:title]
-        [webform_submission:values]
-
-        <hr>Wysłano: [webform_submission:completed]<br />
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]<br>
         <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements:
         horizontal_rule: horizontal_rule

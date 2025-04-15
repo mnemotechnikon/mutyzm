@@ -83,7 +83,6 @@ elements: |
     '#type': webform_actions
     '#title': 'Submit button(s)'
     '#submit__label': Wyślij
-  
 css: ''
 javascript: ''
 settings:
@@ -94,7 +93,7 @@ settings:
   draft_auto_save: false
   confirmation_type: message
   confirmation_url: /Szkolenia/dla_poradni
-  confirmation_message: "<p>Dziękujemy za zgłoszenie!</p>"
+  confirmation_message: '<p>Dziękujemy za zgłoszenie!</p>'
   limit_total: 60
   limit_total_interval: 3600
   limit_user: null
@@ -132,7 +131,12 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: '[webform:title]'
-      body: '<h2>[webform:title]</h2><p>[webform_submission:values]</p><p>Wysłano: [webform_submission:completed]&nbsp;&nbsp;<br><a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>'
+      body: |-
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+
+        <hr><p>Wysłano: [webform_submission:completed]
+        <br><a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements:
         horizontal_rule: horizontal_rule
         informacja_o_administratorze_danych: informacja_o_administratorze_danych
@@ -184,10 +188,9 @@ handlers:
         zapisy@mutyzm.pl<br />
         tel. 796-688-996<br /></p>
 
-        <p><b>Przesłane zgłoszenie:</b>
-        [webform_submission:values]</p>
-        <hr>
-        <p>Wysłano: [webform_submission:completed]<br />
+        <h3>Przesłane zgłoszenie:</h3>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]<br />
         Adres IP nadawcy: [webform_submission:ip-address]</p>
       excluded_elements:
         horizontal_rule: horizontal_rule
@@ -228,10 +231,9 @@ handlers:
       sender_name: ''
       subject: _default
       body: |-
-        [webform:title]
-        [webform_submission:values]
-
-        <hr>Wysłano: [webform_submission:completed]<br />
+        <h2>[webform:title]</h2>
+        <p>[webform_submission:values]</p>
+        <hr><p>Wysłano: [webform_submission:completed]<br>
         <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements:
         horizontal_rule: horizontal_rule
