@@ -292,7 +292,7 @@ handlers:
         [webform_submission:values]<br />
 
         <p>Wysłano: [webform_submission:completed]<br />
-        Podgląd zgłoszenia: [webform_submission:url]</p>
+        <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements: null
       ignore_access: false
       exclude_empty: true
@@ -377,7 +377,7 @@ handlers:
         [webform_submission:values]<br />
 
         <p>Wysłano: [webform_submission:completed]<br />
-        Podgląd zgłoszenia: [webform_submission:url]</p>
+        <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements: null
       ignore_access: false
       exclude_empty: true
@@ -419,7 +419,7 @@ handlers:
         [webform_submission:values]
 
         <hr>Wysłano: [webform_submission:completed]<br />
-        Podgląd zgłoszenia: [webform_submission:url]</p>
+        <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements: null
       ignore_access: false
       exclude_empty: true

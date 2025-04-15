@@ -189,7 +189,7 @@ handlers:
 
         <hr><p>Wysłano: [webform_submission:date:long]<br />
         Wysłane przez: [webform_submission:user]<br />
-        Podgląd zgłoszenia: [webform_submission:url]</p>
+        <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements:
         zgoda_dane_osobowe: zgoda_dane_osobowe
         zgoda_efaktura: zgoda_efaktura
@@ -285,7 +285,7 @@ handlers:
 
         <hr><p>Wysłano: [webform_submission:date:long]<br />
         Wysłane przez: [webform_submission:user]<br />
-        Podgląd zgłoszenia: [webform_submission:url]</p>
+        <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements:
         zgoda_dane_osobowe: zgoda_dane_osobowe
         zgoda_efaktura: zgoda_efaktura

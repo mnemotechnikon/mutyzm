@@ -269,7 +269,7 @@ handlers:
         <p>Informacje dodatkowe:<br />
         [webform_submission:values:uwagi_6]</p>
         <p>Wysłano: [webform_submission:completed]<br />
-        Podgląd zgłoszenia: [webform_submission:url]</p><br />
+        <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p><br />
       excluded_elements:
         horizontal_rule: horizontal_rule
         informacja_o_administratorze_danych: informacja_o_administratorze_danych
@@ -369,7 +369,7 @@ handlers:
         <p>Informacje dodatkowe:<br />
         [webform_submission:values:uwagi_6]</p>
         <p>Wysłano: [webform_submission:completed]<br />
-        Podgląd zgłoszenia: [webform_submission:url]</p><br />
+        <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p><br />
       excluded_elements:
         horizontal_rule: horizontal_rule
         informacja_o_administratorze_danych: informacja_o_administratorze_danych
@@ -413,7 +413,7 @@ handlers:
         [webform_submission:values]
 
         <hr>Wysłano: [webform_submission:completed]<br />
-        Podgląd zgłoszenia: [webform_submission:url]</p>
+        <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
       excluded_elements:
         horizontal_rule: horizontal_rule
         informacja_o_administratorze_danych: informacja_o_administratorze_danych
