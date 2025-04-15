@@ -1,0 +1,48 @@
+uuid: c5047798-7df7-42e4-b1ea-38e179ab5b68
+langcode: pl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.story.body
+    - field.field.node.story.field_image_cache
+    - field.field.node.story.field_metatag
+    - image.style.miniaturka150x100
+    - node.type.story
+  module:
+    - image
+    - text
+    - user
+id: node.story.teaser
+targetEntityType: node
+bundle: story
+mode: teaser
+content:
+  body:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+    weight: -3
+    region: content
+  field_image_cache:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: miniaturka150x100
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  field_metatag: true
+  langcode: true

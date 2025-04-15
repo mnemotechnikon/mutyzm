@@ -1,0 +1,336 @@
+uuid: a8697561-e0e7-429a-b32a-9d9d1d2a9f22
+langcode: pl
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: webform_126
+title: 'Szkolenia dla specjalistów'
+description: null
+categories: {  }
+elements: |
+  imie_nazwisko:
+    '#type': textfield
+    '#size': 
+    '#title': 'Imię i nazwisko' 
+    '#required': true
+  telefon:
+    '#type': textfield
+    '#size': 
+    '#title': 'Telefon komórkowy' 
+    '#required': true
+  email:
+    '#type': email
+    '#size': 20
+    '#default_value': '[current-user:mail]' 
+    '#title': 'Adres e-mail' 
+    '#required': true
+  specjalizacja:
+    '#type': select
+    '#options':
+      psycholog: 'psycholog'
+      psychoterapeuta: 'psychoterapeuta'
+      logopeda: 'logopeda'
+      pedagog: 'pedagog'
+      psychiatra: 'psychiatra'
+      student: 'student'
+    '#title': 'Specjalizacja' 
+    '#required': true
+  termin:
+    '#type': textfield
+    '#size': 
+    '#title': 'Termin' 
+    '#required': true
+  miejscowosc_zamieszkania:
+    '#type': textfield
+    '#size': 
+    '#default_value': '[current-user:profile_miasto]' 
+    '#title': 'Miejscowość zamieszkania' 
+    '#required': true
+  materialy:
+    '#type': select
+    '#options':
+      elektroniczne: 'Materiały elektroniczne w cenie 15 zł.'
+      papierowe: 'Materiały papierowe w cenie 35 zł.'
+    '#title': 'Proszę o materiały ze szkolenia/webinaru' 
+    '#description': 'W przypadku materiałów w wersji papierowej prosimy w uwagach podać adres wysyłki.'
+  zaswiadczenie:
+    '#type': select
+    '#options':
+      elektroniczne: 'Zaświadczenie elektroniczne w cenie 15 zł.'
+      papierowe: 'Zaświadczenie papierowe w cenie 25 zł.'
+    '#title': 'Proszę o wystawienie zaświadczenia' 
+    '#description': 'W przypadku zaświadczenia papierowego prosimy w uwagach podać adres wysyłki.'
+  faktura_uwagi:
+    '#type': textarea
+    '#title': 'Uwagi' 
+    '#description': 'Dodatkowe informacje'
+  faktura:
+    '#type': select
+    '#options':
+      tak: 'TAK'
+      nie: 'NIE'
+    '#title': 'Chcesz otrzymać fakturę?' 
+  fieldset_dane_do_faktury:
+    '#type': fieldset
+    '#open': true
+    '#title': 'Dane do faktury VAT' 
+    '#states':
+      visible:
+        ':input[name="faktura"]':
+          value: tak      
+    faktura_nazwa_13:
+      '#type': textfield
+      '#size': 
+      '#title': 'Nazwa' 
+    faktura_ulica_13:
+      '#type': textfield
+      '#size': 
+      '#title': 'Ulica' 
+    faktura_miasto_13:
+      '#type': textfield
+      '#size': 
+      '#title': 'Kod i miasto' 
+      '#description': 'Proszę podać kod pocztowy i miasto.'
+    faktura_nip_13:
+      '#type': textfield
+      '#size': 
+      '#title': 'NIP - TYLKO DLA FIRM I ZAKŁADÓW PRACY' 
+  fieldset_dane_odbiorcy:
+    '#type': fieldset
+    '#open': true
+    '#title': 'Dane odbiorcy' 
+    dane_odbiorcy_nazwa_26:
+      '#type': textfield
+      '#size': 
+      '#title': 'Nazwa' 
+    dane_odbiorcy_ulica_26:
+      '#type': textfield
+      '#size': 
+      '#title': 'Ulica' 
+    dane_odbiorcy_miasto_26:
+      '#type': textfield
+      '#size': 
+      '#title': 'Kod i miasto' 
+      '#description': 'Proszę podać kod pocztowy i miasto.'
+    '#states':
+      visible:
+        ':input[name="faktura"]':
+          value: tak
+  zgoda_przetwarzanie_danych:
+      '#type': checkbox
+      '#title': 'Zgoda na przetwarzanie danych'
+      '#more_title': 'Pokaż treść zgody'
+      '#more': '<p>TAK, zgadzam się na przetwarzanie moich danych osobowych w celach marketingowych, przez CTM Sp. z o.o. z siedzibą w Krakowie (31-831) przy ul. Fatimskiej 41a/310, jako administratora danych osobowych. Zostałem poinformowany o tym, że podanie ww. danych jest dobrowolne oraz że mam prawo do dostępu do swoich danych, ich poprawiania, a także wycofania udzielonej zgody i pozostałych kwestiach wynikających z art. 13 RODO, dostępnych w Polityce prywatności.</p>'
+      '#required': true
+      '#required_error': 'Zgoda wymagana'
+      '#access_create_roles':
+        - authenticated
+        - anonymous
+      '#access_update_roles':
+        - authenticated
+        - anonymous
+      '#access_view_roles':
+        - authenticated
+        - anonymous
+  zgoda_efaktura:
+    '#type': checkbox
+    '#title': 'Wyrażam zgodę na przesyłanie faktur drogą elektroniczną' 
+    '#states':
+      visible:
+        ':input[name="faktura"]':
+          value: tak
+  zgoda_przewodnik:
+    '#type': checkbox
+    '#title': 'Zamawiam "Mutyzm Wybiórczy - PRAKTYCZNY PRZEWODNIK"' 
+    '#description': "Cena: 79 zł (cena z rabatem -20% dla uczestników szkoleń, wysyłka gratis paczkomatem Inpost)"
+  horizontal_rule:
+    '#type': webform_horizontal_rule
+  informacja_o_administratorze_danych:
+    '#type': processed_text
+    '#title': 'Informacja o Administratorze Danych'
+    '#format': full_html
+    '#text': "<p>Administratorem Państwa danych osobowych jest CTM Sp. z o.o. z siedzibą przy ul. Fatimskiej 41a/310 w Krakowie, e-mail: <a href='mailto:biuro@mutyzm.pl'>biuro@mutyzm.pl</a>, tel. 796-688-996. Podanie danych osobowych zawartych w formularzu jest dobrowolne, ale niezbędne do odpowiedzi na formularz/realizacji umowy, a także że przysługują Państwu prawa dostępu do Państwa danych osobowych, ich zmiany (w tym aktualizacji), a także pozostałe prawa opisane w <a href='/Polityka_prywatności'>Polityce prywatności</a> art. 6 pkt 1 lit. b,c,f RODO.</p>"
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#access_create_roles':
+      - authenticated
+      - anonymous
+    '#access_update_roles':
+      - authenticated
+      - anonymous
+    '#access_view_roles':
+      - authenticated
+      - anonymous
+    '#submit__label': Wyślij
+    
+css: ''
+javascript: ''
+settings:
+  page: true
+  wizard_progress_bar: true
+  preview: 0
+  draft: '0'
+  draft_auto_save: false
+  confirmation_type: message
+  confirmation_url: ''
+  confirmation_message: '<p>Dziękujemy za wysłanie formularza zgłoszeniowego na szkolenie.</p>'
+  limit_total: 60
+  limit_user: 60
+  form_submit_label: Wyślij
+  wizard_complete: 1
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+handlers:
+  email_3:
+    id: email
+    handler_id: email_3
+    label: 'Email zapisy'
+    notes: 'Wysyłka zgłoszenia na adres zapisy@mutyzm.pl'
+    status: true
+    conditions: {  }
+    weight: 3
+    settings:
+      states:
+        - completed
+      to_mail: zapisy@mutyzm.pl
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: '[webform_submission:values:email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:imie_nazwisko:raw]'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: '[webform:title]'
+      body: '<h2>[webform:title]</h2><p>[webform_submission:values]</p><p>Wysłano: [webform_submission:completed]&nbsp;&nbsp;<br>Podgląd zgłoszenia: [webform_submission:url]</p>'
+      excluded_elements:
+        horizontal_rule: horizontal_rule
+        informacja_o_administratorze_danych: informacja_o_administratorze_danych
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: true
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_5:
+    id: email
+    handler_id: email_5
+    label: 'Email do nadawcy'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 5
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: _default
+      cc_options: {  }
+      from_mail: '[webform_submission:values:email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:imie_nazwisko:raw]'
+      reply_to: '[site:mail]'
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: '[webform:title]'
+      body: |-
+        <h2>[webform:title]</h2>
+        <h3>Dziękujemy za wysłanie formularza zgłoszeniowego na szkolenie.</h3>
+        <p>Prosimy sprawdzić, czy nie ma błędu w Państwa formularzu zgłoszeniowym.<br />
+        Po zebraniu grupy potwierdzimy realizację szkolenia, 10-14 dni przed szkoleniem wysyłamy wiadomość do wszystkich uczestników.  <br />
+        Dopiero wtedy wyślemy Państwu e-mailem dane do przelewu oraz dostęp do szkolenia on-line (na żywo) na platformie ZOOM. <br />
+        W przypadku faktur na placówki publiczne, FV standardowo wystawiane są w dniu szkolenia z 14 dniowym terminem płatności. <br />
+        Bardzo prosimy Państwa o wyrozumiałość i cierpliwość ze względu na bardzo duże zainteresowanie naszymi wydarzeniami on-line.</p>
+
+        <p>Kontakt:<br />
+        zapisy@mutyzm.pl<br />
+        tel. 796-688-996<br /></p>
+
+        <p><b>Przesłane zgłoszenie:</b>
+        [webform_submission:values]</p>
+        <hr>
+        <p>Wysłano: [webform_submission:completed]<br />
+        Adres IP nadawcy: [webform_submission:ip-address]</p>
+      excluded_elements:
+        zgoda_dane_osobowe: zgoda_przetwarzanie_danych
+        zgoda_efaktura: zgoda_efaktura
+        zgoda_przewodnik: zgoda_przewodnik
+        horizontal_rule: horizontal_rule
+        informacja_o_administratorze_danych: informacja_o_administratorze_danych
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_8:
+    id: email
+    handler_id: email_8
+    label: 'Email do admina'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 8
+    settings:
+      states:
+        - completed
+      to_mail: admin@mutyzm.pl
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: '[webform_submission:values:email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:imie_nazwisko:raw]'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: _default
+      body: |-
+        [webform:title]
+        [webform_submission:values]
+
+        <hr>Wysłano: [webform_submission:completed]<br />
+        Podgląd zgłoszenia: [webform_submission:url]</p>
+      excluded_elements:
+        horizontal_rule: horizontal_rule
+        informacja_o_administratorze_danych: informacja_o_administratorze_danych
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

@@ -1,0 +1,14 @@
+uuid: 727dcafa-ae10-46db-a95e-57e7072b9993
+langcode: pl
+status: true
+dependencies:
+  config:
+    - user.role.audytor
+  module:
+    - user
+id: user_remove_role_action.audytor
+label: 'Odbierz rolę audytor wskazanym użytkownikom'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: audytor

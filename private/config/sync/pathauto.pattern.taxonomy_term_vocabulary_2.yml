@@ -1,0 +1,21 @@
+uuid: 68f668ea-2753-4cad-982f-4459851eb56b
+langcode: pl
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term_vocabulary_2
+label: 'Termin taksonomii - Działy menu'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:parent]/[term:name]'
+selection_criteria:
+  -
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      vocabulary_2: vocabulary_2
+selection_logic: and
+weight: 0
+relationships: {  }

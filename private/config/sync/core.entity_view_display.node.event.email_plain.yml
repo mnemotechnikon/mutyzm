@@ -1,0 +1,96 @@
+uuid: 3b9f39c3-deb3-4aca-9167-af6ba6c08cc9
+langcode: pl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.email_plain
+    - field.field.node.event.body
+    - field.field.node.event.field_event_specialists
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_event_when
+    - field.field.node.event.field_event_when_hours
+    - field.field.node.event.field_event_where
+    - field.field.node.event.field_free_seats
+    - field.field.node.event.field_metatag
+    - field.field.node.event.field_node_reference
+    - field.field.node.event.field_price
+    - field.field.node.event.taxonomy_vocabulary_2
+    - node.type.event
+  module:
+    - datetime
+    - text
+    - user
+id: node.event.email_plain
+targetEntityType: node
+bundle: event
+mode: email_plain
+content:
+  field_event_type:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: -2
+    region: content
+  field_event_when:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_event_when_hours:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_event_where:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  field_free_seats:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_node_reference:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  field_price:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  breadcrumbs: true
+  field_event_specialists: true
+  field_metatag: true
+  langcode: true
+  taxonomy_vocabulary_2: true

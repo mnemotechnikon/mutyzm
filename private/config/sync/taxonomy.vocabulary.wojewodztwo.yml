@@ -1,0 +1,8 @@
+uuid: 586d8a6c-7618-446f-8110-a8b7d9bff7e8
+langcode: pl
+status: true
+dependencies: {  }
+name: Województwo
+vid: wojewodztwo
+description: 'Lista województw'
+weight: 0

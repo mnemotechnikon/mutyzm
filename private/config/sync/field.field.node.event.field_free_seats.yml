@@ -1,0 +1,23 @@
+uuid: 16b3a7b1-6898-48a8-b01a-80fc1807ee25
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_free_seats
+    - node.type.event
+id: node.event.field_free_seats
+field_name: field_free_seats
+entity_type: node
+bundle: event
+label: 'Wolne miejsca'
+description: 'Ilość wolnych miejsc - opcjonalnie.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

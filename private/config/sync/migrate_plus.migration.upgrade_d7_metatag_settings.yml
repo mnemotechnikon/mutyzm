@@ -1,0 +1,54 @@
+uuid: 13f6ff3b-7351-4c7a-a489-bd91677b716c
+langcode: pl
+status: true
+dependencies: {  }
+id: upgrade_d7_metatag_settings
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'Metatag settings'
+source:
+  plugin: variable
+  variables:
+    - metatag_separator
+    - metatag_use_maxlength
+    - metatag_maxlength_title
+    - metatag_maxlength_description
+    - metatag_maxlength_abstract
+    - metatag_maxlength_keywords
+  source_module: metatag
+process:
+  separator:
+    -
+      plugin: get
+      source: metatag_separator
+  use_maxlength:
+    -
+      plugin: get
+      source: metatag_use_maxlength
+  tag_trim_maxlength/title:
+    -
+      plugin: get
+      source: metatag_maxlength_title
+  tag_trim_maxlength/description:
+    -
+      plugin: get
+      source: metatag_maxlength_description
+  tag_trim_maxlength/abstract:
+    -
+      plugin: get
+      source: metatag_maxlength_abstract
+  tag_trim_maxlength/keywords:
+    -
+      plugin: get
+      source: metatag_maxlength_keywords
+destination:
+  plugin: config
+  config_name: metatag.settings
+migration_dependencies:
+  required: {  }
+  optional: {  }

@@ -1,0 +1,230 @@
+uuid: 0d10eaf6-f896-4097-a40b-63dc79259d1c
+langcode: pl
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 1614
+template: false
+archive: false
+id: webform_1695
+title: 'Nabór na Weekend Odwagi CTM 2025 (luty 2025)'
+description: null
+categories: {  }
+elements: |
+  imie_nazwisko:
+    '#type': textfield
+    '#size': 
+    '#title': 'Imię i nazwisko' 
+    '#description': ""
+    '#required': true
+  telefon:
+    '#type': textfield
+    '#size': 
+    '#title': 'Telefon komórkowy' 
+    '#description': ""
+    '#required': true
+  email:
+    '#type': email
+    '#size': 20
+    '#default_value': '[current-user:mail]' 
+    '#title': 'Adres e-mail' 
+    '#description': ""
+    '#required': true
+  miasto_zamieszkania:
+    '#type': textfield
+    '#size': 
+    '#default_value': '[current-user:profile_miasto]' 
+    '#title': 'Miasto zamieszkania' 
+    '#description': ""
+    '#required': true
+  materialy:
+    '#type': select
+    '#options':
+      elektroniczne: 'Materiały elektroniczne w cenie 15 zł.'
+      papierowe: 'Materiały papierowe w cenie 35 zł.'
+    '#title': 'Proszę o materiały ze szkolenia/webinaru' 
+    '#description': "W przypadku materiałów w wersji papierowej prosimy w uwagach podać adres wysyłki."
+  zaswiadczenie:
+    '#type': select
+    '#options':
+      elektroniczne: 'Zaświadczenie elektroniczne w cenie 15 zł.'
+      papierowe: 'Zaświadczenie papierowe w cenie 25 zł.'
+    '#title': 'Proszę o wystawienie zaświadczenia' 
+    '#description': "W przypadku zaświadczenia papierowego prosimy w uwagach podać adres wysyłki."
+  uwagi:
+    '#type': textarea
+    '#title': 'Wiadomość' 
+    '#description': ""
+  zgoda_dane_osobowe:
+    '#description': "TAK, zgadzam się na przetwarzanie moich danych osobowych w celach marketingowych, przez CTM Sp. z o.o. z siedzibą w Krakowie (31-831) przy ul. Fatimskiej 41a/310, jako administratora danych osobowych. Zostałem poinformowany o tym, że podanie ww. danych jest dobrowolne oraz że mam prawo do dostępu do swoich danych, ich poprawiania, a także wycofania udzielonej zgody i pozostałych kwestiach wynikających z art. 13 RODO, dostępnych w <a href='/Polityka_prywatności'>Polityce prywatności</a>."
+    '#type': checkbox
+    '#options':
+      tak: 'TAK, zgadzam się na przetwarzanie moich danych osobowych w celach marketingowych, przez CTM Sp. z o.o. z siedzibą w Krakowie (31-831) przy ul. Fatimskiej 41a/310, jako administratora danych osobowych. Zostałem poinformowany o tym, że podanie ww. danych jest dobrowolne oraz że mam prawo do dostępu do swoich danych, ich poprawiania, a także wycofania udzielonej zgody i pozostałych kwestiach wynikających z art. 13 RODO, dostępnych w <a href="/Polityka_prywatności">Polityce prywatności</a>.'
+    '#multiple': true
+    '#title_display': invisible
+    '#title': 'Zgoda - dane osobowe' 
+    '#description': ""
+  informacja_o_administratorze_danych:
+    '#type': processed_text
+    '#format': full_html
+    '#text': "<p><span id='ado_info_teaser'>Administratorem Państwa danych osobowych jest CTM Sp. z o.o. z siedzibą przy ul. Fatimskiej 41a/310 w Krakowie, e-mail: <a href='mailto:biuro@mutyzm.pl'>biuro@mutyzm.pl</a>, tel. 796-688-996.</span><a id='ado_info_more'>pokaż pełny tekst</a><span id='ado_info_full'>Podanie danych osobowych zawartych w formularzu jest dobrowolne, ale niezbędne do odpowiedzi na formularz/realizacji umowy, a także że przysługują Państwu prawa dostępu do Państwa danych osobowych, ich zmiany (w tym aktualizacji), a także pozostałe prawa opisane w <a href='/Polityka_prywatności'>Polityce prywatności</a> art. 6 pkt 1 lit. b,c,f RODO.</span></p>\n"
+    '#title': 'Informacja o Administratorze Danych' 
+    '#description': ""
+css: ''
+javascript: ''
+settings:
+  page: true
+  wizard_progress_bar: true
+  preview: 0
+  draft: '0'
+  draft_auto_save: false
+  confirmation_type: url
+  confirmation_url: /Obozy_terapeutyczne_CTM/Nabór_na_Weekend_Odwagi_CTM_2025_luty_2025_-_zostały_wolne_miejsca_dla_2
+  confirmation_message: "<h2>Dziękujemy za zgłoszenie!</h2>\r\n"
+  limit_total: 60
+  limit_user: 60
+  form_submit_label: Wyślij
+  wizard_complete: 1
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+handlers:
+  email_1:
+    id: email
+    handler_id: email_1
+    label: 'Email 1'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: szkolenia@mutyzm.pl
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: default
+      from_options: {  }
+      from_name: default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: default
+      body: |-
+        <h2>[node:title]</h2>
+        [webform_submission:values]
+        <p>[webform_submission:values:zgoda_dane_osobowe:label]: <b>[webform_submission:values:zgoda_dane_osobowe:key]</b><br />
+        [webform_submission:values:zgoda_efaktura:label]: <b>[webform_submission:values:zgoda_efaktura:key]</b>
+        </p>
+
+        <hr><p>Wysłano: [webform_submission:date:long]<br />
+        Wysłane przez: [webform_submission:user]<br />
+        Podgląd zgłoszenia: [webform_submission:url]</p>
+      excluded_elements:
+        zgoda_dane_osobowe: zgoda_dane_osobowe
+        informacja_o_administratorze_danych: informacja_o_administratorze_danych
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_4:
+    id: email
+    handler_id: email_4
+    label: 'Email 4'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 4
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: default
+      from_options: {  }
+      from_name: default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: default
+      body: |
+        <h2>[node:title]</h2>
+        <h3>Dziękujemy za wysłanie formularza zgłoszeniowego.<br />
+      excluded_elements:
+        zgoda_dane_osobowe: zgoda_dane_osobowe
+        informacja_o_administratorze_danych: informacja_o_administratorze_danych
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_5:
+    id: email
+    handler_id: email_5
+    label: 'Email 5'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 5
+    settings:
+      states:
+        - completed
+      to_mail: admin@mutyzm.pl
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: default
+      from_options: {  }
+      from_name: default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: default
+      body: |-
+        [webform_submission:values]
+
+        <hr><p>Wysłano: [webform_submission:date:long]<br />
+        Wysłane przez: [webform_submission:user]<br />
+        Podgląd zgłoszenia: [webform_submission:url]</p>
+      excluded_elements:
+        zgoda_dane_osobowe: zgoda_dane_osobowe
+        informacja_o_administratorze_danych: informacja_o_administratorze_danych
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

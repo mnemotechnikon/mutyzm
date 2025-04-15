@@ -1,0 +1,241 @@
+uuid: d6de643f-195c-4202-aa70-2710f5d0db6b
+langcode: pl
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 137
+template: false
+archive: false
+id: webform_1640
+title: 'Nowość! Program dla nastolatków i młodych dorosłych '
+description: null
+categories: {  }
+elements: |
+  imie_i_nazwisko:
+    '#type': textfield
+    '#title': 'Imię i nazwisko' 
+    '#description': ""
+    '#required': true
+  telefon_komorkowy:
+    '#type': textfield
+    '#title': 'Telefon komórkowy' 
+    '#description': ""
+    '#required': true
+  adres_e_mail:
+    '#type': email
+    '#size': 20
+    '#default_value': '[current-user:mail]' 
+    '#title': 'Adres e-mail' 
+    '#description': ""
+    '#required': true
+  kod_i_miasto:
+    '#type': textfield
+    '#title': 'Kod i miasto' 
+    '#description': ""
+  uwagi2:
+    '#type': textarea
+    '#title': 'Uwagi' 
+    '#description': "<p>dodatkowe informacje</p>"
+  zgoda___dane_osobowe:
+    '#description': "TAK, zgadzam się na przetwarzanie moich danych osobowych w celach marketingowych, przez CTM Sp. z o.o. z siedzibą w Krakowie (31-831) przy ul. Fatimskiej 41a/310, jako administratora danych osobowych. Zostałem poinformowany o tym, że podanie ww. danych jest dobrowolne oraz że mam prawo do dostępu do swoich danych, ich poprawiania, a także wycofania udzielonej zgody i pozostałych kwestiach wynikających z art. 13 RODO, dostępnych w <a href='/Polityka_prywatności'>Polityce prywatności</a>."
+    '#type': checkbox
+    '#options':
+      tak: 'TAK, zgadzam się na przetwarzanie moich danych osobowych w celach marketingowych, przez CTM Sp. z o.o. z siedzibą w Krakowie (31-831) przy ul. Fatimskiej 41a/310, jako administratora danych osobowych. Zostałem poinformowany o tym, że podanie ww. danych jest dobrowolne oraz że mam prawo do dostępu do swoich danych, ich poprawiania, a także wycofania udzielonej zgody i pozostałych kwestiach wynikających z art. 13 RODO, dostępnych w <a href="/Polityka_prywatności">Polityce prywatności</a>.'
+    '#multiple': true
+    '#title_display': invisible
+    '#title': 'Zgoda - dane osobowe' 
+    '#description': ""
+  informacja_o_administratorze_danych:
+    '#type': processed_text
+    '#format': full_html
+    '#text': "<p>Administratorem Państwa danych osobowych jest CTM Sp. z o.o. z siedzibą przy ul. Fatimskiej 41a/310 w Krakowie, e-mail: <a href='mailto:biuro@mutyzm.pl'>biuro@mutyzm.pl</a>, tel. 796-688-996.<a id='ado_info_more'>pokaż pełny tekst</a>Podanie danych osobowych zawartych w formularzu jest dobrowolne, ale niezbędne do odpowiedzi na formularz/realizacji umowy, a także że przysługują Państwu prawa dostępu do Państwa danych osobowych, ich zmiany (w tym aktualizacji), a także pozostałe prawa opisane w <a href='/Polityka_prywatności'>Polityce prywatności</a> art. 6 pkt 1 lit. b,c,f RODO.</p>\n"
+    '#title': 'Informacja o Administratorze Danych' 
+    '#description': ""
+css: ''
+javascript: ''
+settings:
+  page: true
+  wizard_progress_bar: true
+  preview: 0
+  draft: '0'
+  draft_auto_save: false
+  confirmation_type: url
+  confirmation_url: /Nowość_Program_dla_nastolatków_i_młodych_dorosłych
+  confirmation_message: "<h2>Dziękujemy za&nbsp;zgłoszenie!</h2>\r\n"
+  limit_total: 60
+  limit_user: null
+  form_submit_label: Wyślij
+  wizard_complete: 1
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+handlers:
+  email_1:
+    id: email
+    handler_id: email_1
+    label: 'Email 1'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: zapisy@mutyzm.pl
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: default
+      from_options: {  }
+      from_name: default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: default
+      body: default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_2:
+    id: email
+    handler_id: email_2
+    label: 'Email 2'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 2
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:adres_e_mail:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: default
+      from_options: {  }
+      from_name: default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: default
+      body: |
+        <h3>Dziękujemy za wysłanie formularza.</h3>
+        <p>Wysłane przez: [webform_submission:user]</p>
+
+        <p><b>Przesłane zgłoszenie:</b>
+        [webform_submission:values]</p>
+
+
+        <p>Kontakt:<br />
+        E-mail: terapia@ctm.org.pl <br /> 
+        Karolina Olszewska – tel. 531-761- 858 (pon. – pt. w godz. 8:30 – 16:00)<br /> </p>
+
+        <h4> Wiadomość została wygenerowana automatycznie.</h4>
+        <hr>
+        <p>Data wysłania: [webform_submission:date:short]<br />
+        Adres IP nadawcy: [webform_submission:ip-address]</p>
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_3:
+    id: email
+    handler_id: email_3
+    label: 'Email 3'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 3
+    settings:
+      states:
+        - completed
+      to_mail: terapia@ctm.org.pl
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: default
+      from_options: {  }
+      from_name: default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: default
+      body: default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_4:
+    id: email
+    handler_id: email_4
+    label: 'Email 4'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 4
+    settings:
+      states:
+        - completed
+      to_mail: szkolenia@mutyzm.pl
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: default
+      from_options: {  }
+      from_name: default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: default
+      body: default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

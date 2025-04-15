@@ -1,0 +1,14 @@
+uuid: 818ae241-a613-483a-a026-2701aefb01c4
+langcode: pl
+status: true
+dependencies:
+  module:
+    - user
+id: user
+label: 'Użytkownik - default'
+type: 'canonical_entities:user'
+pattern: 'users/[user:name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

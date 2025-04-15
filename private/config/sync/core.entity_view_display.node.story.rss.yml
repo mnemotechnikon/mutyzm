@@ -1,0 +1,28 @@
+uuid: 16dd773b-c452-4c63-ae5b-9afdc2d8d319
+langcode: pl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.rss
+    - field.field.node.story.body
+    - field.field.node.story.field_image_cache
+    - field.field.node.story.field_metatag
+    - node.type.story
+  module:
+    - user
+id: node.story.rss
+targetEntityType: node
+bundle: story
+mode: rss
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  breadcrumbs: true
+  field_image_cache: true
+  field_metatag: true
+  langcode: true

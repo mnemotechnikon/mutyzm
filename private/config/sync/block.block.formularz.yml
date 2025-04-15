@@ -1,0 +1,31 @@
+uuid: 56f1158f-fa12-4744-8ed5-772c8d91af04
+langcode: pl
+status: true
+dependencies:
+  config:
+    - webform.webform.webform_211
+  module:
+    - system
+    - webform
+  theme:
+    - olivero
+id: formularz
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Formularz
+  label_display: '0'
+  provider: webform
+  webform_id: webform_211
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/Kontakt*'

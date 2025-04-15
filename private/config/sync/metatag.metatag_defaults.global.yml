@@ -1,0 +1,17 @@
+uuid: 3d3ff3b1-a6a6-4174-b33d-70091600bc4a
+langcode: pl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Global
+tags:
+  abstract: 'Centrum Terapii Mutyzm, Nieśmiałości i Lęku'
+  canonical_url: '[current-page:url:absolute]'
+  description: 'Centrum Terapii Mutyzmu i Nieśmiałości- zapewniamy profesjonalną pomoc dla dziecka z mutyzmem wybiórczym (selektywnym) ☑️'
+  generator: 'Drupal 7 (http://drupal.org)'
+  keywords: 'mutyzm wybiórczy, mutyzm selektywny, poradnia terapii mutyzmu, nieśmiałość dziecka, dziecko nieśmiałe, zajęcia dla dzieci nieśmiałych, lęki dziecka, zaburzenia lękowe'
+  robots: ''
+  shortlink: '[current-page:url:unaliased]'
+  title: '[current-page:title] - [site:name]'

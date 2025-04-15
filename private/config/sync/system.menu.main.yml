@@ -1,0 +1,10 @@
+uuid: 0053c958-b00e-45fa-8508-efd7d3aa1eaa
+langcode: pl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
+id: main
+label: 'Main menu'
+description: 'Odnośniki podstawowe są często wykorzystywane przez skórki do prezentowania działów witryny w formie kart wyświetlanych w jej górnej części.'
+locked: true

@@ -1,0 +1,10 @@
+uuid: 621b2739-2e6d-4fc1-8a97-496d968f9c9a
+langcode: pl
+status: true
+dependencies:
+  module:
+    - node
+id: node.nodeorder
+label: nodeorder
+targetEntityType: node
+cache: true

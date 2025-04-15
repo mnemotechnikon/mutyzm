@@ -1,0 +1,7 @@
+uuid: 8212fc0d-523b-4eca-aab9-7a5570589e21
+langcode: pl
+status: true
+dependencies: {  }
+formId: user_login_block
+captchaType: captcha/
+label: user_login_block

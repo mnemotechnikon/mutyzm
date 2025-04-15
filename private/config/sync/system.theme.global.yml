@@ -1,0 +1,20 @@
+_core:
+  default_config_hash: 9rAU4Pku7eMBQxauQqAgjzlcicFZ2As6zEa6zvTlCB8
+langcode: pl
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: ''
+  use_default: false
+features:
+  comment_user_picture: false
+  comment_user_verification: false
+  favicon: false
+  logo: true
+  name: false
+  node_user_picture: false
+  slogan: false
+logo:
+  path: sites/default/files/mutyzm_logo.png
+  url: ''
+  use_default: false

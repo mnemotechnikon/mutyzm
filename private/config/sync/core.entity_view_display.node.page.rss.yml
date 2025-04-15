@@ -1,0 +1,40 @@
+uuid: 502968d7-d3eb-4aa9-ab8c-5807fcaa24ec
+langcode: pl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.rss
+    - field.field.node.page.body
+    - field.field.node.page.field_image_cache
+    - field.field.node.page.field_metatag
+    - field.field.node.page.taxonomy_vocabulary_2
+    - field.field.node.page.upload
+    - node.type.page
+  module:
+    - file
+    - user
+id: node.page.rss
+targetEntityType: node
+bundle: page
+mode: rss
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  upload:
+    type: file_table
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  breadcrumbs: true
+  field_image_cache: true
+  field_metatag: true
+  langcode: true
+  taxonomy_vocabulary_2: true

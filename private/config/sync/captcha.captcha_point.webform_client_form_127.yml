@@ -1,0 +1,7 @@
+uuid: 8fdb466f-473e-48b0-a7e9-032d6eea55e6
+langcode: pl
+status: true
+dependencies: {  }
+formId: webform_client_form_127
+captchaType: captcha/default
+label: webform_client_form_127

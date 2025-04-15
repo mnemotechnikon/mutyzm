@@ -1,0 +1,30 @@
+_core:
+  default_config_hash: 6CZIzFifRq3qbdq3n3nDpEOO4hWIQtKOAQNPvGNGKeM
+langcode: pl
+cancel_confirm:
+  subject: '[CTM] - Twoje konto zostało usunięte'
+  body: "<h3>Informacje dotyczące konta [user:name] w witrynie [site:name]:</h3>\r\n<p>Twoje konto zostało usunięte.</p>\r\n<p>W celu wyjaśnienia sytuacji / ponownego utworzenia konta <a href=\"https://mutyzm.pl/Kontakt\">skontaktuj się z administratorem.</a></p>"
+password_reset:
+  subject: '[CTM] - instrukcja odzyskania hasła'
+  body: "<h3>\r\n\tInformacje dotyczące konta [user:name] w witrynie [site:name]:</h3>\r\n<p>Otrzymaliśmy prośbę o wyczyszczenie hasła do konta [user:name].</p>\r\n<p>By zalogować się do [site:url-brief] należy odwiedzić stronę [user:one-time-login-url]<br />\r\n\tLogowanie z użyciem powyższych danych można przeprowadzić tylko raz, a ich ważność upłynie po jednym dniu. Jeśli nie zostaną wykorzystane, nic się nie wydarzy.</p>\r\n<p>Strona [user:edit-url] umożliwia zmianę Twojego hasła.</p>\r\n<p>W razie problem&oacute;w <a href=\"https://mutyzm.pl/Kontakt\">skontaktuj się z administratorem.</a></p>\r\n"
+register_admin_created:
+  subject: '[CTM] - konto utworzone przez administratora'
+  body: "<h3>\r\n\tInformacje dotyczące konta [user:name] w witrynie [site:name]:</h3>\r\n<p>W witrynie [site:name] zostało utworzone konto:</p>\r\n<p>Nazwa użytkownika: <strong>[user:name]</strong><br />\r\n\tHasło: <strong></strong></p>\r\n<p>Można się do niego zalogować na stronie [site:login-url].<br />\r\n\tLogowanie może także zostać przeprowadzone poprzez <u>jednorazowe</u> odwiedzenie strony [user:one-time-login-url]</p>\r\n<p>Strona [user:edit-url] umożliwia zmianę Twojego hasła.</p>\r\n<p>W razie problem&oacute;w <a href=\"https://mutyzm.pl/Kontakt\">skontaktuj się z administratorem.</a></p>\r\n"
+register_no_approval_required:
+  subject: '[CTM] - konto utworzone'
+  body: "<h3>\r\n\tInformacje dotyczące konta [user:name] w witrynie [site:name]:</h3>\r\n<p>Dziękujemy za utworzenie konta w witrynie [site:name]:</p>\r\n<p>Nazwa użytkownika: <strong>[user:name] </strong><br />\r\n\tHasło: <strong></strong></p>\r\n<p>Można się do niego zalogować na stronie [site:login-url].&nbsp;<br />\r\n\tLogowanie może także zostać przeprowadzone poprzez <u>jednorazowe</u> odwiedzenie strony [user:one-time-login-url]</p>\r\n<p>Strona [user:edit-url] umożliwia zmianę Twojego hasła.</p>\r\n<p>W razie problem&oacute;w <a href=\"https://mutyzm.pl/Kontakt\">skontaktuj się z administratorem.</a></p>\r\n"
+register_pending_approval:
+  subject: 'Szczegóły konta dla [user:display-name] na [site:name] (w trakcie weryfikacji)'
+  body: "<h3>\r\n\tInformacje dotyczące konta [user:name] w witrynie [site:name]:</h3>\r\n<p>Dziękujemy za utworzenie konta w witrynie [site:name]:</p>\r\n<p>Nazwa użytkownika: <strong>[user:name]</strong></p>\r\n<p>Aktualnie konto oczekuje na zatwierdzenie przez administratora.<br />\r\n\tPo zatwierdzeniu otrzymasz kolejną wiadomość, kt&oacute;ra będzie zawierać informacje potrzebne do zalogowania i zmiany hasła.</p>\r\n<p>W razie problem&oacute;w <a href=\"https://mutyzm.pl/Kontakt\">skontaktuj się z administratorem.</a></p>\r\n"
+register_pending_approval_admin:
+  subject: 'Szczegóły konta dla [user:display-name] na [site:name] (w trakcie weryfikacji)'
+  body: "[user:display-name] wypełnił formularz założenia konta.\r\n\r\n[user:edit-url]"
+status_activated:
+  subject: '[CTM] - Twoje konto zostało aktywowane'
+  body: "<h3>\r\n\tInformacje dotyczące konta [user:name] w witrynie [site:name]:</h3>\r\n<p>Twoje konto zostało aktywowane. Można się teraz do niego zalogować, wprowadzając na stronie [site:login-url] swoje dane.</p>\r\n<p>Logowanie może także zostać przeprowadzone poprzez <u>jednorazowe</u> odwiedzenie strony. [user:one-time-login-url]</p>\r\n<p>Strona [user:edit-url] umożliwia zmianę Twojego hasła.</p>\r\n<p>W razie problem&oacute;w <a href=\"https://mutyzm.pl/Kontakt\">skontaktuj się z administratorem.</a></p>\r\n"
+status_blocked:
+  subject: '[CTM] - Twoje konto zostało zablokowane'
+  body: "<h3>Informacje dotyczące konta [user:name] w witrynie [site:name]:</h3>\r\n<p>Twoje konto zostało zablokowane.</p>\r\n<p>W celu wyjaśnienia sytuacji / odblokowania konta <a href=\"https://mutyzm.pl/Kontakt\">skontaktuj się z administratorem.</a></p>"
+status_canceled:
+  subject: 'Szczegóły konta użytkownika [user:display-name] na [site:name] (anulowane)'
+  body: "[user:display-name],\r\n\r\nTwoje konto na stronie [site:name] zostało anulowane.\r\n\r\n-- Zespół [site:name]"

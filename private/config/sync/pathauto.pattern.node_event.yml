@@ -1,0 +1,21 @@
+uuid: 3f0e5d37-b1f0-4068-946c-f462dda3ce7c
+langcode: pl
+status: true
+dependencies:
+  module:
+    - node
+id: node_event
+label: 'Zawartość - Wydarzenie'
+type: 'canonical_entities:node'
+pattern: '[node:taxonomy-vocabulary-2:0:parent]/[node:taxonomy-vocabulary-2:0:name]/[node:field-event-when:value]--[node:field-event-where]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      event: event
+selection_logic: and
+weight: 0
+relationships: {  }

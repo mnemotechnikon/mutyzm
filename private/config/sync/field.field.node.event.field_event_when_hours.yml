@@ -1,0 +1,21 @@
+uuid: ea2c4f3e-c365-49cc-8ee0-ec147659bb25
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_when_hours
+    - node.type.event
+  module:
+    - text
+id: node.event.field_event_when_hours
+field_name: field_event_when_hours
+entity_type: node
+bundle: event
+label: Godziny
+description: 'Godziny wpisujemy w osobnych wierszach, np. "sobota 10-18"; "niedziela 10:00 - 16:00". Format godziny dowolny.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,8 @@
+uuid: dfdc19b7-2184-40d0-88a3-108d0a36ed6d
+langcode: pl
+status: true
+dependencies: {  }
+id: menu-kontakt-oddzialy
+label: Kontakt-oddziały
+description: 'Lista oddziałów w dziale kontakt'
+locked: false

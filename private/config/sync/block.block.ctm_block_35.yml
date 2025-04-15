@@ -1,0 +1,30 @@
+uuid: 7a1477d9-1df6-4f5d-aea7-63cb0364e781
+langcode: pl
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:56202073-5ec9-462e-ac19-1ac44bcb34d1'
+  module:
+    - block_content
+    - system
+  theme:
+    - olivero
+id: ctm_block_35
+theme: olivero
+region: content_below
+weight: -7
+provider: null
+plugin: 'block_content:56202073-5ec9-462e-ac19-1ac44bcb34d1'
+settings:
+  id: 'block_content:56202073-5ec9-462e-ac19-1ac44bcb34d1'
+  label: 'Strona główna - terapia'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

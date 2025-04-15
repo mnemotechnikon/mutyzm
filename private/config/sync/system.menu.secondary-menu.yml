@@ -1,0 +1,8 @@
+uuid: 18a28f34-a00b-491c-aedd-78d3a8193da8
+langcode: pl
+status: true
+dependencies: {  }
+id: secondary-menu
+label: 'Secondary menu'
+description: 'Drugorzędne linki są często wykorzystywane do takich stron jak informacje prawne, dane kontaktowe i inne elementy nawigacji, które odgrywają mniejszą rolę niż główne odnośniki'
+locked: false

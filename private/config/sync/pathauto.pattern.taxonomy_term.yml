@@ -1,0 +1,14 @@
+uuid: 1494ca28-ac70-4756-85bf-670a61686636
+langcode: pl
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term
+label: 'Termin taksonomii - default'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

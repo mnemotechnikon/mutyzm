@@ -1,0 +1,31 @@
+uuid: d806b97c-7d15-4ccd-a4c1-dfbe17b6f67b
+langcode: pl
+status: true
+dependencies:
+  module:
+    - slick
+name: 'HTML Mail'
+format: '4'
+weight: -4
+filters:
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: -47
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: -46
+    settings:
+      filter_url_length: 256
+  slick_filter:
+    id: slick_filter
+    provider: slick
+    status: false
+    weight: 4
+    settings:
+      optionset: default
+      media_switch: ''

@@ -1,0 +1,23 @@
+uuid: f6f1c909-7492-4520-8321-4e58a98c6283
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.event
+  module:
+    - text
+id: node.event.body
+field_name: body
+entity_type: node
+bundle: event
+label: 'Opis szkolenia'
+description: 'Wydarzenie - informacje o nadchodzących szkoleniach i innych imprezach. Umożliwia podanie dat i godzin wydarzeń, miejsca, opisu i innych potrzebnych informacji dodatkowych.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

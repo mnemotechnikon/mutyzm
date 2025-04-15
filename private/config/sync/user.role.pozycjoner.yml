@@ -1,0 +1,56 @@
+uuid: 94c335d5-b428-451b-8167-a6aa8a485405
+langcode: pl
+status: true
+dependencies:
+  config:
+    - node.type.page
+  module:
+    - contextual
+    - metatag
+    - node
+    - path
+    - pathauto
+    - redirect
+    - system
+    - xmlsitemap
+id: pozycjoner
+label: pozycjoner
+weight: 4
+is_admin: null
+permissions:
+  - 'access PDF version'
+  - 'access administration menu'
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access default_search search_api_page'
+  - 'access print'
+  - 'access search_api_page'
+  - 'access site reports'
+  - 'access statistics'
+  - 'add JS snippets for google analytics'
+  - 'administer custom breadcrumbs'
+  - 'administer google analytics'
+  - 'administer meta tags'
+  - 'administer nodes'
+  - 'administer pathauto'
+  - 'administer print'
+  - 'administer redirects'
+  - 'administer site configuration'
+  - 'administer site verify'
+  - 'administer site verify uploads'
+  - 'administer statistics'
+  - 'administer url aliases'
+  - 'administer xmlsitemap'
+  - 'block IP addresses'
+  - 'bypass honeypot protection'
+  - 'create url aliases'
+  - 'edit any image content'
+  - 'edit any news content'
+  - 'edit any page content'
+  - 'edit meta tags'
+  - 'notify of path changes'
+  - 'opt-in or out of tracking'
+  - 'use PHP for tracking visibility'
+  - 'use xmlsitemap'
+  - 'view the administration theme'

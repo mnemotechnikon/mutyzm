@@ -1,0 +1,15 @@
+uuid: a0141551-48b1-4951-9662-0a3bb3f83d14
+langcode: pl
+status: true
+dependencies: {  }
+name: jcarousel_100x100
+label: jcarousel_100x100
+effects:
+  1d735e0e-6a1d-4d56-9515-76180535ddad:
+    uuid: 1d735e0e-6a1d-4d56-9515-76180535ddad
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 100
+      height: 100
+      anchor: center-center

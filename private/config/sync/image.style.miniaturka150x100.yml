@@ -1,0 +1,15 @@
+uuid: 06be3120-b2ca-4864-896f-5c79b69fd0b6
+langcode: pl
+status: true
+dependencies: {  }
+name: miniaturka150x100
+label: miniaturka150x100
+effects:
+  c5ebbb98-3896-43c0-a42f-8a15a843d620:
+    uuid: c5ebbb98-3896-43c0-a42f-8a15a843d620
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 150
+      height: 100
+      anchor: center-center

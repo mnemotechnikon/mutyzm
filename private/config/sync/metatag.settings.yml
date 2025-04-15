@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: DrYt8PcXA0xB3C3L1SvtefnkO5SwUonhY3n4Ld8yun4
+langcode: pl
+entity_type_groups: {  }
+separator: ''
+tag_trim_method: beforeValue
+use_maxlength: true
+tag_trim_maxlength:
+  title: 0
+  description: 380
+  abstract: 0
+  keywords: 0
+tag_scroll_max_height: ''
+tag_trim_end: '|.,-:;/+&([{"'''

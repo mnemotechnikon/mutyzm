@@ -1,0 +1,748 @@
+uuid: 3f17071a-38e3-408d-9721-0dd9c4a9266b
+langcode: pl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.storage.node.body
+    - field.storage.node.field_image_cache
+    - image.style.miniaturka150x100
+    - node.type.story
+    - system.menu.main
+  module:
+    - image
+    - node
+    - text
+id: articles
+label: 'Widoki dla artykułów'
+module: views
+description: 'Widoki dla artykułów'
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: 'Ustawienia domyślne'
+    display_plugin: default
+    position: 1
+    display_options:
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: field
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 4
+          total_pages: null
+          id: 0
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Elementów na stronę'
+            items_per_page_options: '5, 10, 20, 40, 60'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- Wszystko -'
+            offset: false
+            offset_label: Przesunięcie
+      sorts:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: standard
+          expose:
+            field_identifier: title
+      filters:
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          plugin_id: bundle
+          operator: in
+          value:
+            story: story
+          group: 0
+          exposed: false
+          expose:
+            label: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            remember: false
+            reduce: false
+            limit_operators: false
+            available_operators: {  }
+            optional: 1
+            single: 1
+          ui_name: ''
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          group_type: group
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 0
+          exposed: false
+          expose:
+            label: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            remember: false
+            limit_operators: false
+            available_operators: {  }
+            optional: 1
+            single: 1
+          ui_name: ''
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          build_mode: teaser
+          links: 0
+          comments: 0
+      query:
+        type: views_query
+        options: {  }
+      css_class: ''
+      display_extenders: {  }
+      style_plugin: default
+      style_options: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+      tags: {  }
+  block_1:
+    id: block_1
+    display_title: Najpopularniejsze
+    display_plugin: block
+    position: 2
+    display_options:
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: '<li>{{ title }}</li>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: div
+          element_wrapper_class: item-list
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          settings:
+            link_to_entity: 1
+          ui_name: ''
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 5
+      sorts: {  }
+      filters:
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          plugin_id: bundle
+          operator: in
+          value:
+            story: story
+          group: 1
+          exposed: false
+          expose:
+            label: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            remember: false
+            reduce: false
+            limit_operators: false
+            available_operators: {  }
+            optional: 1
+            single: 1
+          ui_name: ''
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          group_type: group
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            label: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            remember: false
+            limit_operators: false
+            available_operators: {  }
+            optional: 1
+            single: 1
+          ui_name: ''
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+          2: AND
+      style:
+        type: default
+        options:
+          grouping: ''
+          row_class: ''
+          type: ul
+          wrapper_class: item-list
+          class: ''
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      query:
+        type: views_query
+        options: {  }
+      defaults:
+        css_class: false
+        pager: false
+        style: false
+        row: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+        pager_options: false
+      css_class: ''
+      display_description: 'Blok z 5 najczęściej czytanymi'
+      display_extenders: {  }
+      pager_options: null
+      style_plugin: list
+      style_options:
+        grouping: ''
+        row_class: ''
+        type: ul
+        wrapper_class: item-list
+        class: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags: {  }
+  block_2:
+    id: block_2
+    display_title: Najnowsze
+    display_plugin: block
+    position: 3
+    display_options:
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: '<li>{{ title }}</li>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: div
+          element_wrapper_class: item-list
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          settings:
+            link_to_entity: 1
+          ui_name: ''
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 5
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: created
+          exposed: false
+          granularity: day
+          ui_name: ''
+      filters:
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          plugin_id: bundle
+          operator: in
+          value:
+            story: story
+          group: 1
+          exposed: false
+          expose:
+            label: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            remember: false
+            reduce: false
+            limit_operators: false
+            available_operators: {  }
+            optional: 1
+            single: 1
+          ui_name: ''
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          group_type: group
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            label: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            remember: false
+            limit_operators: false
+            available_operators: {  }
+            optional: 1
+            single: 1
+          ui_name: ''
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+          2: AND
+      style:
+        type: default
+        options:
+          grouping: ''
+          row_class: ''
+          type: ul
+          wrapper_class: item-list
+          class: ''
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      query:
+        type: views_query
+        options: {  }
+      defaults:
+        css_class: false
+        pager: false
+        style: false
+        row: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+        pager_options: false
+      css_class: ''
+      display_description: 'Blok z 5 najnowszymi artykułami'
+      display_extenders: {  }
+      pager_options: null
+      style_plugin: list
+      style_options:
+        grouping: ''
+        row_class: ''
+        type: ul
+        wrapper_class: item-list
+        class: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags: {  }
+  page_2:
+    id: page_2
+    display_title: Strona
+    display_plugin: page
+    position: 4
+    display_options:
+      enabled: true
+      title: Artykuły
+      fields:
+        field_image_cache:
+          id: field_image_cache
+          table: node__field_image_cache
+          field: field_image_cache
+          relationship: none
+          group_type: group
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: fid
+          type: image
+          settings:
+            image_link: content
+            image_style: miniaturka150x100
+            image_loading:
+              attribute: lazy
+            conditions:
+              -
+                condition: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          ui_name: ''
+          delta_random: 0
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: h2
+          element_class: views-articles-title
+          element_label_type: '0'
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: '0'
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          settings:
+            link_to_entity: 1
+          ui_name: ''
+        body:
+          id: body
+          table: node__body
+          field: body
+          relationship: none
+          group_type: group
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: true
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 150
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: true
+            preserve_tags: ''
+            html: false
+            unwanted_characters: ''
+          element_type: p
+          element_class: views-articles-content
+          element_label_type: '0'
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: '0'
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings:
+            conditions:
+              -
+                condition: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          ui_name: ''
+          delta_random: false
+      pager:
+        type: none
+        options:
+          offset: 0
+      sorts:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: title
+          exposed: false
+          ui_name: ''
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          row_class_special: 0
+      row:
+        type: fields
+        options:
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      query:
+        type: views_query
+        options: {  }
+      defaults:
+        title: false
+        css_class: false
+        pager: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        style: false
+        row: false
+        fields: false
+        sorts: false
+        pager_options: false
+      css_class: ''
+      display_description: ''
+      use_more: false
+      use_more_always: false
+      use_more_text: więcej
+      display_extenders: {  }
+      path: Artykuły
+      menu:
+        type: normal
+        title: Artykuły
+        description: ''
+        weight: 0
+        menu_name: main
+        context: '0'
+        name: main
+        context_only_inline: 0
+      style_plugin: default
+      style_options:
+        grouping: {  }
+        row_class: ''
+        default_row_class: 1
+        row_class_special: 0
+      pager_options: null
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_image_cache'

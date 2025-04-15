@@ -1,0 +1,21 @@
+uuid: 2b2b531a-cf63-4e44-a97b-85843e55ca01
+langcode: pl
+status: true
+dependencies:
+  module:
+    - node
+id: node_page
+label: 'Zawartość - Strona'
+type: 'canonical_entities:node'
+pattern: '[node:taxonomy-vocabulary-2:0]/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      page: page
+selection_logic: and
+weight: 0
+relationships: {  }

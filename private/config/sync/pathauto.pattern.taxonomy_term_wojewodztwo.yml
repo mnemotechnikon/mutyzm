@@ -1,0 +1,21 @@
+uuid: 9eb2a433-82ab-433b-b05e-7d052bd41fd6
+langcode: pl
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term_wojewodztwo
+label: 'Termin taksonomii - Województwo'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'woj/[term:name]'
+selection_criteria:
+  -
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      wojewodztwo: wojewodztwo
+selection_logic: and
+weight: 0
+relationships: {  }

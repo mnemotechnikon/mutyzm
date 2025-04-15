@@ -1,0 +1,23 @@
+uuid: f10ae18b-f2d5-4d27-87cf-97e9db057d5b
+langcode: pl
+status: true
+dependencies: {  }
+name: miniaturka150
+label: miniaturka150
+effects:
+  e66954c9-ebac-4413-86eb-b3e5623c9f04:
+    uuid: e66954c9-ebac-4413-86eb-b3e5623c9f04
+    id: image_crop
+    weight: -9
+    data:
+      width: 150
+      height: 100
+      anchor: center-top
+  6340feff-5346-430b-a14b-b7ec75d7f8dd:
+    uuid: 6340feff-5346-430b-a14b-b7ec75d7f8dd
+    id: image_scale
+    weight: -10
+    data:
+      width: 150
+      height: null
+      upscale: false

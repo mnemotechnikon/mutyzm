@@ -1,0 +1,28 @@
+uuid: 945d8948-34e1-49e3-8765-42dedb1933e4
+langcode: pl
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    parent: 'main-menu:0:'
+  scheduler:
+    expand_fieldset: always
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: false
+name: Wydarzenie
+type: event
+description: 'Wydarzenie - informacje o nadchodzących szkoleniach i innych imprezach. Umożliwia podanie dat i godzin wydarzeń, miejsca, opisu i innych potrzebnych informacji dodatkowych.'
+help: "<p>W polu &quot;opis szkolenia&quot; należy wstawić informacje o szkoleniu (cele, informacje dodatkowe itp.)</p>\r\n"
+new_revision: false
+preview_mode: 1
+display_submitted: false

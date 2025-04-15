@@ -1,0 +1,25 @@
+uuid: fa266770-d42d-4a32-8797-3df50a70a40e
+langcode: pl
+status: true
+dependencies:
+  config:
+    - filter.format.2
+  module:
+    - ckeditor5
+format: '2'
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - bold
+      - italic
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+image_upload: {  }

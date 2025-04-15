@@ -1,0 +1,34 @@
+uuid: 9957bfce-ffd4-485f-ac9d-b18be9d8cc5b
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.field.node.story.body
+    - field.field.node.story.field_image_cache
+    - field.field.node.story.field_metatag
+    - node.type.story
+  module:
+    - text
+    - user
+id: node.story.default
+targetEntityType: node
+bundle: story
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: -3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  field_image_cache: true
+  field_metatag: true
+  langcode: true

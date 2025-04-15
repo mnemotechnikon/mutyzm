@@ -1,0 +1,30 @@
+uuid: 19a9e8b4-fb25-4b2f-93e7-2eb5ef8e6368
+langcode: pl
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:24277db5-6ca7-49b6-83a5-d97c2d1b0553'
+  module:
+    - block_content
+    - system
+  theme:
+    - olivero
+id: ctm_block_40
+theme: olivero
+region: content_below
+weight: -6
+provider: null
+plugin: 'block_content:24277db5-6ca7-49b6-83a5-d97c2d1b0553'
+settings:
+  id: 'block_content:24277db5-6ca7-49b6-83a5-d97c2d1b0553'
+  label: 'Strona główna- fundacja'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

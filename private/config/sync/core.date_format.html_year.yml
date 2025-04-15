@@ -1,0 +1,10 @@
+uuid: 4cd4971b-4d2d-4889-a047-9eacdfbe9716
+langcode: pl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: OjekiQuX9RbVQ2_8jOHBL94RgYLePqX7wpfNGgcQzrk
+id: html_year
+label: 'Rok HTML'
+locked: true
+pattern: 'Y'

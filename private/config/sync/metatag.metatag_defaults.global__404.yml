@@ -1,0 +1,11 @@
+uuid: 0fa47290-381a-4eb9-98cf-d0b9164e9960
+langcode: pl
+status: true
+dependencies: {  }
+id: global__404
+label: 'Global: 404'
+tags:
+  abstract: 'Strona poświęcona problematyce mutyzmu.'
+  canonical_url: '[site:url]'
+  description: 'Dlaczego nie znaleziono tej strony? Upewnij się, że poprawnie wpisałeś adres. Możesz też wrócić na stronę główną lub skorzystać z wyszukiwarki.'
+  shortlink: '[site:url]'

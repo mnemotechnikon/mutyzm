@@ -1,0 +1,46 @@
+uuid: a040fbe6-c418-4fe7-9432-420c548c2744
+langcode: pl
+status: true
+dependencies:
+  module:
+    - media
+    - system
+_core:
+  default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
+id: anonymous
+label: 'użytkownik anonimowy'
+weight: 3
+is_admin: false
+permissions:
+  - 'access PDF version'
+  - 'access content'
+  - 'access overlay'
+  - 'access print'
+  - 'access protected content'
+  - 'create ad content'
+  - 'see EU Cookie Compliance popup'
+  - 'show text format dropdown'
+  - 'subscribe to newsletters'
+  - 'view field_article_link'
+  - 'view field_event_type'
+  - 'view field_event_when'
+  - 'view field_event_when_hours'
+  - 'view field_event_where'
+  - 'view field_free_seats'
+  - 'view field_frontpage_promote'
+  - 'view field_image_banner'
+  - 'view field_image_cache'
+  - 'view field_news_articles'
+  - 'view field_news_forum'
+  - 'view field_news_misc'
+  - 'view field_node_reference'
+  - 'view field_price'
+  - 'view field_private_files'
+  - 'view imagecache Banner'
+  - 'view imagecache jcarousel_100x100'
+  - 'view imagecache miniaturka150x100'
+  - 'view imagecache miniaturka300x200'
+  - 'view media'
+  - 'view own field_private_files'
+  - 'view uploaded files'
+  - 'vote on polls'

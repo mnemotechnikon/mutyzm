@@ -1,0 +1,20 @@
+uuid: 86093e9e-c4ea-494d-87f6-2e8036cf3e00
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_event_when_hours
+field_name: field_event_when_hours
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: c0607d0b-50a9-45ae-bd0b-2f1884466223
+langcode: pl
+status: true
+dependencies:
+  module:
+    - node
+id: node_webform
+label: 'Zawartość - Formularz'
+type: 'canonical_entities:node'
+pattern: 'Formularze/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      webform: webform
+selection_logic: and
+weight: 0
+relationships: {  }
