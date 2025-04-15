@@ -292,7 +292,8 @@ handlers:
         <p>[webform_submission:values]</p>
         <hr><p>Wysłano: [webform_submission:completed]<br>
         <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
-      excluded_elements: null
+      excluded_elements:
+        informacja_o_administratorze_danych: informacja_o_administratorze_danych
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: true
@@ -320,9 +321,9 @@ handlers:
       bcc_options: {  }
       cc_mail: ''
       cc_options: {  }
-      from_mail: '[webform_submission:values:email:raw]'
+      from_mail: '[site:mail]'
       from_options: {  }
-      from_name: '[webform_submission:values:imie_nazwisko:raw]'
+      from_name: '[site:name]'
       reply_to: ''
       return_path: ''
       sender_mail: ''
@@ -335,7 +336,8 @@ handlers:
 
         <hr><p>Data wysłania: [webform_submission:completed]<br />
         IP nadawcy: [webform_submission:ip-address]</p>
-      excluded_elements: null
+      excluded_elements: 
+        informacja_o_administratorze_danych: informacja_o_administratorze_danych
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: true
@@ -377,7 +379,8 @@ handlers:
 
         <hr><p>Wysłano: [webform_submission:completed]<br />
         <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
-      excluded_elements: null
+      excluded_elements:
+        informacja_o_administratorze_danych: informacja_o_administratorze_danych
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: true
@@ -393,7 +396,7 @@ handlers:
     handler_id: email_5
     label: 'Email do admina'
     notes: ''
-    status: true
+    status: false
     conditions: {  }
     weight: 5
     settings:
@@ -413,12 +416,9 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: _default
-      body: |-
-        <h2>[webform:title]</h2>
-        <p>[webform_submission:values]</p>
-        <hr><p>Wysłano: [webform_submission:completed]<br>
-        <a href="[webform_submission:url]">Podgląd zgłoszenia</a></p>
-      excluded_elements: null
+      body: _default
+      excluded_elements:
+        informacja_o_administratorze_danych: informacja_o_administratorze_danych
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: true

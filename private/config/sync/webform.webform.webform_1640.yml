@@ -62,7 +62,7 @@ settings:
   draft_auto_save: false
   confirmation_type: message
   confirmation_url: /Nowość_Program_dla_nastolatków_i_młodych_dorosłych
-  confirmation_message: "<p>Dziękujemy za&nbsp;zgłoszenie!</p>"
+  confirmation_message: "<p>Dziękujemy za zgłoszenie!</p>"
   limit_total: 60
   limit_total_interval: 3600
   limit_user: null
