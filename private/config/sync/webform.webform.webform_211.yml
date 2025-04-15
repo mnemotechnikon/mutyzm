@@ -336,7 +336,7 @@ handlers:
 
         <hr><p>Data wysłania: [webform_submission:completed]<br />
         IP nadawcy: [webform_submission:ip-address]</p>
-      excluded_elements: 
+      excluded_elements:
         informacja_o_administratorze_danych: informacja_o_administratorze_danych
       ignore_access: false
       exclude_empty: true

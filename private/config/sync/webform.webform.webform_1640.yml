@@ -51,7 +51,6 @@ elements: |
     '#type': webform_actions
     '#title': 'Submit button(s)'
     '#submit__label': Wyślij
-  
 css: ''
 javascript: ''
 settings:
@@ -62,7 +61,7 @@ settings:
   draft_auto_save: false
   confirmation_type: message
   confirmation_url: /Nowość_Program_dla_nastolatków_i_młodych_dorosłych
-  confirmation_message: "<p>Dziękujemy za zgłoszenie!</p>"
+  confirmation_message: '<p>Dziękujemy za zgłoszenie!</p>'
   limit_total: 60
   limit_total_interval: 3600
   limit_user: null
@@ -154,7 +153,7 @@ handlers:
         Karolina Olszewska – tel. 531-761- 858 (pon. – pt. w godz. 8:30 – 16:00)<br /> </p>
 
         <h4> Wiadomość została wygenerowana automatycznie.</h4>
-        
+
         <hr><p>Wysłano: [webform_submission:completed]<br />
         Adres IP nadawcy: [webform_submission:ip-address]</p>
       excluded_elements:

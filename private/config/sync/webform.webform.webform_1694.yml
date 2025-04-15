@@ -72,7 +72,6 @@ elements: |
       - authenticated
       - anonymous
     '#submit__label': Wyślij
-
 css: ''
 javascript: ''
 settings:
@@ -83,7 +82,7 @@ settings:
   draft_auto_save: false
   confirmation_type: message
   confirmation_url: /Terapia/Terapia_grupowa_-_CTM_Świebodzice_CTM_Warszawa_CTM_Gliwice_CTM_Gdańsk
-  confirmation_message: "<p>Dziękujemy za zgłoszenie!</p>"
+  confirmation_message: '<p>Dziękujemy za zgłoszenie!</p>'
   limit_total: 60
   limit_total_interval: 3600
   limit_user: 60
