@@ -7,6 +7,7 @@ dependencies:
     - media.type.document
   module:
     - file
+    - imce
     - path
 _core:
   default_config_hash: aewrRkePgJzdD5kPOq8JeMcKHs6yat49nE7ZeCQzQZg
@@ -27,7 +28,9 @@ content:
     region: content
     settings:
       progress_indicator: throbber
-    third_party_settings: {  }
+    third_party_settings:
+      imce:
+        enabled: true
   langcode:
     type: language_select
     weight: 2
@@ -49,14 +52,12 @@ content:
       display_label: true
     third_party_settings: {  }
   uid:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 5
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden:
   name: true
+  publish_on: true
+  unpublish_on: true

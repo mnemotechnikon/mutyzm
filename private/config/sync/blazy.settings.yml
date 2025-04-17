@@ -2,13 +2,15 @@ _core:
   default_config_hash: zMBMF9Q35kIhZL2P1Dztk-BGFewINdrs8RE9bB5kqyo
 langcode: pl
 admin_css: true
+lazy_html: false
 nojs:
   lazy: '0'
-  classlist: '0'
   polyfill: '0'
+  classlist: '0'
   promise: '0'
   raf: '0'
-fx: ''
+  webp: '0'
+fx: blur
 blur_client: false
 blur_storage: false
 blur_minwidth: 0
