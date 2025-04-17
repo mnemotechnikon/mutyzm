@@ -48,6 +48,7 @@ display:
             items_per_page_options_all_label: '- Wszystko -'
             offset: false
             offset_label: Przesunięcie
+          pagination_heading_level: h4
       sorts:
         title:
           id: title

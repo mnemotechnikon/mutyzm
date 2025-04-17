@@ -83,7 +83,7 @@ display:
   user_page:
     display_title: User
     display_options:
-      display_description: 'Scheduled media on user profile, showing just that user''s scheduled media'
+      display_description: "Scheduled media on user profile, showing just that user's scheduled media"
       menu:
         title: 'Scheduled Media'
         description: 'Scheduled Media by this user'

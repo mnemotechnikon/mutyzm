@@ -2,8 +2,7 @@ uuid: 69e1cd47-561b-4c99-b97e-ff75c5b8156f
 langcode: pl
 status: true
 dependencies:
-  module:
-    - slick
+  module: {  }
 name: HTML
 format: '1'
 weight: -5
@@ -36,11 +35,3 @@ filters:
     weight: -8
     settings:
       filter_url_length: 72
-  slick_filter:
-    id: slick_filter
-    provider: slick
-    status: false
-    weight: 4
-    settings:
-      optionset: default
-      media_switch: ''

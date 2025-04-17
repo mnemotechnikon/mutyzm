@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.nodeorder
 label: nodeorder
+description: ''
 targetEntityType: node
 cache: true

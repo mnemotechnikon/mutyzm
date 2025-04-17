@@ -11,6 +11,7 @@ dependencies:
     - media.type.remote_video
     - media.type.video
   module:
+    - file
     - filter
     - media
     - node
@@ -31,6 +32,7 @@ permissions:
   - 'create video media'
   - 'delete own audio media'
   - 'delete own document media'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own remote_video media'
   - 'delete own video media'
@@ -39,14 +41,11 @@ permissions:
   - 'edit any image media'
   - 'edit any remote_video media'
   - 'edit any video media'
-  - 'edit mimemail user settings'
-  - 'edit own ad content'
   - 'edit own audio media'
   - 'edit own document media'
   - 'edit own image media'
   - 'edit own remote_video media'
   - 'edit own video media'
-  - 'edit own webform submissions'
   - 'use text format basic_html'
   - 'use text format webform_default'
   - 'view media'

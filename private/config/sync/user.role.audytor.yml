@@ -4,8 +4,11 @@ status: true
 dependencies:
   module:
     - block
+    - block_content
     - captcha
     - contextual
+    - file
+    - help
     - image
     - node
     - path
@@ -21,10 +24,14 @@ weight: 5
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access block library'
   - 'access content'
   - 'access content overview'
   - 'access contextual links'
+  - 'access help pages'
   - 'access site reports'
+  - 'administer block content'
+  - 'administer block types'
   - 'administer blocks'
   - 'administer image styles'
   - 'administer modules'
@@ -35,6 +42,7 @@ permissions:
   - 'administer themes'
   - 'administer url aliases'
   - 'administer xmlsitemap'
+  - 'delete own files'
   - 'skip CAPTCHA'
   - 'view own unpublished content'
   - 'view scheduled content'

@@ -1,13 +1,10 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
-langcode: pl
 module:
   action: 0
   admin_toolbar: 0
   automated_cron: 0
   big_pipe: 0
-  blazy: 0
-  blazy_ui: 0
   block: 0
   block_content: 0
   breakpoint: 0
@@ -21,15 +18,11 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
-  devel: 0
-  devel_generate: 0
-  diff: 0
   dynamic_page_cache: 0
   editor: 0
   fb_likebox: 0
   field: 0
   field_group: 0
-  field_group_migrate: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -48,23 +41,17 @@ module:
   migrate: 0
   migrate_drupal: 0
   migrate_drupal_ui: 0
-  migrate_plus: 0
-  migrate_source_csv: 0
-  migrate_tools: 0
-  migrate_upgrade: 0
   mysql: 0
   node: 0
   options: 0
   page_cache: 0
   path: 0
   path_alias: 0
+  phpass: 0
   redirect: 0
   scheduler: 0
   search: 0
   shortcut: 0
-  slick: 0
-  slick_lightbox: 0
-  slick_ui: 0
   system: 0
   taxonomy: 0
   telephone: 0
@@ -75,8 +62,6 @@ module:
   update: 0
   upgrade_status: 0
   user: 0
-  views_bulk_operations: 0
-  views_migration: 0
   views_ui: 0
   webform: 0
   webform_node: 0

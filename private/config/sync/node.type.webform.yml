@@ -27,7 +27,7 @@ _core:
 name: Formularz
 type: webform
 description: 'Twórz formularze i ankiety dostępne dla użytkowników. Zgłoszenia i statystyki dostępne są dla uprawnionych użytkowników.'
-help: ''
+help: null
 new_revision: false
 preview_mode: 1
 display_submitted: false

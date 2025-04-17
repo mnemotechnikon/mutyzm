@@ -6,7 +6,10 @@ dependencies:
     - node.type.page
   module:
     - block
+    - block_content
     - contextual
+    - file
+    - help
     - locale
     - node
     - path
@@ -20,11 +23,15 @@ weight: 1
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access block library'
   - 'access content overview'
   - 'access contextual links'
+  - 'access help pages'
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access user profiles'
+  - 'administer block content'
+  - 'administer block types'
   - 'administer blocks'
   - 'administer menu'
   - 'administer nodes'
@@ -35,6 +42,7 @@ permissions:
   - 'create page content'
   - 'create url aliases'
   - 'delete any page content'
+  - 'delete own files'
   - 'delete own page content'
   - 'edit any page content'
   - 'edit own page content'
