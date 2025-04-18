@@ -7,7 +7,6 @@ dependencies:
   module:
     - contextual
     - file
-    - help
     - metatag
     - node
     - path
@@ -23,7 +22,6 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access contextual links'
-  - 'access help pages'
   - 'access site reports'
   - 'administer meta tags'
   - 'administer nodes'

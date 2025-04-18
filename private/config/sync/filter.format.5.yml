@@ -1,9 +1,8 @@
 uuid: db645e01-c710-45d5-8e61-70f6d28683ce
 langcode: pl
 status: true
-dependencies:
-  module: {  }
-name: 'Czysty tekst'
+dependencies: {  }
+name: '[migrate] plain text'
 format: '5'
 weight: -3
 filters:

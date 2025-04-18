@@ -1,4 +1,4 @@
-uuid: 84709e9b-e208-4738-82a7-d8f5833333e8
+uuid: cb06e3d4-cd9c-4e71-bb90-3bfb4bb9ba77
 langcode: pl
 status: true
 dependencies:
@@ -7,16 +7,16 @@ dependencies:
   theme:
     - olivero
 _core:
-  default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
-id: olivero_search_form_wide
+  default_config_hash: yEBET0cqDbk8dkWzaJw-8CKft0961VBflsISoSR6Lj8
+id: olivero_search_form_narrow
 theme: olivero
-region: secondary_menu
-weight: -5
+region: primary_menu
+weight: -4
 provider: null
 plugin: search_form_block
 settings:
   id: search_form_block
-  label: 'Formularz wyszukiwania (szeroki)'
+  label: 'Formularz wyszukiwania (wąski)'
   label_display: '0'
   provider: search
   page_id: ''

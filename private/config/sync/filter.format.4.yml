@@ -1,8 +1,7 @@
 uuid: d806b97c-7d15-4ccd-a4c1-dfbe17b6f67b
 langcode: pl
-status: true
-dependencies:
-  module: {  }
+status: false
+dependencies: {  }
 name: 'HTML Mail'
 format: '4'
 weight: -4

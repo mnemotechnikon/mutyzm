@@ -8,7 +8,6 @@ dependencies:
     - captcha
     - contextual
     - file
-    - help
     - image
     - node
     - path
@@ -28,7 +27,6 @@ permissions:
   - 'access content'
   - 'access content overview'
   - 'access contextual links'
-  - 'access help pages'
   - 'access site reports'
   - 'administer block content'
   - 'administer block types'

@@ -1,8 +1,7 @@
 uuid: 3ac720a2-d9df-471d-b9b9-5c2c18814152
 langcode: pl
 status: true
-dependencies:
-  module: {  }
+dependencies: {  }
 name: 'Full HTML'
 format: '2'
 weight: -6

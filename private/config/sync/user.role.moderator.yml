@@ -9,7 +9,6 @@ dependencies:
     - block_content
     - contextual
     - file
-    - help
     - locale
     - node
     - path
@@ -26,7 +25,6 @@ permissions:
   - 'access block library'
   - 'access content overview'
   - 'access contextual links'
-  - 'access help pages'
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access user profiles'

@@ -1,8 +1,7 @@
 uuid: 69e1cd47-561b-4c99-b97e-ff75c5b8156f
 langcode: pl
-status: true
-dependencies:
-  module: {  }
+status: false
+dependencies: {  }
 name: HTML
 format: '1'
 weight: -5
