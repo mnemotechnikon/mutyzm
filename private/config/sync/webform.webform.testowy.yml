@@ -166,7 +166,7 @@ settings:
   confirmation_exclude_token: false
   confirmation_update: false
   limit_total: null
-  limit_total_interval: null
+  limit_total_interval: 3600
   limit_total_message: ''
   limit_total_unique: false
   limit_user: null
