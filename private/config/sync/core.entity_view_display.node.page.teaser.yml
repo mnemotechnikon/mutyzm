@@ -26,10 +26,12 @@ content:
     settings:
       trim_length: 300
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   links:
-    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   breadcrumbs: true

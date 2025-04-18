@@ -10,6 +10,7 @@ dependencies:
   module:
     - text
     - user
+    - webform
 _core:
   default_config_hash: Ls5l3Xs7-YstJnurxFLKj38Exqr2JMZs1j9YeX1Kh2o
 id: node.webform.teaser
@@ -23,14 +24,22 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
+    region: content
+  webform:
+    type: webform_entity_reference_entity_view
+    label: inline
+    settings:
+      source_entity: true
+      lazy: false
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   breadcrumbs: true
   langcode: true
-  webform: true

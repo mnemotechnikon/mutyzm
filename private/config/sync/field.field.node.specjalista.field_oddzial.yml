@@ -11,7 +11,7 @@ field_name: field_oddzial
 entity_type: node
 bundle: specjalista
 label: Oddział
-description: 'Wybierz oddział, w którym pracuje dany specjalista.'
+description: 'Wybierz oddział, w którym pracuje dany specjalista'
 required: true
 translatable: false
 default_value: {  }

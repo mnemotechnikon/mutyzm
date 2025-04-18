@@ -13,6 +13,7 @@ dependencies:
     - image
     - node
     - text
+    - user
 id: articles
 label: 'Widoki dla artykułów'
 module: views
@@ -37,6 +38,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 4
           total_pages: null
           id: 0
@@ -48,7 +50,6 @@ display:
             items_per_page_options_all_label: '- Wszystko -'
             offset: false
             offset_label: Przesunięcie
-          pagination_heading_level: h4
       sorts:
         title:
           id: title
@@ -669,9 +670,31 @@ display:
           ui_name: ''
           delta_random: false
       pager:
-        type: none
+        type: full
         options:
           offset: 0
+          pagination_heading_level: h4
+          items_per_page: 12
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Następna ›'
+            previous: '‹ Poprzednia'
+            first: '« Pierwsza'
+            last: 'Ostatnia »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Elementów na stronę'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- Wszystko -'
+            offset: false
+            offset_label: Przesunięcie
+          quantity: 4
+      access:
+        type: perm
+        options:
+          perm: 'access content'
       sorts:
         title:
           id: title
@@ -687,12 +710,13 @@ display:
           exposed: false
           ui_name: ''
       style:
-        type: default
+        type: grid_responsive
         options:
           grouping: {  }
-          row_class: ''
-          default_row_class: true
-          row_class_special: 0
+          columns: 3
+          cell_min_width: 320
+          grid_gutter: 20
+          alignment: horizontal
       row:
         type: fields
         options:
@@ -704,6 +728,7 @@ display:
         type: views_query
         options: {  }
       defaults:
+        access: false
         title: false
         css_class: false
         pager: false
@@ -726,7 +751,7 @@ display:
         type: normal
         title: Artykuły
         description: ''
-        weight: 0
+        weight: -46
         menu_name: main
         context: '0'
         name: main
@@ -743,7 +768,9 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
+        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_image_cache'

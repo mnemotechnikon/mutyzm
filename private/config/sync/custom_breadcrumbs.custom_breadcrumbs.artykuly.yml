@@ -1,0 +1,15 @@
+uuid: c031cb2d-553c-44a1-aa42-ef8c2a6eaa73
+langcode: pl
+status: true
+dependencies: {  }
+id: artykuly
+label: Artykuły
+description: ''
+entityType: node
+entityBundle: story
+language: pl
+breadcrumbPaths: /Artykuły
+breadcrumbTitles: Artykuły
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''

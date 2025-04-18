@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.specjalista.field_image_cache
     - field.field.node.specjalista.field_metatag
     - field.field.node.specjalista.field_oddzial
+    - image.style.thumbnail
     - node.type.specjalista
   module:
     - image
@@ -19,9 +20,10 @@ bundle: specjalista
 mode: teaser
 content:
   body:
-    type: text_default
+    type: text_trimmed
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 100
     third_party_settings: {  }
     weight: 1
     region: content
@@ -30,26 +32,19 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: thumbnail
       image_loading:
         attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
-  field_oddzial:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 2
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
 hidden:
   breadcrumbs: true
   field_metatag: true
+  field_oddzial: true
   langcode: true

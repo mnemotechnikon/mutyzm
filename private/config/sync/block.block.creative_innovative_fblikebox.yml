@@ -1,0 +1,34 @@
+uuid: 7190f639-f30b-4366-b02f-123c0d9914e8
+langcode: pl
+status: true
+dependencies:
+  module:
+    - fb_likebox
+  theme:
+    - creative_innovative
+id: creative_innovative_fblikebox
+theme: creative_innovative
+region: footer_first
+weight: -6
+provider: null
+plugin: fb_likebox_block
+settings:
+  id: fb_likebox_block
+  label: 'Polub nas na Facebooku'
+  label_display: '0'
+  provider: fb_likebox
+  url: 'https://www.facebook.com/CTM-Centrum-Terapii-994134447368046'
+  app_id: ''
+  hide_header: 0
+  stream: 0
+  events: 0
+  messages: 0
+  show_faces: '0'
+  title: 'Polub nas na Facebooku'
+  width: 350
+  height: 100
+  hide_cta: 0
+  small_header: 0
+  adapt_container_width: 1
+  language: pl_PL
+visibility: {  }

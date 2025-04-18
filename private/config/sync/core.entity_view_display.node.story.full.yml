@@ -1,22 +1,22 @@
-uuid: 6095f6ac-449e-4386-b41e-46f655c04e40
+uuid: bb985259-d95a-40ea-a859-a9307b49e914
 langcode: pl
 status: true
 dependencies:
   config:
-    - field.field.node.specjalista.body
-    - field.field.node.specjalista.field_image_cache
-    - field.field.node.specjalista.field_metatag
-    - field.field.node.specjalista.field_oddzial
-    - image.style.thumbnail
-    - node.type.specjalista
+    - core.entity_view_mode.node.full
+    - field.field.node.story.body
+    - field.field.node.story.field_image_cache
+    - field.field.node.story.field_metatag
+    - image.style.large
+    - node.type.story
   module:
     - image
     - text
     - user
-id: node.specjalista.default
+id: node.story.full
 targetEntityType: node
-bundle: specjalista
-mode: default
+bundle: story
+mode: full
 content:
   body:
     type: text_default
@@ -30,24 +30,16 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: thumbnail
+      image_style: large
       image_loading:
         attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
-  field_oddzial:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
 hidden:
   breadcrumbs: true

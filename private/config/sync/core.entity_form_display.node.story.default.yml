@@ -10,6 +10,7 @@ dependencies:
     - node.type.story
   module:
     - image
+    - imce
     - metatag
     - path
     - text
@@ -41,7 +42,9 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
-    third_party_settings: {  }
+    third_party_settings:
+      imce:
+        enabled: true
   field_metatag:
     type: metatag_firehose
     weight: 11

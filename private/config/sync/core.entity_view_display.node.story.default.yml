@@ -6,8 +6,10 @@ dependencies:
     - field.field.node.story.body
     - field.field.node.story.field_image_cache
     - field.field.node.story.field_metatag
+    - image.style.media_library
     - node.type.story
   module:
+    - image
     - text
     - user
 id: node.story.default
@@ -22,8 +24,14 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  breadcrumbs:
-    settings: {  }
+  field_image_cache:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: media_library
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
@@ -33,6 +41,6 @@ content:
     weight: 2
     region: content
 hidden:
-  field_image_cache: true
+  breadcrumbs: true
   field_metatag: true
   langcode: true

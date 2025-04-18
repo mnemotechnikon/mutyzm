@@ -46,6 +46,14 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
+  taxonomy_vocabulary_2:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
   upload:
     type: file_table
     label: hidden
@@ -58,4 +66,3 @@ hidden:
   breadcrumbs: true
   field_metatag: true
   langcode: true
-  taxonomy_vocabulary_2: true

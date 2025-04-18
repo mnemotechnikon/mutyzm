@@ -1,6 +1,6 @@
 uuid: 3b9f39c3-deb3-4aca-9167-af6ba6c08cc9
 langcode: pl
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.email_plain

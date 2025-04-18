@@ -1,0 +1,22 @@
+uuid: 674456f1-431a-4fd9-a1df-a4c1259a5cbd
+langcode: pl
+status: true
+dependencies:
+  config:
+    - node.type.specjalista
+id: node.specjalista.promote
+field_name: promote
+entity_type: node
+bundle: specjalista
+label: 'Promowany na stronie głównej'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Włączony
+  off_label: Wyłączony
+field_type: boolean

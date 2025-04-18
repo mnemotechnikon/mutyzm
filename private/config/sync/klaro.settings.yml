@@ -1,7 +1,7 @@
 _core:
   default_config_hash: HhNyhQ6tRke0JqjC9BExmWr-cTRPJWrIlD9LXhe-8Dk
 langcode: pl
-dialog_mode: silent
+dialog_mode: manager
 auto_decorate_final_html: false
 auto_decorate_js_alter: true
 auto_decorate_page_attachments: true
@@ -12,14 +12,15 @@ log_unknown_resources: false
 block_unknown_label: 'Unknown services'
 block_unknown_description: 'Allow loading of unknown external resources'
 show_toggle_button: false
-show_close_button: false
+show_close_button: true
 deletable_cookie_domains: {  }
 exclude_urls: {  }
 disable_urls: {  }
 styles:
   - light
+  - right
 process_descriptions: false
-override_css: true
+override_css: false
 show_notice_title: false
 library:
   element_id: klaro
@@ -27,11 +28,11 @@ library:
   cookie_name: klaro
   cookie_expires_after_days: 180
   cookie_domain: ''
-  group_by_purpose: false
-  accept_all: false
+  group_by_purpose: true
+  accept_all: true
   hide_decline_all: false
-  hide_learn_more: false
-  learn_more_as_button: false
+  hide_learn_more: true
+  learn_more_as_button: true
   additional_class: ''
   html_texts: false
   auto_focus: true

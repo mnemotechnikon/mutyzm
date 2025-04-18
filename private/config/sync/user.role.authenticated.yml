@@ -13,6 +13,7 @@ dependencies:
   module:
     - file
     - filter
+    - klaro
     - media
     - node
     - system
@@ -46,6 +47,7 @@ permissions:
   - 'edit own image media'
   - 'edit own remote_video media'
   - 'edit own video media'
+  - 'use klaro'
   - 'use text format basic_html'
   - 'use text format webform_default'
   - 'view media'

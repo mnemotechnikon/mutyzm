@@ -27,34 +27,41 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_image_cache:
     type: image
     label: hidden
     settings:
-      image_link: file
+      image_link: ''
       image_style: media_library
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 4
     region: content
+  taxonomy_vocabulary_2:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
   upload:
     type: file_table
-    label: hidden
+    label: above
     settings:
-      use_description_as_link_text: true
+      use_description_as_link_text: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
   breadcrumbs: true
   field_metatag: true
   langcode: true
-  taxonomy_vocabulary_2: true

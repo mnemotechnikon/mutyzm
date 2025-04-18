@@ -1,0 +1,15 @@
+uuid: 859bc151-6bf0-46d8-a55e-5d31fa869f53
+langcode: pl
+status: true
+dependencies: {  }
+id: konferencje
+label: Konferencje
+description: ''
+entityType: path_alias
+entityBundle: path_alias
+language: pl
+breadcrumbPaths: /Konferencje
+breadcrumbTitles: Konferencje
+type: '2'
+pathPattern: '/*konferencj*'
+extraCacheContexts: ''

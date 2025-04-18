@@ -16,54 +16,56 @@ dependencies:
     - field.field.node.event.taxonomy_vocabulary_2
     - node.type.event
   module:
-    - datetime
+    - datetime_range
     - field_group
     - metatag
     - path
+    - scheduler
     - text
 third_party_settings:
   field_group:
     group_event_info:
       children:
-        - body
-        - field_event_where
-        - field_price
-        - field_free_seats
-        - field_event_type
-        - field_event_when_hours
-        - field_event_when
-        - field_event_specialists
         - title
+        - field_event_type
+        - field_event_specialists
+        - body
+        - field_price
+        - field_event_where
+        - field_event_when
+        - field_event_when_hours
+        - field_free_seats
       label: 'Informacje o wydarzeniu'
       region: content
       parent_name: ''
       weight: 0
-      format_type: tab
+      format_type: details
       format_settings:
         classes: 'group-event-info field-group-tab'
         show_empty_fields: false
         id: ''
         label_as_html: false
-        formatter: closed
+        open: true
         description: ''
         required_fields: true
     group_event_setup:
       children:
-        - taxonomy_vocabulary_2
         - field_node_reference
+        - taxonomy_vocabulary_2
       label: 'Ustawienia wydarzenia'
       region: content
       parent_name: ''
       weight: 2
-      format_type: tab
+      format_type: details
       format_settings:
         classes: 'group-event-setup field-group-tab'
         show_empty_fields: false
         id: ''
         label_as_html: false
-        formatter: closed
+        open: false
         description: ''
         required_fields: true
+        formatter: closed
 id: node.event.default
 targetEntityType: node
 bundle: event
@@ -81,7 +83,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -98,17 +100,20 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_event_when:
-    type: datetime_default
+    type: daterange_datelist
     weight: 7
     region: content
-    settings: {  }
+    settings:
+      increment: 15
+      date_order: DMY
+      time_type: none
     third_party_settings: {  }
   field_event_when_hours:
     type: text_textfield
     weight: 8
     region: content
     settings:
-      size: 50
+      size: 20
       placeholder: ''
     third_party_settings: {  }
   field_event_where:
@@ -128,17 +133,21 @@ content:
     third_party_settings: {  }
   field_metatag:
     type: metatag_firehose
-    weight: 121
+    weight: 13
     region: content
     settings:
       sidebar: true
       use_details: true
     third_party_settings: {  }
   field_node_reference:
-    type: options_select
+    type: entity_reference_autocomplete_tags
     weight: 2
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 5
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_price:
     type: number
@@ -149,42 +158,58 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   scheduler_settings:
-    weight: 50
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 7
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  taxonomy_vocabulary_2:
+    type: entity_reference_autocomplete_tags
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 5
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -196,7 +221,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -205,11 +230,9 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  publish_on: true
-  taxonomy_vocabulary_2: true
   unpublish_on: true

@@ -12,7 +12,7 @@ _core:
   default_config_hash: YRZjNp4d68NjJAVhrrUrXKwpV12i7OFWg4MY6Bsd0mw
 id: bootstrap5_account_menu
 theme: bootstrap5
-region: nav_additional
+region: footer
 weight: -7
 provider: null
 plugin: 'system_menu_block:account'

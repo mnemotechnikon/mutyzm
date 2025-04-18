@@ -6,20 +6,20 @@ features:
   comment_user_picture: true
   comment_user_verification: true
   favicon: true
-  node_user_picture: true
+  node_user_picture: false
 logo:
   path: 'public://vendor-8.jpg'
   use_default: true
 b5_top_container: container
 b5_top_container_config: ''
-b5_body_schema: none
+b5_body_schema: light
 b5_body_bg_schema: none
 arrow_up: right
 b5_navbar_schema: dark
-b5_navbar_bg_schema: none
+b5_navbar_bg_schema: light
 b5_footer_schema: dark
 b5_footer_bg_schema: dark
-footer_copyright: '© All Rights Reserved.'
+footer_copyright: '© CTM Sp. z o.o.'
 subtheme_folder: themes/custom
 subtheme_name: 'B5 subtheme'
 subtheme_machine_name: b5subtheme
@@ -40,10 +40,10 @@ slide3_desc: 'Creative & Innovative Slider Design'
 slide3_url: 'https://www.drupal.org/smashing-infolabs-pvt-ltd'
 slide3_text: 'Contact us'
 slide3_image: {  }
-slide4_head: 'Bootstrap, Slider, Color'
-slide4_desc: 'Creative & Innovative Slider Design'
-slide4_url: 'https://www.drupal.org/smashing-infolabs-pvt-ltd'
-slide4_text: 'Contact us'
+slide4_head: 'Niezbędne narzędzia dla Ciebie i Twojego dziecka'
+slide4_desc: Sklep
+slide4_url: 'https://sklep.ctm.org.pl/'
+slide4_text: 'Zobacz produkty'
 slide4_image: {  }
 slide5_head: 'Bootstrap, Slider, Color'
 slide5_desc: 'Creative & Innovative Slider Design'
@@ -51,12 +51,12 @@ slide5_url: 'https://www.drupal.org/smashing-infolabs-pvt-ltd'
 slide5_text: 'Contact us'
 slide5_image: {  }
 show_social_icon: 1
-facebook_url: 'https://www.facebook.com/'
-twitter_url: 'https://twitter.com/'
-linkedin_url: 'https://www.linkedin.com/'
-instagram_url: 'https://www.instagram.com/'
-youtube_url: 'https://www.youtube.com/'
+facebook_url: 'https://www.facebook.com/CTM-Centrum-Terapii-994134447368046'
+twitter_url: ''
+linkedin_url: ''
+instagram_url: 'https://www.instagram.com/ctm_centrum_terapii'
+youtube_url: 'https://www.youtube.com/@CTMCentrumTerapii'
 show_information_icon: 1
-address: ''
-contact: '+012 345 6789'
-mail_id: info@example.com
+address: 'Nowe Miasto Lubawskie, ul. Grunwaldzka 67'
+contact: '+48 796 688 996'
+mail_id: biuro@mutyzm.pl

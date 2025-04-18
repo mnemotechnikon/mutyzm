@@ -2,40 +2,37 @@ _core:
   default_config_hash: FHr6psQnRtYvXa9wwVyQsT3ytUtv2w9OvbvbdMDq4a0
 langcode: pl
 consentModal:
-  title: 'Use of personal data and cookies'
-  description: |
-    Please choose the services and 3rd party applications we would like to use.
+  title: 'Wykorzystywanie danych osobowych i plików cookie'
+  description: "Wybierz usługi i aplikacje innych firm, z których chcesz korzystać.\r\n"
   privacyPolicy:
-    name: 'privacy policy'
-    text: |
-      To learn more, please read our {privacyPolicy}.
-    url: 'internal:/<front>'
+    name: 'polityka prywatności'
+    text: "Więcej informacji w dokumencie {privacyPolicy}.\r\n"
+    url: 'internal:/polityka-prywatnosci'
 consentNotice:
-  title: 'Use of personal data and cookies'
-  changeDescription: 'There were changes since your last visit, please update your consent.'
-  description: |
-    We use cookies and process personal data for the following purposes: {purposes}.
+  title: 'Wykorzystywanie danych osobowych i plików cookie'
+  changeDescription: 'Od ostatniej wizyty nastąpiły zmiany, prosimy o aktualizację zgody.'
+  description: "Używamy plików cookie i przetwarzamy dane osobowe w następujących celach: {purposes}.\r\n"
   learnMore: Dostosuj
 ok: Akceptuj
 save: Zapisz
 decline: Odrzuć
 close: Zamknij
-acceptAll: 'Accept all'
-acceptSelected: 'Accept selected'
+acceptAll: 'Akceptuj wszystko'
+acceptSelected: 'Akceptuj wybrane'
 service:
   disableAll:
-    title: 'Toggle all services'
-    description: 'Use this switch to enable/disable all services.'
+    title: 'Przełącz wszystkie usługi'
+    description: 'Ten przełącznik służy do włączania/wyłączania wszystkich usług.'
   optOut:
-    title: (opt-out)
-    description: 'This service is loaded by default (opt-out possible).'
+    title: (rezygnacja)
+    description: 'Ta usługa jest ładowana domyślnie (możliwość rezygnacji).'
   required:
-    title: '(always required)'
-    description: 'This service is always required.'
-  purposes: Purposes
-  purpose: Purpose
+    title: '(zawsze wymagane)'
+    description: 'Ta usługa jest zawsze wymagana.'
+  purposes: Cele
+  purpose: Cel
 contextualConsent:
   acceptAlways: Zawsze
-  acceptOnce: 'Yes (this time)'
-  description: 'Load external content supplied by {title}?'
+  acceptOnce: 'Tak (tym razem)'
+  description: 'Załadować zawartość zewnętrzną dostarczoną przez {title}?'
 poweredBy: 'Powered by Klaro!'
