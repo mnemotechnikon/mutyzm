@@ -20,15 +20,19 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: -3
+    weight: 1
+    region: content
+  breadcrumbs:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
 hidden:
-  breadcrumbs: true
   field_image_cache: true
   field_metatag: true
   langcode: true

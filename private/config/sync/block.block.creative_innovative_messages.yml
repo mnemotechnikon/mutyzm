@@ -1,5 +1,5 @@
 uuid: 99b56104-6181-40e3-9ecb-146d65b23e90
-langcode: en
+langcode: pl
 status: true
 dependencies:
   module:
@@ -16,7 +16,7 @@ provider: null
 plugin: system_messages_block
 settings:
   id: system_messages_block
-  label: Messages
+  label: Wiadomości
   label_display: '0'
   provider: system
 visibility: {  }

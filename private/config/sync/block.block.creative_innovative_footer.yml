@@ -1,5 +1,5 @@
 uuid: dd88e7d8-575d-4b85-975b-80ef0b77e7a1
-langcode: en
+langcode: pl
 status: true
 dependencies:
   config:
@@ -18,7 +18,7 @@ provider: null
 plugin: 'system_menu_block:footer'
 settings:
   id: 'system_menu_block:footer'
-  label: Footer
+  label: Stopka
   label_display: '0'
   provider: system
   level: 1

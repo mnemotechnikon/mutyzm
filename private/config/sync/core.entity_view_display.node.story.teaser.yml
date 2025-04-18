@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.story.body
     - field.field.node.story.field_image_cache
     - field.field.node.story.field_metatag
-    - image.style.miniaturka150x100
+    - image.style.media_library
     - node.type.story
   module:
     - image
@@ -30,8 +30,8 @@ content:
     type: image
     label: hidden
     settings:
-      image_link: content
-      image_style: miniaturka150x100
+      image_link: ''
+      image_style: media_library
       image_loading:
         attribute: lazy
     third_party_settings: {  }
