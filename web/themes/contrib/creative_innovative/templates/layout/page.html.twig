@@ -95,12 +95,12 @@ set arrow_up_side = ' ' ~
   {% endif %}
   <div class="container-fluid position-relative p-0">
     {% if page.header or page.nav_main %}
-      <nav class="{{nav_classes}} px-5 py-3 py-lg-0">
-        <div class="d-flex w-100">
-          <h1 class="m-0">{{ page.header }}</h1>
+      <nav class="{{nav_classes}} px-3 py-3 py-lg-0">
+        <div class="container-xl">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="fa fa-bars"></span>
           </button>
+          <h1 class="m-0 d-none d-sm-block">{{ page.header }}</h1>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
               {{ page.nav_main }}
