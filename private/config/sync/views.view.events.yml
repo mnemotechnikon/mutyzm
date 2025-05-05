@@ -1,0 +1,2222 @@
+uuid: 3ade49b2-f433-4a9e-b46b-d1fd6753caba
+langcode: pl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.storage.node.field_event_when
+    - field.storage.node.field_event_where
+    - field.storage.node.field_free_seats
+    - field.storage.node.field_price
+    - node.type.event
+    - system.menu.admin
+    - user.role.administrator
+    - user.role.moderator
+  module:
+    - datetime
+    - datetime_range
+    - node
+    - options
+    - user
+    - views_bulk_operations
+id: events
+label: Wydarzenia
+module: views
+description: 'Nadchodzące wydarzenia, szkolenia, itp.'
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: 'Ustawienia domyślne'
+    display_plugin: default
+    position: 1
+    display_options:
+      title: 'Nadchodzące wydarzenia'
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: field
+          label: ''
+          exclude: true
+          settings:
+            link_to_entity: false
+      pager:
+        type: none
+        options:
+          offset: 0
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Zastosuj
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      access:
+        type: none
+      cache:
+        type: none
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+      sorts: {  }
+      filters:
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            event: event
+          group: 0
+      style:
+        type: default
+      row:
+        type: 'entity:node'
+        options:
+          links: false
+      query:
+        type: views_query
+        options: {  }
+      use_more: true
+      use_more_always: false
+      use_more_text: więcej
+      link_display: page_1
+      display_extenders: {  }
+      style_plugin: default
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags: {  }
+  block_1:
+    id: block_1
+    display_title: Nadchodzące-blok
+    display_plugin: block
+    position: 4
+    display_options:
+      fields:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+            unwanted_characters: ''
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          settings:
+            link_to_entity: 0
+          ui_name: ID
+        path:
+          id: path
+          table: node
+          field: view_node
+          relationship: none
+          group_type: group
+          entity_type: node
+          plugin_id: entity_link
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: true
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+            unwanted_characters: ''
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          absolute: true
+          ui_name: Ścieżka
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: field
+          label: ''
+          alter:
+            path: '{{ path }}'
+          element_type: strong
+        field_event_when:
+          id: field_event_when
+          table: node__field_event_when
+          field: field_event_when
+          plugin_id: field
+          label: ''
+          element_label_colon: false
+          settings:
+            format_type: short
+            fromto: both
+            multiple_number: ''
+            multiple_from: ''
+            multiple_to: ''
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 7
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          label: 'Pole tekstowe'
+          content:
+            value: "<p>Potrzebujesz konsultacji? Chcesz nawiązać wsp&oacute;łpracę? - <a href=\"http://mutyzm.pl/Kontakt\">skontaktuj się.</a></p>\r\n"
+            format: '2'
+      sorts:
+        field_event_when_value:
+          id: field_event_when_value
+          table: node__field_event_when
+          field: field_event_when_value
+          plugin_id: datetime
+      filters:
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            event: event
+          group: 1
+        date_filter:
+          id: date_filter
+          table: node__field_event_when
+          field: field_event_when_value
+          plugin_id: datetime
+          operator: '>='
+          group: 1
+          default_date: now
+          default_to_date: now
+          year_range: '-1:+1'
+          date_fields:
+            field_event_when_value: field_event_when_value
+      filter_groups:
+        groups:
+          1: AND
+          2: AND
+      style:
+        type: default
+      row:
+        type: fields
+        options:
+          hide_empty: true
+      query:
+        type: views_query
+        options: {  }
+      defaults:
+        empty: false
+        pager: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        style: false
+        row: false
+        relationships: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+        pager_options: false
+      display_description: 'Blok z listą nadchodzących wydarzeń'
+      use_more: true
+      use_more_always: false
+      use_more_text: 'Zobacz więcej wydarzeń'
+      display_extenders: {  }
+      block_description: 'Nadchodzące wydarzenia'
+      style_plugin: list
+      pager_options: null
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_event_when'
+  block_2:
+    id: block_2
+    display_title: 'Szkolenia specjaliści'
+    display_plugin: block
+    position: 5
+    display_options:
+      title: 'Najbliższe szkolenia'
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: strong
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          ui_name: Tytuł
+        field_event_where:
+          id: field_event_where
+          table: node__field_event_where
+          field: field_event_where
+          plugin_id: field
+          label: ''
+          element_label_colon: false
+          type: string
+          settings:
+            max_length: 255
+            case_sensitive: false
+            is_ascii: false
+        field_event_when:
+          id: field_event_when
+          table: node__field_event_when
+          field: field_event_when
+          plugin_id: field
+          label: ''
+          element_label_colon: false
+          settings:
+            format_type: short
+            fromto: value
+            multiple_number: ''
+            multiple_from: ''
+            multiple_to: ''
+      pager:
+        type: none
+        options:
+          offset: 0
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          label: 'Pole tekstowe'
+          content:
+            value: "<p><a href=\"http://mutyzm.pl/Kontakt\">Zapytaj</a> o szkolenia w Twojej okolicy.</p>\r\n"
+            format: '2'
+      sorts:
+        field_event_when_value:
+          id: field_event_when_value
+          table: node__field_event_when
+          field: field_event_when_value
+          relationship: none
+          group_type: group
+          plugin_id: datetime
+          order: ASC
+          expose:
+            label: ''
+          exposed: false
+          ui_name: ''
+      filters:
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            event: event
+          group: 1
+        field_event_when_value:
+          id: field_event_when_value
+          table: node__field_event_when
+          field: field_event_when_value
+          plugin_id: datetime
+          operator: '>='
+          default_date: now
+          year_range: '-1:+1'
+        field_event_type_value:
+          id: field_event_type_value
+          table: node__field_event_type
+          field: field_event_type_value
+          plugin_id: list_field
+          operator: or
+          value:
+            szkolenia_specjalisci: szkolenia_specjalisci
+      filter_groups:
+        groups:
+          1: AND
+          2: AND
+      style:
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            title: title
+            field_event_where: field_event_where
+            field_event_when: field_event_when
+          default: field_event_when
+          info:
+            title:
+              sortable: true
+              default_sort_order: asc
+              align: views-align-left
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_event_where:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_event_when:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
+      row:
+        type: fields
+        options:
+          inline:
+            field_event_where: field_event_where
+            field_event_when: field_event_when
+          separator: ', '
+          hide_empty: true
+      query:
+        type: views_query
+        options: {  }
+      defaults:
+        empty: false
+        title: false
+        pager: false
+        style: false
+        row: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+      display_extenders: {  }
+      block_description: 'Najbliższe szkolenia dla specjalistów'
+      style_plugin: list
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_event_when'
+        - 'config:field.storage.node.field_event_where'
+  block_3:
+    id: block_3
+    display_title: 'Szkolenia rodzice'
+    display_plugin: block
+    position: 6
+    display_options:
+      title: 'Najbliższe szkolenia'
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: field
+          label: ''
+          exclude: true
+          element_type: strong
+          settings:
+            link_to_entity: false
+          ui_name: Tytuł
+        field_event_where:
+          id: field_event_where
+          table: node__field_event_where
+          field: field_event_where
+          plugin_id: field
+          label: ''
+          element_label_colon: false
+          type: string
+          settings:
+            max_length: 255
+            case_sensitive: false
+            is_ascii: false
+        field_event_when:
+          id: field_event_when
+          table: node__field_event_when
+          field: field_event_when
+          plugin_id: field
+          label: ''
+          element_label_colon: false
+          settings:
+            format_type: short
+            fromto: value
+            multiple_number: ''
+            multiple_from: ''
+            multiple_to: ''
+        field_price:
+          id: field_price
+          table: node__field_price
+          field: field_price
+          plugin_id: field
+          element_type: strong
+          settings:
+            thousand_separator: ' '
+            prefix_suffix: 1
+        field_free_seats:
+          id: field_free_seats
+          table: node__field_free_seats
+          field: field_free_seats
+          plugin_id: field
+          element_type: strong
+          type: number_unformatted
+          settings:
+            thousand_separator: ' '
+            prefix_suffix: 1
+      pager:
+        type: none
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          label: 'Pole tekstowe'
+          content:
+            value: "<p><a href=\"http://mutyzm.pl/Kontakt\">Zapytaj</a> o szkolenia w Twojej okolicy.</p>\r\n"
+            format: '2'
+      sorts:
+        field_event_when_value:
+          id: field_event_when_value
+          table: node__field_event_when
+          field: field_event_when_value
+          relationship: none
+          group_type: group
+          plugin_id: datetime
+          order: ASC
+          expose:
+            label: ''
+          exposed: false
+          ui_name: ''
+      filters:
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            event: event
+          group: 1
+        field_event_type_value:
+          id: field_event_type_value
+          table: node__field_event_type
+          field: field_event_type_value
+          plugin_id: list_field
+          operator: or
+          value:
+            szkolenia_rodzice: szkolenia_rodzice
+        field_event_when_value:
+          id: field_event_when_value
+          table: node__field_event_when
+          field: field_event_when_value
+          plugin_id: datetime
+          operator: '>='
+          default_date: now
+          year_range: '-1:+1'
+      filter_groups:
+        groups:
+          1: AND
+          2: AND
+      style:
+        type: default
+      row:
+        type: fields
+        options:
+          inline:
+            field_event_when: field_event_when
+            field_event_where: field_event_where
+          separator: ', '
+          hide_empty: true
+      query:
+        type: views_query
+        options: {  }
+      defaults:
+        empty: false
+        title: false
+        pager: false
+        style: false
+        row: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+      display_extenders: {  }
+      block_description: 'Najbliższe szkolenia dla rodziców'
+      style_plugin: list
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_event_when'
+        - 'config:field.storage.node.field_event_where'
+        - 'config:field.storage.node.field_free_seats'
+        - 'config:field.storage.node.field_price'
+  block_4:
+    id: block_4
+    display_title: 'Szkolenia poradnie'
+    display_plugin: block
+    position: 7
+    display_options:
+      title: 'Najbliższe szkolenia'
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: strong
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          settings:
+            link_to_entity: 0
+          ui_name: Tytuł
+      pager:
+        type: none
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          label: 'Pole tekstowe'
+          content:
+            value: "<p><a href=\"http://mutyzm.pl/Kontakt\">Zapytaj</a> o szkolenia w Twojej okolicy.</p>\r\n"
+            format: '2'
+      sorts:
+        field_event_when_value:
+          id: field_event_when_value
+          table: node__field_event_when
+          field: field_event_when_value
+          relationship: none
+          group_type: group
+          plugin_id: datetime
+          order: ASC
+          expose:
+            label: ''
+          exposed: false
+          ui_name: ''
+      filters:
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            event: event
+          group: 1
+        date_filter:
+          id: date_filter
+          table: node__field_event_when
+          field: field_event_when_value
+          plugin_id: datetime
+          operator: '>='
+          group: 1
+          default_date: now
+          default_to_date: now
+          year_range: '-1:+1'
+          date_fields:
+            field_event_when_value: field_event_when_value
+        field_event_type_value:
+          id: field_event_type_value
+          table: node__field_event_type
+          field: field_event_type_value
+          relationship: none
+          group_type: group
+          plugin_id: list_field
+          operator: or
+          value:
+            szkolenia_poradnie: szkolenia_poradnie
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+            operator_label: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          ui_name: ''
+      filter_groups:
+        groups:
+          1: AND
+          2: AND
+      style:
+        type: default
+      row:
+        type: fields
+        options:
+          inline:
+            field_event_where_value: field_event_where_value
+            field_event_when_value: field_event_when_value
+          separator: ', '
+      query:
+        type: views_query
+        options: {  }
+      defaults:
+        empty: false
+        title: false
+        pager: false
+        style: false
+        row: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+      display_extenders: {  }
+      block_description: 'Najbliższe szkolenia dla poradni'
+      style_plugin: list
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags: {  }
+  block_5:
+    id: block_5
+    display_title: Konferencje
+    display_plugin: block
+    position: 8
+    display_options:
+      title: 'Najbliższe konferencje'
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: field
+          label: ''
+          exclude: true
+          element_type: strong
+          settings:
+            link_to_entity: false
+          ui_name: Tytuł
+        field_event_where:
+          id: field_event_where
+          table: node__field_event_where
+          field: field_event_where
+          plugin_id: field
+          label: ''
+          element_label_colon: false
+          type: string
+          settings:
+            max_length: 255
+            case_sensitive: false
+            is_ascii: false
+        field_event_when:
+          id: field_event_when
+          table: node__field_event_when
+          field: field_event_when
+          plugin_id: field
+          label: ''
+          element_label_colon: false
+          settings:
+            format_type: short
+            fromto: value
+            multiple_number: ''
+            multiple_from: ''
+            multiple_to: ''
+        field_price:
+          id: field_price
+          table: node__field_price
+          field: field_price
+          relationship: none
+          group_type: group
+          plugin_id: field
+          label: Cena
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: strong
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ' '
+            prefix_suffix: true
+            conditions:
+              -
+                condition: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          ui_name: ''
+          delta_random: false
+        field_free_seats:
+          id: field_free_seats
+          table: node__field_free_seats
+          field: field_free_seats
+          relationship: none
+          group_type: group
+          plugin_id: field
+          label: 'Wolne miejsca'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: strong
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_unformatted
+          settings:
+            conditions:
+              -
+                condition: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          ui_name: ''
+          delta_random: false
+      pager:
+        type: none
+        options:
+          offset: 0
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          label: 'Pole tekstowe'
+          empty: true
+          ui_name: ''
+          content:
+            value: |
+              <p>Brak zaplanowanych konferencji.</p>
+            format: '2'
+          tokenize: 0
+      sorts:
+        field_event_when_value:
+          id: field_event_when_value
+          table: node__field_event_when
+          field: field_event_when_value
+          relationship: none
+          group_type: group
+          plugin_id: datetime
+          order: ASC
+          expose:
+            label: ''
+          exposed: false
+          ui_name: ''
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          group_type: group
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            operator_label: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          ui_name: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            event: event
+          group: 1
+        field_event_when_value:
+          id: field_event_when_value
+          table: node__field_event_when
+          field: field_event_when_value
+          plugin_id: datetime
+          operator: '>='
+          group: 1
+          default_date: now
+          year_range: '-1:+1'
+        field_event_type_value:
+          id: field_event_type_value
+          table: node__field_event_type
+          field: field_event_type_value
+          relationship: none
+          group_type: group
+          plugin_id: list_field
+          operator: or
+          value:
+            konferencje: konferencje
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+            operator_label: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          ui_name: ''
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+      row:
+        type: fields
+        options:
+          inline:
+            field_event_where: field_event_where
+            field_event_when: field_event_when
+          separator: ', '
+          hide_empty: true
+      query:
+        type: views_query
+        options: {  }
+      defaults:
+        empty: false
+        title: false
+        pager: false
+        style: false
+        row: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+      display_description: 'Blok z nadchodzącymi konferencjami'
+      display_extenders: {  }
+      block_description: 'Najbliższe konferencje'
+      style_plugin: list
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_event_when'
+        - 'config:field.storage.node.field_event_where'
+        - 'config:field.storage.node.field_free_seats'
+        - 'config:field.storage.node.field_price'
+  page_1:
+    id: page_1
+    display_title: Nadchodzące
+    display_plugin: page
+    position: 3
+    display_options:
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: field
+        field_event_where:
+          id: field_event_where
+          table: node__field_event_where
+          field: field_event_where
+          plugin_id: field
+          element_label_colon: false
+          type: string
+          settings:
+            max_length: 255
+            case_sensitive: false
+            is_ascii: false
+        field_event_when:
+          id: field_event_when
+          table: node__field_event_when
+          field: field_event_when
+          plugin_id: field
+          element_label_colon: false
+          settings:
+            format_type: short
+            fromto: both
+            multiple_number: ''
+            multiple_from: ''
+            multiple_to: ''
+        field_price:
+          id: field_price
+          table: node__field_price
+          field: field_price
+          plugin_id: field
+          label: ''
+          exclude: true
+          element_label_colon: false
+          settings:
+            thousand_separator: ' '
+            prefix_suffix: 1
+        field_free_seats:
+          id: field_free_seats
+          table: node__field_free_seats
+          field: field_free_seats
+          plugin_id: field
+          label: ''
+          exclude: true
+          element_label_colon: false
+          settings:
+            thousand_separator: ' '
+            prefix_suffix: 1
+      pager:
+        type: none
+        options:
+          offset: 0
+      exposed_form:
+        type: input_required
+        options:
+          submit_button: Zastosuj
+          reset_button_label: Przywróć
+          exposed_sorts_label: 'Sortuj po'
+          expose_sort_order: false
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+          text_input_required: 'Wybierz dowolny filtr i naciśnij Zastosuj, żeby zobaczyć wyniki.'
+          text_input_required_format: '2'
+      access:
+        type: none
+      sorts:
+        field_event_when_value:
+          id: field_event_when_value
+          table: node__field_event_when
+          field: field_event_when_value
+          plugin_id: datetime
+      filters:
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            event: event
+          group: 1
+          expose:
+            operator_id: type_op
+            label: Typ
+            operator: type_op
+            identifier: type
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              administrator: administrator
+              anonymous: anonymous
+              moderator: moderator
+        field_event_when_value:
+          id: field_event_when_value
+          table: node__field_event_when
+          field: field_event_when_value
+          plugin_id: datetime
+          operator: '>='
+          value:
+            min: '2015-08-22'
+            max: '2015-08-22'
+          expose:
+            operator_id: field_event_when_value_op
+            label: 'Data (field_event_when)'
+            operator: field_event_when_value_op
+            identifier: field_event_when_value
+          is_grouped: true
+          group_info:
+            label: 'Data (field_event_when)'
+            identifier: field_event_when_value
+            remember: false
+            group_items:
+              1: {  }
+              2: {  }
+              3: {  }
+          default_date: now
+      filter_groups:
+        groups:
+          1: AND
+          2: AND
+      style:
+        type: table
+        options:
+          default_row_class: false
+          columns:
+            title: title
+            field_event_where: field_event_where
+            field_event_when: field_event_when
+            field_price: field_price
+            field_free_seats: field_free_seats
+          default: field_event_when
+          info:
+            title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+            field_event_where:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+            field_event_when:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+            field_price:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+            field_free_seats:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+      query:
+        type: views_query
+        options: {  }
+      defaults:
+        access: false
+        pager: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        exposed_form: false
+        style: false
+        row: false
+        fields: false
+        sorts: false
+        arguments: false
+        filters: false
+        filter_groups: false
+      display_description: 'Strona z tabelą wydarzeń (tylko aktualne)'
+      use_more_always: false
+      use_more_text: więcej
+      display_extenders: {  }
+      path: Wydarzenia/aktualne
+      style_plugin: table
+      style_options:
+        default_row_class: false
+        columns:
+          title: title
+          field_event_where: field_event_where
+          field_event_when: field_event_when
+          field_price: field_price
+          field_free_seats: field_free_seats
+        default: field_event_when
+        info:
+          title:
+            sortable: 0
+            default_sort_order: asc
+            align: ''
+            separator: ''
+            empty_column: 0
+          field_event_where:
+            sortable: 0
+            default_sort_order: asc
+            align: ''
+            separator: ''
+            empty_column: 0
+          field_event_when:
+            sortable: 0
+            default_sort_order: asc
+            align: ''
+            separator: ''
+            empty_column: 0
+          field_price:
+            sortable: 0
+            default_sort_order: asc
+            align: ''
+            separator: ''
+            empty_column: 0
+          field_free_seats:
+            sortable: 0
+            default_sort_order: asc
+            align: ''
+            separator: ''
+            empty_column: 0
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_event_when'
+        - 'config:field.storage.node.field_event_where'
+        - 'config:field.storage.node.field_free_seats'
+        - 'config:field.storage.node.field_price'
+  page_2:
+    id: page_2
+    display_title: Wszystkie
+    display_plugin: page
+    position: 2
+    display_options:
+      title: 'Lista wszystkich wydarzeń'
+      fields:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          settings:
+            link_to_entity: 0
+          ui_name: ''
+        views_bulk_operations:
+          id: views_bulk_operations
+          table: views
+          field: views_bulk_operations_bulk_form
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: views_bulk_operations_bulk_form
+          label: Akcje
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          batch: true
+          batch_size: 10
+          form_step: true
+          ajax_loader: false
+          buttons: false
+          action_title: Akcja
+          clear_on_exposed: true
+          force_selection_info: false
+          selected_actions:
+            -
+              action_id: views_bulk_operations_delete_entity
+              preconfiguration:
+                add_confirmation: true
+                confirm_help_text: '%action %count elementów - na pewno?'
+                label_override: Usuń
+                message_override: ''
+            -
+              action_id: 'entity:publish_action:node'
+              preconfiguration:
+                add_confirmation: false
+                confirm_help_text: ''
+                label_override: Publikuj
+                message_override: ''
+            -
+              action_id: 'entity:unpublish_action:node'
+              preconfiguration:
+                add_confirmation: false
+                confirm_help_text: ''
+                label_override: 'Zakończ publikację'
+                message_override: ''
+          ui_name: ''
+          vbo_settings:
+            display_type: '0'
+            enable_select_all_pages: 1
+            row_clickable: 1
+            force_single: 0
+            entity_load_capacity: '10'
+            skip_batching: 0
+          vbo_operations:
+            'rules_component::rules_node_bulk_update':
+              selected: 1
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::pathauto_node_update_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::views_bulk_operations_change_owner_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::clone_action_clone':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::views_bulk_operations_delete_revision':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::views_bulk_operations_modify_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+              settings:
+                show_all_tokens: 1
+                display_values:
+                  _all_: _all_
+            'action::node_make_unsticky_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::node_promote_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::views_bulk_operations_argument_selector_action':
+              selected: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+              settings:
+                url: ''
+            'action::node_make_sticky_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::node_publish_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'rules_component::scheduler_remove_publish_date_component':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'rules_component::scheduler_remove_unpublish_date_component':
+              selected: 1
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 1
+              label: 'Usuń datę zakończenia publikacji'
+            'rules_component::rules_remove_unpublish_date':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'rules_component::scheduler_set_publish_date_component':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'rules_component::scheduler_set_unpublish_date_component':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::views_bulk_operations_delete_item':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+              settings:
+                log: 0
+            'action::node_unpromote_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::views_bulk_operations_script_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::system_send_email_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::node_unpublish_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::node_unpublish_by_keyword_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::node_save_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+            'action::node_assign_owner_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          group_type: group
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: boolean
+          settings:
+            format: unicode-yes-no
+            format_custom_false: ''
+            format_custom_true: ''
+          ui_name: ''
+          type_custom_true: ''
+          type_custom_false: ''
+          not: 0
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: field
+        field_event_when:
+          id: field_event_when
+          table: node__field_event_when
+          field: field_event_when
+          relationship: none
+          group_type: group
+          plugin_id: field
+          label: 'Data wydarzenia'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: daterange_default
+          settings:
+            datetime_type: date
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          ui_name: ''
+          delta_random: false
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          plugin_id: field
+          label: 'Data publikacji'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          settings:
+            date_format: short
+          ui_name: ''
+          custom_date_format: ''
+          second_date_format_custom: ''
+          second_date_format: long
+          timezone: ''
+      pager:
+        type: full
+        options:
+          offset: 0
+          pagination_heading_level: h4
+          items_per_page: 20
+          total_pages: null
+          id: 0
+          tags:
+            next: 'następna ›'
+            previous: '‹ poprzednia'
+            first: '« pierwsza'
+            last: 'ostatnia »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Elementów na stronę'
+            items_per_page_options: '5, 10, 20, 40, 60'
+            items_per_page_options_all: true
+            items_per_page_options_all_label: '- Wszystko -'
+            offset: false
+            offset_label: Przesunięcie
+          quantity: 9
+      access:
+        type: role
+        options:
+          role:
+            administrator: administrator
+            moderator: moderator
+      filters:
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            event: event
+          group: 1
+          expose:
+            label: Typ
+            operator: type_op
+            identifier: type
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: Opublikowane
+            description: ''
+            use_operator: false
+            operator: status_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: status
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              moderator: '0'
+              content_editor: '0'
+              anonymous: '0'
+              pozycjoner: '0'
+              audytor: '0'
+          is_grouped: true
+          group_info:
+            label: Opublikowane
+            description: ''
+            identifier: status
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: Tak
+                operator: '='
+                value: '1'
+              2:
+                title: Nie
+                operator: '='
+                value: '0'
+      filter_groups:
+        groups:
+          1: AND
+          2: AND
+      style:
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            nid: nid
+            views_bulk_operations: views_bulk_operations
+            status: status
+            title: title
+            field_event_when: field_event_when
+            created: created
+          default: field_event_when
+          info:
+            nid:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            views_bulk_operations:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            status:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_event_when:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            created:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
+      query:
+        type: views_query
+        options: {  }
+      defaults:
+        access: false
+        title: false
+        pager: false
+        style: false
+        row: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+        pager_options: false
+      display_description: 'Strona z tabelą wydarzeń (wszystkie)'
+      display_extenders: {  }
+      path: admin/content/event
+      menu:
+        type: normal
+        title: Wydarzenia
+        description: 'Lista wszystkich wydarzeń w systemie'
+        weight: -99
+        menu_name: admin
+        parent: system.admin_content
+        context: '0'
+        name: admin
+        context_only_inline: 0
+      style_plugin: table
+      style_options:
+        grouping: {  }
+        row_class: ''
+        default_row_class: 1
+        row_class_special: 1
+        override: 1
+        sticky: 0
+        caption: ''
+        summary: ''
+        columns:
+          views_bulk_operations: views_bulk_operations
+          title: title
+          field_event_when: field_event_when
+          created: created
+          unpublish_on: unpublish_on
+        info:
+          views_bulk_operations:
+            align: ''
+            separator: ''
+            empty_column: 0
+          title:
+            sortable: 0
+            default_sort_order: asc
+            align: ''
+            separator: ''
+            empty_column: 0
+          field_event_when:
+            sortable: 1
+            default_sort_order: desc
+            align: ''
+            separator: ''
+            empty_column: 0
+          created:
+            sortable: 1
+            default_sort_order: desc
+            align: ''
+            separator: ''
+            empty_column: 0
+          unpublish_on:
+            sortable: 1
+            default_sort_order: desc
+            align: ''
+            separator: ''
+            empty_column: 0
+        default: unpublish_on
+        empty_table: 0
+      pager_options: null
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.roles
+      tags:
+        - 'config:field.storage.node.field_event_when'
