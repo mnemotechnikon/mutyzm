@@ -11,5 +11,5 @@ language: pl
 breadcrumbPaths: /Szkolenia
 breadcrumbTitles: Szkolenia
 type: '2'
-pathPattern: '/Szkolenia*'
+pathPattern: "/Szkolenia*\r\n/Grupa_superwizyjna_dla_specjalistów"
 extraCacheContexts: ''

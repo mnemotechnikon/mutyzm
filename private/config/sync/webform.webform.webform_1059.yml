@@ -12,92 +12,91 @@ id: webform_1059
 title: 'Konferencje - formularz zgłoszeniowy'
 description: null
 categories: {  }
-elements: |
+elements: |-
   imie_nazwisko:
     '#type': textfield
-    '#size': 
-    '#title': 'Imię i nazwisko' 
+    '#size': null
+    '#title': 'Imię i nazwisko'
     '#required': true
   telefon:
     '#type': textfield
-    '#size': 
-    '#title': 'Telefon komórkowy' 
+    '#size': null
+    '#title': 'Telefon komórkowy'
     '#required': true
   email:
     '#type': email
     '#size': 20
-    '#default_value': '[current-user:mail]' 
-    '#title': 'Adres e-mail' 
+    '#default_value': '[current-user:mail]'
+    '#title': 'Adres e-mail'
     '#required': true
   specjalizacja:
     '#type': select
     '#options':
-      psycholog: 'psycholog'
-      psychoterapeuta: 'psychoterapeuta'
-      logopeda: 'logopeda'
-      pedagog: 'pedagog'
-      psychiatra: 'psychiatra'
-      student: 'student'
-    '#title': 'Specjalizacja' 
+      psycholog: psycholog
+      psychoterapeuta: psychoterapeuta
+      logopeda: logopeda
+      pedagog: pedagog
+      psychiatra: psychiatra
+      student: student
+    '#title': Specjalizacja
     '#required': true
   firma:
     '#type': textfield
-    '#size': 
-    '#title': 'Firma/instytucja' 
+    '#size': null
+    '#title': Firma/instytucja
   termin:
     '#type': textfield
-    '#size': 
-    '#title': 'Termin konferencji' 
+    '#size': null
+    '#title': 'Termin konferencji'
   miejscowosc:
     '#type': textfield
-    '#size': 
-    '#default_value': '[current-user:profile_miasto]' 
-    '#title': 'Miejscowość konferencji' 
+    '#size': null
+    '#default_value': '[current-user:profile_miasto]'
+    '#title': 'Miejscowość konferencji'
     '#required': true
   miejscowosc_zamieszkania:
     '#type': textfield
-    '#size': 
-    '#default_value': '[current-user:profile_miasto]' 
-    '#title': 'Miejscowość zamieszkania' 
+    '#size': null
+    '#default_value': '[current-user:profile_miasto]'
+    '#title': 'Miejscowość zamieszkania'
     '#required': true
   faktura:
     '#type': select
     '#options':
-      tak: 'TAK'
-      nie: 'NIE'
-    '#title': 'Chcesz otrzymać fakturę?' 
+      tak: TAK
+      nie: NIE
+    '#title': 'Chcesz otrzymać fakturę?'
   fieldset_dane_do_faktury:
     '#type': fieldset
     '#open': true
-    '#title': 'Dane do faktury VAT' 
+    '#title': 'Dane do faktury VAT'
     '#states':
       visible:
         ':input[name="faktura"]':
           value: tak
-          
     faktura_nazwa_13:
       '#type': textfield
-      '#size': 
-      '#title': 'Nazwa' 
+      '#size': null
+      '#title': Nazwa
     faktura_ulica_13:
       '#type': textfield
-      '#size': 
-      '#title': 'Ulica' 
+      '#size': null
+      '#title': Ulica
     faktura_miasto_13:
       '#type': textfield
-      '#size': 
-      '#title': 'Kod i miasto' 
-      '#description': "Proszę podać kod pocztowy i miasto."
+      '#size': null
+      '#title': 'Kod i miasto'
+      '#description': 'Proszę podać kod pocztowy i miasto.'
     faktura_nip_13:
       '#type': textfield
-      '#size': 
-      '#title': 'NIP - TYLKO DLA FIRM I ZAKŁADÓW PRACY' 
+      '#size': null
+      '#title': 'NIP - TYLKO DLA FIRM I ZAKŁADÓW PRACY'
     faktura_uwagi_13:
       '#type': textarea
-      '#title': 'Uwagi do faktury' 
+      '#title': 'Uwagi do faktury'
     zgoda_efaktura:
       '#type': checkbox
-      '#title': 'Wyrażam zgodę na przesyłanie faktur drogą elektroniczną' 
+      '#title': 'Wyrażam zgodę na przesyłanie faktur drogą elektroniczną'
       '#states':
         visible:
           ':input[name="faktura"]':
@@ -116,6 +115,8 @@ elements: |
     '#title': 'Informacja o Administratorze Danych'
     '#format': full_html
     '#text': "<p>Administratorem Państwa danych osobowych jest CTM Sp. z o.o. z siedzibą przy ul. Fatimskiej 41a/310 w Krakowie, e-mail: <a href='mailto:biuro@mutyzm.pl'>biuro@mutyzm.pl</a>, tel. 796-688-996. Podanie danych osobowych zawartych w formularzu jest dobrowolne, ale niezbędne do odpowiedzi na formularz/realizacji umowy, a także że przysługują Państwu prawa dostępu do Państwa danych osobowych, ich zmiany (w tym aktualizacji), a także pozostałe prawa opisane w <a href='/Polityka_prywatności'>Polityce prywatności</a> art. 6 pkt 1 lit. b,c,f RODO.</p>"
+  captcha:
+    '#type': captcha
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'

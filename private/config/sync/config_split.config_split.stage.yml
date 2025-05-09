@@ -1,0 +1,21 @@
+uuid: a12b1f4a-5db1-4874-bfcf-1a5908ac8f84
+langcode: pl
+status: false
+dependencies: {  }
+id: stage
+label: stage
+description: 'Stage server settings'
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../private/config/split/stage
+module:
+  reroute_email: 1
+  layout_discovery: 1
+  layout_builder: 1
+theme: {  }
+complete_list:
+  - symfony_mailer_lite.symfony_mailer_lite_transport.smtp_stage
+partial_list:
+  - symfony_mailer_lite.settings

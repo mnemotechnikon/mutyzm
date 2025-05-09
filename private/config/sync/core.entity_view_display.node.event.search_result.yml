@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_result
     - field.field.node.event.body
+    - field.field.node.event.field_category
     - field.field.node.event.field_event_specialists
     - field.field.node.event.field_event_type
     - field.field.node.event.field_event_when
@@ -90,6 +91,7 @@ content:
 hidden:
   body: true
   breadcrumbs: true
+  field_category: true
   field_event_specialists: true
   field_metatag: true
   langcode: true

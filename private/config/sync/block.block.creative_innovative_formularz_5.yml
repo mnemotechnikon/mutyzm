@@ -1,0 +1,31 @@
+uuid: a1aeae4b-5602-4596-9337-fde16976e0d0
+langcode: pl
+status: true
+dependencies:
+  config:
+    - webform.webform.webform_225
+  module:
+    - system
+    - webform
+  theme:
+    - creative_innovative
+id: creative_innovative_formularz_5
+theme: creative_innovative
+region: sidebar_second
+weight: -8
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Formularz zgłoszeniowy'
+  label_display: visible
+  provider: webform
+  webform_id: webform_225
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/*dla_poradni*'

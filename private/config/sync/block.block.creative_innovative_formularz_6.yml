@@ -1,0 +1,31 @@
+uuid: f599df1b-ad84-4fb3-9786-554d80acfae7
+langcode: pl
+status: true
+dependencies:
+  config:
+    - webform.webform.webform_802
+  module:
+    - system
+    - webform
+  theme:
+    - creative_innovative
+id: creative_innovative_formularz_6
+theme: creative_innovative
+region: sidebar_second
+weight: -7
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Formularz zgłoszeniowy'
+  label_display: visible
+  provider: webform
+  webform_id: webform_802
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/*grupa_superwizyjna*'

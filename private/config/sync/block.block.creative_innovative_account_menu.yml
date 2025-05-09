@@ -12,8 +12,8 @@ _core:
   default_config_hash: dM5LK2g7iBaQ5M41--DvaurMRkRjdBvWdl4beCTMrP8
 id: creative_innovative_account_menu
 theme: creative_innovative
-region: footer_third
-weight: -6
+region: footer_fourth
+weight: -12
 provider: null
 plugin: 'system_menu_block:account'
 settings:

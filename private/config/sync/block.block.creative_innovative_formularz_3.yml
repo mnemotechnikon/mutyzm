@@ -1,0 +1,31 @@
+uuid: c12490af-df85-467c-851b-a0e23a94e054
+langcode: pl
+status: true
+dependencies:
+  config:
+    - webform.webform.webform_126
+  module:
+    - system
+    - webform
+  theme:
+    - creative_innovative
+id: creative_innovative_formularz_3
+theme: creative_innovative
+region: sidebar_second
+weight: -10
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Formularz zgłoszeniowy'
+  label_display: visible
+  provider: webform
+  webform_id: webform_126
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/Szkolenia/dla_specjalistów*\r\n/Szkolenia/dla_specjalistow*"

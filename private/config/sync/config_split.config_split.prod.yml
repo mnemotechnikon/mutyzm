@@ -1,0 +1,18 @@
+uuid: a3c4c711-ef01-4df1-8ff8-610c21337b82
+langcode: pl
+status: false
+dependencies: {  }
+id: prod
+label: prod
+description: 'Production server settings'
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../private/config/split/prod
+module: {  }
+theme: {  }
+complete_list:
+  - symfony_mailer_lite.symfony_mailer_lite_transport.smtp_prod
+partial_list:
+  - symfony_mailer_lite.settings

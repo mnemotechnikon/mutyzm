@@ -1,7 +1,0 @@
-uuid: 5eef1789-23ce-4a2f-9a3e-892d7d25690c
-langcode: pl
-status: true
-dependencies: {  }
-formId: webform_client_form_126
-captchaType: captcha/default
-label: webform_client_form_126

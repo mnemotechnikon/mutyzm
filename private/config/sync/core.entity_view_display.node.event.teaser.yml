@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.event.body
+    - field.field.node.event.field_category
     - field.field.node.event.field_event_specialists
     - field.field.node.event.field_event_type
     - field.field.node.event.field_event_when
@@ -17,30 +18,23 @@ dependencies:
     - field.field.node.event.taxonomy_vocabulary_2
     - node.type.event
   module:
-    - datetime
-    - text
+    - datetime_range
     - user
 id: node.event.teaser
 targetEntityType: node
 bundle: event
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 5
-    region: content
   field_event_when:
-    type: datetime_default
+    type: daterange_custom
     label: inline
     settings:
       timezone_override: ''
-      format_type: short
+      date_format: 'Y-m-d\TH:i:s'
+      from_to: both
+      separator: '-'
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_event_where:
     type: string
@@ -48,21 +42,31 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: -1
+    weight: 0
+    region: content
+  field_price:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 3
     region: content
 hidden:
+  body: true
   breadcrumbs: true
+  field_category: true
   field_event_specialists: true
   field_event_type: true
   field_event_when_hours: true
   field_free_seats: true
   field_metatag: true
   field_node_reference: true
-  field_price: true
   langcode: true
   taxonomy_vocabulary_2: true

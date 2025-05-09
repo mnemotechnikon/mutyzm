@@ -5,10 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_featured_image
     - field.field.node.page.field_image_cache
+    - field.field.node.page.field_media_document
     - field.field.node.page.field_metatag
     - field.field.node.page.taxonomy_vocabulary_2
-    - field.field.node.page.upload
     - node.type.page
   module:
     - text
@@ -24,19 +25,28 @@ content:
     type: text_summary_or_trimmed
     label: hidden
     settings:
-      trim_length: 300
+      trim_length: 200
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_featured_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   breadcrumbs: true
   field_image_cache: true
+  field_media_document: true
   field_metatag: true
   langcode: true
   taxonomy_vocabulary_2: true
-  upload: true

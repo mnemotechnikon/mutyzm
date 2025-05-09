@@ -1,0 +1,46 @@
+uuid: 2e7162d2-2d0f-405a-b09c-376f0022f944
+langcode: pl
+status: true
+dependencies: {  }
+id: upgrade_d7_metatag_field_instance_widget_settings_taxonomy_term_vocabulary_2
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'Metatag field instance widget settings of Działy menu terminy taksonomii'
+source:
+  plugin: d7_metatag_field_instance
+  source_module: metatag
+  ignore_map: true
+  constants:
+    field_name: field_metatag
+    form_mode: default
+  entity_type_id: taxonomy_term
+  entity_type: taxonomy_term
+  bundle: vocabulary_2
+process:
+  bundle:
+    -
+      plugin: get
+      source: bundle
+  entity_type:
+    -
+      plugin: get
+      source: entity_type
+  field_name:
+    -
+      plugin: get
+      source: constants/field_name
+  form_mode:
+    -
+      plugin: get
+      source: constants/form_mode
+destination:
+  plugin: component_entity_form_display
+migration_dependencies:
+  required:
+    - upgrade_d7_metatag_field_instance_taxonomy_term_vocabulary_2
+  optional: {  }

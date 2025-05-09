@@ -7,11 +7,12 @@ dependencies:
 id: node_page
 label: 'Zawartość - Strona'
 type: 'canonical_entities:node'
-pattern: '[node:taxonomy-vocabulary-2:0]/[node:title]'
+pattern: '[node:title]'
 selection_criteria:
-  -
+  94971090-390a-4568-a733-0d21ca492898:
     id: 'entity_bundle:node'
     negate: false
+    uuid: 94971090-390a-4568-a733-0d21ca492898
     context_mapping:
       node: node
     bundles:

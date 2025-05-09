@@ -9,7 +9,7 @@ _core:
 id: tabs
 theme: creative_innovative
 region: content
-weight: -3
+weight: -13
 provider: null
 plugin: local_tasks_block
 settings:

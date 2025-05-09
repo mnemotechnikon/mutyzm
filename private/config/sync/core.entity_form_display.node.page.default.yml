@@ -4,17 +4,18 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_featured_image
     - field.field.node.page.field_image_cache
+    - field.field.node.page.field_media_document
     - field.field.node.page.field_metatag
     - field.field.node.page.taxonomy_vocabulary_2
-    - field.field.node.page.upload
     - image.style.thumbnail
     - node.type.page
   module:
     - field_group
-    - file
     - image
     - imce
+    - media_library
     - metatag
     - path
     - text
@@ -22,12 +23,13 @@ third_party_settings:
   field_group:
     group_media:
       children:
+        - field_featured_image
+        - field_media_document
         - field_image_cache
-        - upload
-      label: Multiedia
+      label: Multimedia
       region: content
-      parent_name: ''
-      weight: 3
+      parent_name: group_tabs
+      weight: 2
       format_type: tab
       format_settings:
         classes: ''
@@ -37,6 +39,40 @@ third_party_settings:
         formatter: closed
         description: 'Dodaj zdjęcia i/lub pliki'
         required_fields: true
+    group_content:
+      children:
+        - title
+        - taxonomy_vocabulary_2
+        - body
+      label: Treść
+      region: content
+      parent_name: group_tabs
+      weight: 1
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: open
+        description: ''
+        required_fields: true
+    group_tabs:
+      children:
+        - group_content
+        - group_media
+      label: Tabs
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        direction: horizontal
+        width_breakpoint: 640
 _core:
   default_config_hash: SfpLhPExzvR0MgFp0Wp7CrmgEnhcqQ-fXIWFhbf4ue0
 id: node.page.default
@@ -46,7 +82,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 1
+    weight: 3
     region: content
     settings:
       rows: 10
@@ -56,21 +92,37 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_featured_image:
+    type: media_library_widget
+    weight: 26
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_image_cache:
     type: image_image
-    weight: 9
+    weight: 28
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings:
+      imce:
+        enabled: true
+  field_media_document:
+    type: media_library_widget
+    weight: 27
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_metatag:
     type: metatag_firehose
-    weight: 11
+    weight: 9
     region: content
     settings:
       sidebar: true
@@ -78,34 +130,34 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 12
+    weight: 10
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 6
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 7
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -122,7 +174,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60
@@ -130,21 +182,12 @@ content:
     third_party_settings: {  }
   uid:
     type: options_select
-    weight: 4
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
-  upload:
-    type: file_generic
-    weight: 11
-    region: content
-    settings:
-      progress_indicator: throbber
-    third_party_settings:
-      imce:
-        enabled: true
   url_redirects:
-    weight: 9
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

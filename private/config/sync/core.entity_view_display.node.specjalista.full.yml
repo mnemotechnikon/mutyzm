@@ -37,20 +37,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_oddzial:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 2
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
 hidden:
   breadcrumbs: true
   field_metatag: true
+  field_oddzial: true
   langcode: true

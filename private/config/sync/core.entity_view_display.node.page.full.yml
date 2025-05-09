@@ -5,17 +5,22 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.page.body
+    - field.field.node.page.field_featured_image
     - field.field.node.page.field_image_cache
+    - field.field.node.page.field_media_document
     - field.field.node.page.field_metatag
     - field.field.node.page.taxonomy_vocabulary_2
-    - field.field.node.page.upload
-    - image.style.media_library
+    - image.style.miniaturka300x200
     - node.type.page
   module:
-    - file
-    - image
+    - glightbox
+    - layout_builder
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
 id: node.page.full
@@ -31,38 +36,39 @@ content:
     weight: 0
     region: content
   field_image_cache:
-    type: image
+    type: glightbox
     label: hidden
     settings:
-      image_link: file
-      image_style: media_library
-      image_loading:
-        attribute: lazy
+      glightbox_node_style: miniaturka300x200
+      glightbox_node_style_first: ''
+      glightbox_image_style: ''
+      glightbox_gallery: field_page
+      glightbox_gallery_custom: ''
+      glightbox_caption: auto
+      glightbox_caption_custom: ''
+      glightbox_caption_description: auto
+      glightbox_caption_description_custom: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 3
+    region: content
+  field_media_document:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 4
     region: content
-  taxonomy_vocabulary_2:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  upload:
-    type: file_table
-    label: hidden
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    weight: 3
-    region: content
 hidden:
   breadcrumbs: true
+  field_featured_image: true
   field_metatag: true
   langcode: true
+  layout_builder__layout: true
+  taxonomy_vocabulary_2: true

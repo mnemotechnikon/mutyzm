@@ -6,7 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.storage.node.body
     - field.storage.node.field_image_cache
-    - image.style.miniaturka150x100
+    - image.style.miniaturka300x200
     - node.type.story
     - system.menu.main
   module:
@@ -487,6 +487,7 @@ display:
           field: field_image_cache
           relationship: none
           group_type: group
+          admin_label: ''
           plugin_id: field
           label: ''
           exclude: false
@@ -529,16 +530,13 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: fid
+          click_sort_column: target_id
           type: image
           settings:
             image_link: content
-            image_style: miniaturka150x100
+            image_style: miniaturka300x200
             image_loading:
               attribute: lazy
-            conditions:
-              -
-                condition: ''
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -713,9 +711,9 @@ display:
         type: grid_responsive
         options:
           grouping: {  }
-          columns: 3
-          cell_min_width: 320
-          grid_gutter: 20
+          columns: 2
+          cell_min_width: 300
+          grid_gutter: 40
           alignment: horizontal
       row:
         type: fields

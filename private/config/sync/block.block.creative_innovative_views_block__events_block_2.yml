@@ -1,0 +1,29 @@
+uuid: c0ee4ce8-8fd0-4f95-b678-4b562d32e91a
+langcode: pl
+status: true
+dependencies:
+  config:
+    - views.view.events
+  module:
+    - system
+    - views
+  theme:
+    - creative_innovative
+id: creative_innovative_views_block__events_block_2
+theme: creative_innovative
+region: content
+weight: -12
+provider: null
+plugin: 'views_block:events-block_2'
+settings:
+  id: 'views_block:events-block_2'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/Szkolenia/dla_specjalistów*\r\n/Szkolenia/dla_specjalistow*"

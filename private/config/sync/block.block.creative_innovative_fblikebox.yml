@@ -25,8 +25,8 @@ settings:
   messages: 0
   show_faces: '0'
   title: 'Polub nas na Facebooku'
-  width: 350
-  height: 100
+  width: null
+  height: null
   hide_cta: 0
   small_header: 0
   adapt_container_width: 1

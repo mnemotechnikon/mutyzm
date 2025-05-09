@@ -1,0 +1,39 @@
+uuid: 46bef3f7-94eb-49ad-b789-3f5fdcc7c17b
+langcode: pl
+status: true
+dependencies:
+  config:
+    - webform.webform.webform_211
+  module:
+    - language
+    - system
+    - webform
+  theme:
+    - creative_innovative
+id: creative_innovative_formularz
+theme: creative_innovative
+region: sidebar_second
+weight: -2
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Skontaktuj się'
+  label_display: visible
+  provider: webform
+  webform_id: webform_211
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  language:
+    id: language
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'
+    langcodes:
+      pl: pl
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/Kontakt*\r\n/Zapisy_na_wizyty_w_CTM"

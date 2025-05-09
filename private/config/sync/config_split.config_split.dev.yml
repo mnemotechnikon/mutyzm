@@ -1,0 +1,17 @@
+uuid: cfe36d4d-6b86-4b57-aeda-9c660eb797f1
+langcode: pl
+status: false
+dependencies: {  }
+id: dev
+label: dev
+description: 'Development settings '
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../private/config/split/dev
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list:
+  - symfony_mailer_lite.settings

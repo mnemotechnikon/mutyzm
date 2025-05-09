@@ -4,12 +4,12 @@ langcode: pl
 enable_globally: 0
 enable_globally_on_admin_routes: false
 default_challenge: captcha/Math
-description: 'To pytanie sprawdza czy jesteś człowiekiem i zapobiega wysyłaniu spamu.'
-title: CAPTCHA
+description: ''
+title: 'Zabezpieczenie antyspamowe'
 administration_mode: true
 administration_mode_on_admin_routes: false
 whitelist_ips: ''
-wrong_captcha_response_message: 'Odpowiedź na przedstawione zadanie jest nieprawidłowa.'
+wrong_captcha_response_message: 'Odpowiedź nieprawidłowa.'
 default_validation: 1
 persistence: 1
 enable_stats: false

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_category
     - field.field.node.event.field_event_specialists
     - field.field.node.event.field_event_type
     - field.field.node.event.field_event_when
@@ -51,7 +52,7 @@ third_party_settings:
     group_event_setup:
       children:
         - field_node_reference
-        - taxonomy_vocabulary_2
+        - field_category
       label: 'Ustawienia wydarzenia'
       region: content
       parent_name: ''
@@ -87,6 +88,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_category:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 5
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_event_specialists:
     type: options_select
     weight: 3
@@ -100,13 +111,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_event_when:
-    type: daterange_datelist
+    type: daterange_default
     weight: 7
     region: content
-    settings:
-      increment: 15
-      date_order: DMY
-      time_type: none
+    settings: {  }
     third_party_settings: {  }
   field_event_when_hours:
     type: text_textfield
@@ -133,7 +141,7 @@ content:
     third_party_settings: {  }
   field_metatag:
     type: metatag_firehose
-    weight: 13
+    weight: 14
     region: content
     settings:
       sidebar: true
@@ -171,7 +179,7 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -189,21 +197,21 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 12
+    weight: 13
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 7
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   taxonomy_vocabulary_2:
     type: entity_reference_autocomplete_tags
-    weight: 3
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -229,10 +237,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   url_redirects:
     weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  unpublish_on: true
+hidden: {  }

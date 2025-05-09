@@ -11,7 +11,7 @@ _core:
 id: creative_innovative_messages
 theme: creative_innovative
 region: content
-weight: -6
+weight: -15
 provider: null
 plugin: system_messages_block
 settings:

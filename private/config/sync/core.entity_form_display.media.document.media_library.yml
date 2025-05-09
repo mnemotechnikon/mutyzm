@@ -8,6 +8,7 @@ dependencies:
     - media.type.document
   module:
     - file
+    - imce
 _core:
   default_config_hash: dcpfpqyLXOSGpulacMAJW3H-G34_LeNsjdfxd1_oCfY
 id: media.document.media_library
@@ -21,7 +22,9 @@ content:
     region: content
     settings:
       progress_indicator: throbber
-    third_party_settings: {  }
+    third_party_settings:
+      imce:
+        enabled: true
   langcode:
     type: language_select
     weight: 1
@@ -34,6 +37,7 @@ hidden:
   name: true
   path: true
   publish_on: true
+  scheduler_settings: true
   status: true
   uid: true
   unpublish_on: true

@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_image_cache
     - field.storage.node.field_oddzial
     - node.type.specjalista
+    - taxonomy.vocabulary.oddzialy
   module:
     - image
     - node
@@ -85,6 +86,7 @@ display:
           field: field_image_cache
           relationship: none
           group_type: group
+          admin_label: ''
           plugin_id: field
           label: ''
           exclude: false
@@ -127,16 +129,13 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: fid
+          click_sort_column: target_id
           type: image
           settings:
             image_link: ''
             image_style: ''
             image_loading:
               attribute: lazy
-            conditions:
-              -
-                condition: ''
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -155,6 +154,7 @@ display:
           field: body
           relationship: none
           group_type: group
+          admin_label: ''
           plugin_id: field
           label: ''
           exclude: false
@@ -199,10 +199,7 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: text_default
-          settings:
-            conditions:
-              -
-                condition: ''
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -221,9 +218,10 @@ display:
           field: field_oddzial
           relationship: none
           group_type: group
+          admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -263,10 +261,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: tid
+          click_sort_column: target_id
           type: entity_reference_label
           settings:
-            target_type: taxonomy_term
+            link: true
           group_column: tid
           group_columns: {  }
           group_rows: true
@@ -293,18 +291,34 @@ display:
       cache:
         type: none
       sorts:
-        entityqueue_relationship:
-          id: entityqueue_relationship
-          table: node_field_data
-          field: entityqueue_relationship
+        field_oddzial_target_id:
+          id: field_oddzial_target_id
+          table: node__field_oddzial
+          field: field_oddzial_target_id
           relationship: none
           group_type: group
+          admin_label: ''
+          plugin_id: standard
           order: ASC
           expose:
             label: ''
-            field_identifier: entityqueue_relationship
+            field_identifier: ''
           exposed: false
-          ui_name: ''
+        sticky:
+          id: sticky
+          table: node_field_data
+          field: sticky
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: sticky
+          plugin_id: standard
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments:
         field_oddzial_tid:
           id: field_oddzial_tid
@@ -344,12 +358,12 @@ display:
             transform: 0
           break_phrase: false
           not: false
+          target_entity_type_id: taxonomy_term
           ui_name: ''
           breadcrumb_enable: 1
           breadcrumb: 'Link do %1'
           style_options: {  }
           field_name: field_oddzial
-          target_entity_type_id: taxonomy_term
       filters:
         status:
           id: status
@@ -375,17 +389,13 @@ display:
             operator_limit_selection: false
             operator_list: {  }
       style:
-        type: grid
+        type: grid_responsive
         options:
-          row_class: zespol-grid-view
-          default_row_class: false
-          uses_fields: false
+          grouping: {  }
           columns: 2
+          cell_min_width: 420
+          grid_gutter: 40
           alignment: horizontal
-          row_class_special: 0
-          fill_single_line: 1
-          caption: ''
-          summary: ''
       row:
         type: fields
         options:
@@ -401,9 +411,8 @@ display:
           query_comment: ''
           disable_sql_rewrite: false
           distinct: false
+          replica: false
           query_tags: {  }
-          pure_distinct: 0
-          slave: 0
       relationships:
         entityqueue_relationship:
           id: entityqueue_relationship
@@ -457,6 +466,7 @@ display:
           field: field_oddzial_target_id
           relationship: none
           group_type: count_distinct
+          admin_label: ''
           entity_type: node
           plugin_id: entity_target_id
           default_action: ignore
@@ -465,7 +475,7 @@ display:
             title_enable: false
             title: Wszystko
           title_enable: true
-          title: '%1'
+          title: '{{ arguments.field_oddzial_tid }}'
           default_argument_type: raw
           default_argument_options:
             index: 0
@@ -484,18 +494,19 @@ display:
             type: 'entity:taxonomy_term'
             fail: ignore
           validate_options:
-            vocabularies:
+            bundles:
               oddzialy: oddzialy
-            type: tid
-            transform: 0
+            access: false
+            operation: view
+            multiple: 0
           break_phrase: false
           not: false
+          target_entity_type_id: taxonomy_term
           ui_name: ''
           breadcrumb_enable: 1
           breadcrumb: '%1/%2'
           style_options: {  }
           field_name: field_oddzial
-          target_entity_type_id: taxonomy_term
       query:
         type: views_query
         options: {  }
@@ -503,28 +514,7 @@ display:
         css_class: false
         relationships: false
         arguments: false
-      relationships:
-        entityqueue_relationship:
-          id: entityqueue_relationship
-          table: node_field_data
-          field: entityqueue_relationship
-          relationship: none
-          group_type: group
-          admin_label: 'Kolejka: Specjaliści'
-          entity_type: node
-          plugin_id: standard
-          required: false
-          ui_name: ''
-          label: 'Kolejka: Specjaliści'
-          limit: 1
-          queues:
-            specjalisci: specjalisci
-            cennik: 0
-            zespol_bydgoszcz: 0
-            zespol_warszawa: 0
-            zespol_wrzesnia: 0
-            zespol_swiebodzice: 0
-            zespol_wspolpracownicy: 0
+      relationships: {  }
       css_class: zespol_view
       display_description: ''
       display_extenders: {  }

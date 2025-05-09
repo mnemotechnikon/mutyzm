@@ -7,11 +7,12 @@ dependencies:
 id: node_event
 label: 'Zawartość - Wydarzenie'
 type: 'canonical_entities:node'
-pattern: '[node:taxonomy-vocabulary-2:0:parent]/[node:taxonomy-vocabulary-2:0:name]/[node:field-event-when:value]--[node:field-event-where]'
+pattern: '[node:field_category:entity:root]/[node:field_category:entity:parent]/[node:field_category:entity:name]/[node:field_event_when:value]--[node:field_event_where:value]'
 selection_criteria:
-  -
+  d758ec6e-70f9-4dd4-9f5e-0e77266ec080:
     id: 'entity_bundle:node'
     negate: false
+    uuid: d758ec6e-70f9-4dd4-9f5e-0e77266ec080
     context_mapping:
       node: node
     bundles:

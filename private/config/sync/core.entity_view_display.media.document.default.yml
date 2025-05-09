@@ -7,7 +7,6 @@ dependencies:
     - media.type.document
   module:
     - file
-    - image
 _core:
   default_config_hash: XxUyhaTuM0OUUZpr8G6jdrFBEh5eag7auWxBKhm6cvY
 id: media.document.default
@@ -17,33 +16,16 @@ mode: default
 content:
   field_media_document:
     type: file_table
-    label: visually_hidden
+    label: above
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
-    weight: 2
-    region: content
-  name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
     weight: 0
-    region: content
-  thumbnail:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden:
   breadcrumbs: true
   created: true
   langcode: true
+  name: true
+  thumbnail: true
   uid: true

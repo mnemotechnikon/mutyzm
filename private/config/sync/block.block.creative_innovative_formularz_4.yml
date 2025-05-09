@@ -1,0 +1,31 @@
+uuid: b0725d9b-dedb-4515-9bae-e8ad61b45c14
+langcode: pl
+status: true
+dependencies:
+  config:
+    - webform.webform.webform_127
+  module:
+    - system
+    - webform
+  theme:
+    - creative_innovative
+id: creative_innovative_formularz_4
+theme: creative_innovative
+region: sidebar_second
+weight: -9
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Formularz zgłoszeniowy'
+  label_display: visible
+  provider: webform
+  webform_id: webform_127
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/Szkolenia/dla_rodziców*\r\n/Szkolenia/dla_rodzicow*"

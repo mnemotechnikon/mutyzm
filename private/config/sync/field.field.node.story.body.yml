@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
+    - filter.format.full_html
     - node.type.story
   module:
     - text
@@ -12,7 +13,7 @@ field_name: body
 entity_type: node
 bundle: story
 label: Treść
-description: 'Artykuł, podobny w formie do strony, to idealny nośnik często aktualizowanych treści, które informują użytkowników bądź zachęcają ich do wyrażenia swojej opinii. Za pomocą artykułów publikować można oświadczenia dla prasy, ogłoszenia, a także wpisy o charakterze nieformalnym. Domyślne ustawienia artykułu pozwalają użytkownikom na umieszczanie odpowiedzi, a także decydują o automatycznej publikacji artykułów na stronie głównej.'
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -20,4 +21,6 @@ default_value_callback: ''
 settings:
   display_summary: true
   required_summary: false
+  allowed_formats:
+    - full_html
 field_type: text_with_summary

@@ -17,11 +17,11 @@ type: file
 settings:
   target_type: file
   display_field: true
-  display_default: false
+  display_default: true
   uri_scheme: public
 module: file
 locked: false
-cardinality: -1
+cardinality: 10
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

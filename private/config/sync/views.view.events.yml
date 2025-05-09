@@ -217,7 +217,7 @@ display:
           label: ''
           alter:
             path: '{{ path }}'
-          element_type: strong
+          element_type: ''
         field_event_when:
           id: field_event_when
           table: node__field_event_when
@@ -243,8 +243,8 @@ display:
           field: area
           label: 'Pole tekstowe'
           content:
-            value: "<p>Potrzebujesz konsultacji? Chcesz nawiązać wsp&oacute;łpracę? - <a href=\"http://mutyzm.pl/Kontakt\">skontaktuj się.</a></p>\r\n"
-            format: '2'
+            value: "<p>Potrzebujesz konsultacji? Chcesz nawiązać wsp&oacute;łpracę? - <a href=\"/Kontakt\">skontaktuj się.</a></p>\r\n"
+            format: full_html
       sorts:
         field_event_when_value:
           id: field_event_when_value
@@ -322,7 +322,7 @@ display:
     display_plugin: block
     position: 5
     display_options:
-      title: 'Najbliższe szkolenia'
+      title: 'Najbliższe szkolenia dla specjalistów'
       fields:
         title:
           id: title
@@ -332,7 +332,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: ''
+          label: Tytuł
           exclude: false
           alter:
             alter_text: false
@@ -361,7 +361,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: strong
+          element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -392,27 +392,131 @@ display:
           id: field_event_where
           table: node__field_event_where
           field: field_event_where
+          relationship: none
+          group_type: group
+          admin_label: ''
           plugin_id: field
-          label: ''
+          label: Miejsce
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
           element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
           type: string
           settings:
-            max_length: 255
-            case_sensitive: false
-            is_ascii: false
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         field_event_when:
           id: field_event_when
           table: node__field_event_when
           field: field_event_when
+          relationship: none
+          group_type: group
+          admin_label: ''
           plugin_id: field
-          label: ''
+          label: Data
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
           element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: daterange_default
           settings:
+            timezone_override: ''
             format_type: short
-            fromto: value
-            multiple_number: ''
-            multiple_from: ''
-            multiple_to: ''
+            from_to: both
+            separator: '-'
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
         type: none
         options:
@@ -424,8 +528,8 @@ display:
           field: area
           label: 'Pole tekstowe'
           content:
-            value: "<p><a href=\"http://mutyzm.pl/Kontakt\">Zapytaj</a> o szkolenia w Twojej okolicy.</p>\r\n"
-            format: '2'
+            value: "<p><a href=\"/Kontakt\">Zapytaj</a> o szkolenia w Twojej okolicy.</p>\r\n"
+            format: full_html
       sorts:
         field_event_when_value:
           id: field_event_when_value
@@ -523,14 +627,22 @@ display:
         empty: false
         title: false
         pager: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
         style: false
         row: false
         fields: false
         sorts: false
         filters: false
         filter_groups: false
+      use_more: false
+      use_more_always: false
+      use_more_text: więcej
       display_extenders: {  }
       block_description: 'Najbliższe szkolenia dla specjalistów'
+      allow:
+        items_per_page: false
       style_plugin: list
     cache_metadata:
       max-age: -1
@@ -548,7 +660,7 @@ display:
     display_plugin: block
     position: 6
     display_options:
-      title: 'Najbliższe szkolenia'
+      title: 'Najbliższe szkolenia dla rodziców'
       fields:
         title:
           id: title
@@ -556,10 +668,10 @@ display:
           field: title
           plugin_id: field
           label: ''
-          exclude: true
-          element_type: strong
+          exclude: false
+          element_type: ''
           settings:
-            link_to_entity: false
+            link_to_entity: true
           ui_name: Tytuł
         field_event_where:
           id: field_event_where
@@ -586,25 +698,6 @@ display:
             multiple_number: ''
             multiple_from: ''
             multiple_to: ''
-        field_price:
-          id: field_price
-          table: node__field_price
-          field: field_price
-          plugin_id: field
-          element_type: strong
-          settings:
-            thousand_separator: ' '
-            prefix_suffix: 1
-        field_free_seats:
-          id: field_free_seats
-          table: node__field_free_seats
-          field: field_free_seats
-          plugin_id: field
-          element_type: strong
-          type: number_unformatted
-          settings:
-            thousand_separator: ' '
-            prefix_suffix: 1
       pager:
         type: none
       empty:
@@ -614,8 +707,8 @@ display:
           field: area
           label: 'Pole tekstowe'
           content:
-            value: "<p><a href=\"http://mutyzm.pl/Kontakt\">Zapytaj</a> o szkolenia w Twojej okolicy.</p>\r\n"
-            format: '2'
+            value: "<p><a href=\"/Kontakt\">Zapytaj</a> o szkolenia w Twojej okolicy.</p>\r\n"
+            format: full_html
       sorts:
         field_event_when_value:
           id: field_event_when_value
@@ -660,7 +753,44 @@ display:
           1: AND
           2: AND
       style:
-        type: default
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            title: title
+            field_event_where: field_event_where
+            field_event_when: field_event_when
+          default: field_event_when
+          info:
+            title:
+              sortable: true
+              default_sort_order: asc
+              align: views-align-left
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_event_where:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_event_when:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
       row:
         type: fields
         options:
@@ -690,19 +820,18 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.field_event_when'
         - 'config:field.storage.node.field_event_where'
-        - 'config:field.storage.node.field_free_seats'
-        - 'config:field.storage.node.field_price'
   block_4:
     id: block_4
     display_title: 'Szkolenia poradnie'
     display_plugin: block
     position: 7
     display_options:
-      title: 'Najbliższe szkolenia'
+      title: 'Najbliższe szkolenia dla poradni'
       fields:
         title:
           id: title
@@ -740,7 +869,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: strong
+          element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -755,6 +884,31 @@ display:
           settings:
             link_to_entity: 0
           ui_name: Tytuł
+        field_event_where:
+          id: field_event_where
+          table: node__field_event_where
+          field: field_event_where
+          plugin_id: field
+          label: ''
+          element_label_colon: false
+          type: string
+          settings:
+            max_length: 255
+            case_sensitive: false
+            is_ascii: false
+        field_event_when:
+          id: field_event_when
+          table: node__field_event_when
+          field: field_event_when
+          plugin_id: field
+          label: ''
+          element_label_colon: false
+          settings:
+            format_type: short
+            fromto: value
+            multiple_number: ''
+            multiple_from: ''
+            multiple_to: ''
       pager:
         type: none
       empty:
@@ -764,8 +918,8 @@ display:
           field: area
           label: 'Pole tekstowe'
           content:
-            value: "<p><a href=\"http://mutyzm.pl/Kontakt\">Zapytaj</a> o szkolenia w Twojej okolicy.</p>\r\n"
-            format: '2'
+            value: "<p><a href=\"/Kontakt\">Zapytaj</a> o szkolenia w Twojej okolicy.</p>\r\n"
+            format: full_html
       sorts:
         field_event_when_value:
           id: field_event_when_value
@@ -846,7 +1000,44 @@ display:
           1: AND
           2: AND
       style:
-        type: default
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            title: title
+            field_event_where: field_event_where
+            field_event_when: field_event_when
+          default: field_event_when
+          info:
+            title:
+              sortable: true
+              default_sort_order: asc
+              align: views-align-left
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_event_where:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_event_when:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
       row:
         type: fields
         options:
@@ -875,8 +1066,11 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_event_when'
+        - 'config:field.storage.node.field_event_where'
   block_5:
     id: block_5
     display_title: Konferencje
@@ -892,7 +1086,7 @@ display:
           plugin_id: field
           label: ''
           exclude: true
-          element_type: strong
+          element_type: ''
           settings:
             link_to_entity: false
           ui_name: Tytuł
@@ -921,140 +1115,6 @@ display:
             multiple_number: ''
             multiple_from: ''
             multiple_to: ''
-        field_price:
-          id: field_price
-          table: node__field_price
-          field: field_price
-          relationship: none
-          group_type: group
-          plugin_id: field
-          label: Cena
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: null
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: strong
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ' '
-            prefix_suffix: true
-            conditions:
-              -
-                condition: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          ui_name: ''
-          delta_random: false
-        field_free_seats:
-          id: field_free_seats
-          table: node__field_free_seats
-          field: field_free_seats
-          relationship: none
-          group_type: group
-          plugin_id: field
-          label: 'Wolne miejsca'
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: null
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: strong
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_unformatted
-          settings:
-            conditions:
-              -
-                condition: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          ui_name: ''
-          delta_random: false
       pager:
         type: none
         options:
@@ -1072,7 +1132,7 @@ display:
           content:
             value: |
               <p>Brak zaplanowanych konferencji.</p>
-            format: '2'
+            format: full_html
           tokenize: 0
       sorts:
         field_event_when_value:
@@ -1188,7 +1248,44 @@ display:
         groups:
           1: AND
       style:
-        type: default
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            title: title
+            field_event_where: field_event_where
+            field_event_when: field_event_when
+          default: field_event_when
+          info:
+            title:
+              sortable: true
+              default_sort_order: asc
+              align: views-align-left
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_event_where:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_event_when:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
       row:
         type: fields
         options:
@@ -1219,12 +1316,11 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.field_event_when'
         - 'config:field.storage.node.field_event_where'
-        - 'config:field.storage.node.field_free_seats'
-        - 'config:field.storage.node.field_price'
   page_1:
     id: page_1
     display_title: Nadchodzące
@@ -1296,7 +1392,7 @@ display:
           sort_asc_label: Rosnąco
           sort_desc_label: Malejąco
           text_input_required: 'Wybierz dowolny filtr i naciśnij Zastosuj, żeby zobaczyć wyniki.'
-          text_input_required_format: '2'
+          text_input_required_format: full_html
       access:
         type: none
       sorts:

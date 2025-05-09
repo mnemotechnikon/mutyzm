@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.full_html
     - filter.format.webform_default
     - media.type.audio
     - media.type.document
@@ -49,6 +50,7 @@ permissions:
   - 'edit own video media'
   - 'use klaro'
   - 'use text format basic_html'
+  - 'use text format full_html'
   - 'use text format webform_default'
   - 'view media'
   - 'view own unpublished content'

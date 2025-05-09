@@ -18,10 +18,18 @@ content:
     type: oembed
     label: hidden
     settings:
-      max_width: 0
-      max_height: 0
+      max_width: 800
+      max_height: 600
       loading:
-        attribute: eager
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
     weight: 0
     region: content
@@ -29,6 +37,5 @@ hidden:
   breadcrumbs: true
   created: true
   langcode: true
-  name: true
   thumbnail: true
   uid: true

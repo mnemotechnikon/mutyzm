@@ -4,17 +4,22 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_featured_image
     - field.field.node.page.field_image_cache
+    - field.field.node.page.field_media_document
     - field.field.node.page.field_metatag
     - field.field.node.page.taxonomy_vocabulary_2
-    - field.field.node.page.upload
     - image.style.media_library
     - node.type.page
   module:
-    - file
-    - image
+    - layout_builder
+    - media
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
 id: node.page.default
@@ -27,23 +32,23 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
-  field_image_cache:
-    type: image
-    label: hidden
+  field_media_document:
+    type: media_thumbnail
+    label: above
     settings:
       image_link: ''
       image_style: media_library
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   taxonomy_vocabulary_2:
     type: entity_reference_label
@@ -51,17 +56,11 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 0
-    region: content
-  upload:
-    type: file_table
-    label: above
-    settings:
-      use_description_as_link_text: false
-    third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
 hidden:
   breadcrumbs: true
+  field_featured_image: true
+  field_image_cache: true
   field_metatag: true
   langcode: true
