@@ -31,3 +31,7 @@ div.field--name-field-image-cache div.field__item {
  {
     color: var(--primary);
 }
+
+#show_information_social {
+    background-color: #091E3E !important;
+}
