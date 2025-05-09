@@ -71,18 +71,36 @@ elements: |-
     '#description': 'Dodatkowe informacje'
   faktura:
     '#type': select
-    '#options':
-      tak: TAK
-      nie: NIE
     '#title': 'Chcesz otrzymać fakturę?'
+    '#options': custom_taknie
+    '#empty_option': Wybierz
+    '#empty_value': none
+    '#access_create_roles':
+      - authenticated
+      - anonymous
+    '#access_update_roles':
+      - authenticated
+      - anonymous
+    '#access_view_roles':
+      - authenticated
+      - anonymous
   fieldset_dane_do_faktury:
     '#type': fieldset
-    '#open': true
     '#title': 'Dane do faktury VAT'
+    '#open': true
     '#states':
       visible:
         ':input[name="faktura"]':
           value: tak
+    '#access_create_roles':
+      - authenticated
+      - anonymous
+    '#access_update_roles':
+      - authenticated
+      - anonymous
+    '#access_view_roles':
+      - authenticated
+      - anonymous
     faktura_nazwa_13:
       '#type': textfield
       '#size': null
@@ -100,27 +118,48 @@ elements: |-
       '#type': textfield
       '#size': null
       '#title': 'NIP - TYLKO DLA FIRM I ZAKŁADÓW PRACY'
-  fieldset_dane_odbiorcy:
-    '#type': fieldset
-    '#open': true
-    '#title': 'Dane odbiorcy'
-    dane_odbiorcy_nazwa_26:
-      '#type': textfield
-      '#size': null
-      '#title': Nazwa
-    dane_odbiorcy_ulica_26:
-      '#type': textfield
-      '#size': null
-      '#title': Ulica
-    dane_odbiorcy_miasto_26:
-      '#type': textfield
-      '#size': null
-      '#title': 'Kod i miasto'
-      '#description': 'Proszę podać kod pocztowy i miasto.'
-    '#states':
-      visible:
-        ':input[name="faktura"]':
-          value: tak
+    inne_dane_odbiorcy:
+      '#type': checkbox
+      '#title': 'inne dane odbiorcy'
+      '#access_create_roles':
+        - authenticated
+        - anonymous
+      '#access_update_roles':
+        - authenticated
+        - anonymous
+      '#access_view_roles':
+        - authenticated
+        - anonymous
+    fieldset_dane_odbiorcy:
+      '#type': fieldset
+      '#title': 'Dane odbiorcy'
+      '#open': true
+      '#states':
+        visible:
+          ':input[name="inne_dane_odbiorcy"]':
+            checked: true
+      '#access_create_roles':
+        - authenticated
+        - anonymous
+      '#access_update_roles':
+        - authenticated
+        - anonymous
+      '#access_view_roles':
+        - authenticated
+        - anonymous
+      dane_odbiorcy_nazwa_26:
+        '#type': textfield
+        '#size': null
+        '#title': Nazwa
+      dane_odbiorcy_ulica_26:
+        '#type': textfield
+        '#size': null
+        '#title': Ulica
+      dane_odbiorcy_miasto_26:
+        '#type': textfield
+        '#size': null
+        '#title': 'Kod i miasto'
+        '#description': 'Proszę podać kod pocztowy i miasto.'
   zgoda_przetwarzanie_danych:
     '#type': checkbox
     '#title': 'Zgoda na przetwarzanie danych'

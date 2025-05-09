@@ -1,0 +1,15 @@
+uuid: dd4a5e20-5673-4cd2-bbd2-b8a5145b2104
+langcode: pl
+status: true
+dependencies: {  }
+id: zespol
+label: Zespół
+description: ''
+entityType: _none
+entityBundle: _none
+language: pl
+breadcrumbPaths: /Zespol
+breadcrumbTitles: Zespół
+type: '2'
+pathPattern: "/Zespół*\r\n/Zespol*"
+extraCacheContexts: ''
