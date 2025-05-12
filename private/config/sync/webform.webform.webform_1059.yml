@@ -62,10 +62,13 @@ elements: |-
     '#required': true
   faktura:
     '#type': select
-    '#options':
-      tak: TAK
-      nie: NIE
     '#title': 'Chcesz otrzymać fakturę?'
+    '#options': custom_taknie
+    '#empty_option': Wybierz
+    '#empty_value': none
+    '#access_create_roles':
+      - authenticated
+      - anonymous
   fieldset_dane_do_faktury:
     '#type': fieldset
     '#open': true
