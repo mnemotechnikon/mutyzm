@@ -8,7 +8,7 @@ dependencies:
     - creative_innovative
 id: creative_innovative_markawitryny_2
 theme: creative_innovative
-region: breadcrumb
+region: header
 weight: -15
 provider: null
 plugin: system_branding_block
@@ -26,7 +26,4 @@ visibility:
     negate: false
     status_codes:
       - 200
-  request_path:
-    id: request_path
-    negate: true
-    pages: '<front>'
+  

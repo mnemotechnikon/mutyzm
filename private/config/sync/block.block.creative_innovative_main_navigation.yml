@@ -13,7 +13,7 @@ _core:
 id: creative_innovative_main_navigation
 theme: creative_innovative
 region: nav_main
-weight: 0
+weight: -14
 provider: null
 plugin: 'system_menu_block:main'
 settings:
