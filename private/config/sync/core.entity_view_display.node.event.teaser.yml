@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.event.field_metatag
     - field.field.node.event.field_node_reference
     - field.field.node.event.field_price
-    - field.field.node.event.taxonomy_vocabulary_2
     - node.type.event
   module:
     - datetime_range
@@ -69,4 +68,3 @@ hidden:
   field_metatag: true
   field_node_reference: true
   langcode: true
-  taxonomy_vocabulary_2: true

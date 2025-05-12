@@ -12,7 +12,7 @@ third_party_settings:
     parent: 'main:'
   scheduler:
     expand_fieldset: always
-    fields_display_mode: vertical_tab
+    fields_display_mode: fieldset
     publish_enable: true
     publish_past_date: error
     publish_past_date_created: false
@@ -26,7 +26,7 @@ third_party_settings:
 name: Wydarzenie
 type: event
 description: 'Wydarzenie - informacje o nadchodzących szkoleniach i innych imprezach. Umożliwia podanie dat i godzin wydarzeń, miejsca, opisu i innych potrzebnych informacji dodatkowych.'
-help: "<p>W polu &quot;opis szkolenia&quot; należy wstawić informacje o szkoleniu (cele, informacje dodatkowe itp.)</p>\r\n"
+help: null
 new_revision: false
 preview_mode: 1
 display_submitted: false
