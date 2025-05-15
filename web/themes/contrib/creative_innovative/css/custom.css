@@ -1,3 +1,8 @@
+/* Navbar background color */
+nav.navbar {
+    background-color: #fff !important;
+}
+
 /* Tytuly artykulow w widoku siatki */
 h2.views-articles-title  {
     word-wrap: break-word;
@@ -21,7 +26,8 @@ div.field--name-field-image-cache div.field__item {
 }
 
 /* Menu boczne kontakt */
-#block-creative-innovative-kontaktoddzialy .nav-item a {
+#block-creative-innovative-kontaktoddzialy .nav-item a,
+#block-creative-innovative-mainmenu .nav-item a {
     color: #000;
     padding: 15px 0;
 }
@@ -34,4 +40,23 @@ div.field--name-field-image-cache div.field__item {
 
 #show_information_social {
     background-color: #091E3E !important;
+}
+
+/* Multimedia dodawanie obrazka i dokumentow */
+#field_featured_image-media-library-wrapper,
+#field_media_document-media-library-wrapper {
+    border: 1px solid #ccc !important;
+}
+
+#field_featured_image-media-library-wrapper legend,
+#field_media_document-media-library-wrapper legend,
+#field_featured_image-media-library-wrapper div.fieldset-wrapper,
+#field_media_document-media-library-wrapper div.fieldset-wrapper {
+    padding-left: 0.5em;
+}
+
+#field_featured_image-media-library-wrapper legend,
+#field_media_document-media-library-wrapper legend {
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
 }
