@@ -185,7 +185,7 @@ elements: |-
           value: tak
   zgoda_przewodnik:
     '#type': checkbox
-    '#title': 'Zamawiam "Mutyzm Wybiórczy - PRAKTYCZNY PRZEWODNIK"'
+    '#title': 'TAK, +79 zł książka Mutyzm Wybiórczy - PRAKTYCZNY PRZEWODNIK (cena z rabatem -20% dla uczestników szkoleń, wysyłka gratis paczkomatem Inpost)'
     '#description': 'Cena: 79 zł (cena z rabatem -20% dla uczestników szkoleń, wysyłka gratis paczkomatem Inpost)'
   horizontal_rule:
     '#type': webform_horizontal_rule
