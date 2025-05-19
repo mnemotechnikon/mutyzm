@@ -1,9 +1,0 @@
-uuid: 31a52eff-2de4-4d60-ab31-58847e6719b0
-langcode: pl
-status: true
-dependencies: {  }
-name: Oddziały
-vid: oddzialy
-description: 'Lista oddziałów, w których pracują specjaliści'
-weight: 0
-new_revision: false

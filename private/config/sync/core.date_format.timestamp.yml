@@ -1,8 +1,0 @@
-uuid: 3bcae802-5db7-4210-84d5-9ef117e058cb
-langcode: pl
-status: true
-dependencies: {  }
-id: timestamp
-label: Timestamp
-locked: false
-pattern: U
