@@ -31,6 +31,7 @@ elements: |-
     '#required': true
   specjalizacja:
     '#type': select
+    '#title': Specjalizacja
     '#options':
       psycholog: psycholog
       psychoterapeuta: psychoterapeuta
@@ -38,8 +39,16 @@ elements: |-
       pedagog: pedagog
       psychiatra: psychiatra
       student: student
-    '#title': Specjalizacja
     '#required': true
+    '#access_create_roles':
+      - authenticated
+      - anonymous
+    '#access_update_roles':
+      - authenticated
+      - anonymous
+    '#access_view_roles':
+      - authenticated
+      - anonymous
   miejscowosc_zamieszkania:
     '#type': textfield
     '#size': null

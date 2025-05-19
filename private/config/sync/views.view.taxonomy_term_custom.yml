@@ -1,6 +1,6 @@
 uuid: c9bd2988-121d-4191-b5b5-18d2d5064bf8
 langcode: pl
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -376,6 +376,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      title: Obozy
       filters:
         status:
           id: status
@@ -439,6 +440,7 @@ display:
         groups:
           1: AND
       defaults:
+        title: false
         filters: false
         filter_groups: false
       display_description: ''
@@ -460,6 +462,9 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      title: Filmy
+      defaults:
+        title: false
       display_description: ''
       display_extenders: {  }
       path: taxonomy/term/69

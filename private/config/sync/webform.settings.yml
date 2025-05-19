@@ -168,7 +168,7 @@ element:
     webform_signature: webform_signature
     webform_video_file: webform_video_file
 html_editor:
-  disabled: false
+  disabled: true
   element_format: webform_default
   mail_format: webform_default
   tidy: true
@@ -335,11 +335,11 @@ ui:
   toolbar_item: false
 libraries:
   excluded_libraries:
-    - choices
     - codemirror
     - jquery.chosen
     - jquery.intl-tel-input
     - jquery.rateit
+    - jquery.select2
     - popperjs
     - progress-tracker
     - signature_pad

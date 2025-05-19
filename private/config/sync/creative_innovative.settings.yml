@@ -10,7 +10,7 @@ features:
   favicon: true
   node_user_picture: false
 logo:
-  path: 'public://mutyzm.png'
+  path: 'public://ctm_centrum_terapii_logo.jpg'
   use_default: false
 b5_top_container: container
 b5_top_container_config: ''
@@ -18,10 +18,10 @@ b5_body_schema: light
 b5_body_bg_schema: none
 arrow_up: right
 b5_navbar_schema: light
-b5_navbar_bg_schema: light
+b5_navbar_bg_schema: none
 b5_footer_schema: dark
 b5_footer_bg_schema: dark
-footer_copyright: 'Niniejszy materiał, w tym jego układ, forma i zestawienie, jest objęty ochroną prawną. Kopiowanie, powielanie i wykorzystywanie materiału w całości lub części w sposób niezgodny z prawem, nie podając autora i źródła, jest zabronione. Portal podejmie wszelkie prawem dozwolone kroki celem ochrony wskazanych materiałów. © CTM Sp. z o.o.'
+footer_copyright: 'Niniejszy materiał, w tym jego układ, forma i zestawienie, jest objęty ochroną prawną. Kopiowanie, powielanie i wykorzystywanie materiału w całości lub części w sposób niezgodny z prawem, nie podając autora i źródła, jest zabronione. Portal podejmie wszelkie prawem dozwolone kroki celem ochrony wskazanych materiałów. <br> © CTM Sp. z o.o.'
 subtheme_folder: themes/custom
 subtheme_name: 'B5 subtheme'
 subtheme_machine_name: b5subtheme

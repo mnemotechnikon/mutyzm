@@ -235,7 +235,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 7
+          items_per_page: 3
       empty:
         area:
           id: area
@@ -302,7 +302,7 @@ display:
         pager_options: false
       display_description: 'Blok z listą nadchodzących wydarzeń'
       use_more: true
-      use_more_always: false
+      use_more_always: true
       use_more_text: 'Zobacz więcej wydarzeń'
       display_extenders: {  }
       block_description: 'Nadchodzące wydarzenia'
@@ -1394,7 +1394,9 @@ display:
           text_input_required: 'Wybierz dowolny filtr i naciśnij Zastosuj, żeby zobaczyć wyniki.'
           text_input_required_format: full_html
       access:
-        type: none
+        type: perm
+        options:
+          perm: 'access content'
       sorts:
         field_event_when_value:
           id: field_event_when_value
@@ -1561,6 +1563,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_event_when'
         - 'config:field.storage.node.field_event_where'

@@ -410,7 +410,7 @@ display:
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_tags: {  }
       relationships:
@@ -515,7 +515,7 @@ display:
         relationships: false
         arguments: false
       relationships: {  }
-      css_class: zespol_view
+      css_class: 'zespol_view mb-3'
       display_description: ''
       display_extenders: {  }
       path: taxonomy/term/48

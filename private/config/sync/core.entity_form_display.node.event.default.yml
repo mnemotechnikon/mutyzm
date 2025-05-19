@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.event.field_price
     - node.type.event
   module:
+    - autocomplete_deluxe
     - datetime_range
     - field_group
     - metatag
@@ -88,14 +89,21 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_category:
-    type: entity_reference_autocomplete
+    type: autocomplete_deluxe
     weight: 4
     region: content
     settings:
       match_operator: CONTAINS
-      match_limit: 5
+      autocomplete_route_name: autocomplete_deluxe.autocomplete
       size: 60
-      placeholder: ''
+      selection_handler: default
+      match_limit: 5
+      min_length: 0
+      delimiter: ''
+      not_found_message_allow: false
+      not_found_message: "The term '@term' will be added"
+      new_terms: false
+      no_empty_message: 'No terms could be found. Please type in order to add a new term.'
     third_party_settings: {  }
   field_event_specialists:
     type: options_select
@@ -217,14 +225,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   uid:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 3
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default

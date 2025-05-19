@@ -13,7 +13,7 @@ dependencies:
 _core:
   default_config_hash: uVPQEpmZxMNaMQGTGQghVz_jsbwMAdfEtD2ZDUnhrPg
 id: scheduler_scheduled_content
-label: 'Scheduled Content'
+label: 'Zaplanowana zawartość'
 module: views
 description: 'Find and manage scheduled content.'
 tag: ''
@@ -26,7 +26,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Scheduled Content'
+      title: 'Zaplanowana zawartość'
       fields:
         node_bulk_form:
           id: node_bulk_form
@@ -1533,7 +1533,7 @@ display:
       path: admin/content/scheduled
       menu:
         type: normal
-        title: 'Scheduled Content'
+        title: 'Zaplanowana zawartość'
         description: 'Content that is scheduled for publishing or unpublishing'
         weight: -97
         expanded: false

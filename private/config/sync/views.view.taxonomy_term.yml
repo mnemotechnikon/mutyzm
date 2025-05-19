@@ -303,6 +303,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      title: '%1'
       pager:
         type: none
         options:
@@ -323,6 +324,7 @@ display:
         type: views_query
         options: {  }
       defaults:
+        title: false
         use_ajax: false
         pager: false
         style: false

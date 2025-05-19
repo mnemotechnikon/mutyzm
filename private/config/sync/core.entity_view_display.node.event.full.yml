@@ -29,6 +29,7 @@ third_party_settings:
         - field_event_type
         - field_node_reference
         - field_category
+        - field_token_test
       label: '<h2>Dodatkowe informacje</h2>'
       parent_name: ''
       region: content
@@ -91,7 +92,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 11
+    weight: 10
     region: content
   field_event_specialists:
     type: entity_reference_label

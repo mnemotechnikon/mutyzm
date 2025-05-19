@@ -50,6 +50,59 @@ elements: |-
     '#access_view_roles':
       - authenticated
       - anonymous
+  zatrudnienie:
+    '#type': select
+    '#title': Zatrudnienie
+    '#options': employment_status
+    '#choices': true
+    '#access_create_roles':
+      - authenticated
+      - anonymous
+    '#access_update_roles':
+      - authenticated
+      - anonymous
+    '#access_view_roles':
+      - authenticated
+      - anonymous
+  dzialy_menu:
+    '#type': entity_autocomplete
+    '#title': 'Działy menu'
+    '#multiple': 5
+    '#access_create_roles':
+      - authenticated
+      - anonymous
+    '#access_update_roles':
+      - authenticated
+      - anonymous
+    '#access_view_roles':
+      - authenticated
+      - anonymous
+    '#target_type': taxonomy_term
+    '#selection_handler': 'default:taxonomy_term'
+    '#selection_settings':
+      target_bundles:
+        vocabulary_2: vocabulary_2
+      sort:
+        field: name
+        direction: asc
+      auto_create: false
+      auto_create_bundle: ''
+  data_czas:
+    '#type': datetime
+    '#title': 'data czas'
+    '#access_create_roles':
+      - authenticated
+      - anonymous
+    '#access_update_roles':
+      - authenticated
+      - anonymous
+    '#access_view_roles':
+      - authenticated
+      - anonymous
+    '#date_year_range': '2025:2050'
+    '#date_time_element': timepicker
+    '#date_time_format': 'H:i'
+    '#date_time_step': '1800'
 css: ''
 javascript: ''
 settings:

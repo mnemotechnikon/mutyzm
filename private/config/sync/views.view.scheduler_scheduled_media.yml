@@ -13,7 +13,7 @@ dependencies:
 _core:
   default_config_hash: YRy2WeHDLh-luDD3tNW3oTAOBJXXDxo4x5lCCox6aSo
 id: scheduler_scheduled_media
-label: 'Scheduled Media'
+label: 'Zaplanowane media'
 module: views
 description: 'Find and manage scheduled media.'
 tag: ''
@@ -26,7 +26,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Scheduled Media'
+      title: 'Zaplanowane media'
       fields:
         media_bulk_form:
           id: media_bulk_form
@@ -1036,7 +1036,7 @@ display:
       path: admin/content/media/scheduled
       menu:
         type: normal
-        title: 'Scheduled Media'
+        title: 'Zaplanowane media'
         description: 'Media items that are scheduled for publishing or unpublishing'
         weight: -96
         expanded: false
@@ -1093,8 +1093,8 @@ display:
       path: user/%user/scheduled_media
       menu:
         type: tab
-        title: 'Scheduled Media'
-        description: 'Scheduled Media by this user'
+        title: 'Zaplanowane media'
+        description: 'Zaplanowane media przez tego użytkownika'
         weight: -1
         expanded: false
         menu_name: account
