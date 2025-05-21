@@ -60,3 +60,8 @@ div.field--name-field-image-cache div.field__item {
     background-color: #eee;
     border-bottom: 1px solid #ccc;
 }
+
+/* Oferta diagram */
+map[name="oferta_diagram_map"] > area:hover {
+    cursor: pointer;
+}
