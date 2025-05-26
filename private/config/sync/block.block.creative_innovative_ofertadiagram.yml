@@ -1,0 +1,35 @@
+uuid: 853a5718-2467-4a41-9e7e-c0650fc8e083
+langcode: pl
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e06d6229-827d-44d9-b69d-415236ed1613'
+  module:
+    - block_content
+    - system
+  theme:
+    - creative_innovative
+id: creative_innovative_ofertadiagram
+theme: creative_innovative
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:e06d6229-827d-44d9-b69d-415236ed1613'
+settings:
+  id: 'block_content:e06d6229-827d-44d9-b69d-415236ed1613'
+  label: 'Oferta diagram'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  response_status:
+    id: response_status
+    negate: false
+    status_codes:
+      - 200
+  request_path:
+    id: request_path
+    negate: false
+    pages: /Nasza_oferta

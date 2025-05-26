@@ -1,0 +1,35 @@
+uuid: d11c3d87-3651-4545-bcb7-7699dc08ca5c
+langcode: pl
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:69668939-04b5-4122-bb19-5a5f3e08e960'
+  module:
+    - block_content
+    - system
+  theme:
+    - creative_innovative
+id: creative_innovative_instagramblok
+theme: creative_innovative
+region: content
+weight: -5
+provider: null
+plugin: 'block_content:69668939-04b5-4122-bb19-5a5f3e08e960'
+settings:
+  id: 'block_content:69668939-04b5-4122-bb19-5a5f3e08e960'
+  label: 'Instagram blok'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  response_status:
+    id: response_status
+    negate: false
+    status_codes:
+      - 200
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

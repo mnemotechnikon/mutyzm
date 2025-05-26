@@ -12,7 +12,7 @@ dependencies:
 id: creative_innovative_dlaczegomy
 theme: creative_innovative
 region: content
-weight: -7
+weight: -6
 provider: null
 plugin: 'block_content:e3a27790-6bc2-40b5-800a-a4f1d4c9edd7'
 settings:
