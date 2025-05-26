@@ -45,7 +45,6 @@
         "drupal/quick_node_clone": "^1.22",
         "drupal/redirect": "^1.11",
         "drupal/reroute_email": "^2.3@RC",
-        "drupal/rules": "^4.0",
         "drupal/scheduler": "^2.2",
         "drupal/symfony_mailer_lite": "^2.0",
         "drupal/upgrade_status": "^4.3",
